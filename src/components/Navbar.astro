@@ -15,24 +15,30 @@ const navLinks = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[var(--color-border)]">
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href={`/${lang}/`} class="text-lg font-semibold text-[var(--color-text)]">
-      {site.name[lang]}
+    <a href={`/${lang}/`} class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center">
+        <span class="text-white text-sm font-bold">P</span>
+      </div>
+      <span class="text-lg font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+        {site.name[lang]}
+      </span>
     </a>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-1">
       {navLinks.map(link => (
         <a
           href={link.href}
-          class={`text-sm transition-colors ${
+          class={`px-3 py-1.5 rounded-lg text-sm transition-all ${
             currentPath.startsWith(link.href)
-              ? 'text-[var(--color-primary)] font-medium'
-              : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
+              ? 'text-[var(--color-primary)] bg-[var(--color-primary-50)] font-medium'
+              : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
           }`}
         >
           {link.label}
         </a>
       ))}
+      <div class="w-px h-5 bg-[var(--color-border)] mx-2"></div>
       <LanguageSwitcher lang={lang} currentPath={currentPath} />
     </div>
   </div>

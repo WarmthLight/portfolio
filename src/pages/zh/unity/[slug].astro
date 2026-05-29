@@ -19,8 +19,17 @@ const { title, description, cover, video, tags } = project.data;
 ---
 
 <Base lang={lang} title={`${title[lang]} - 作品集`}>
-  <article class="max-w-4xl mx-auto px-6 py-16">
-    <div class="aspect-video rounded-xl overflow-hidden bg-black mb-8">
+  <article class="max-w-5xl mx-auto px-6 py-16">
+    <!-- 返回按钮 -->
+    <a href="/zh/unity" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group">
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      {t.project.back}
+    </a>
+
+    <!-- 视频播放器 -->
+    <div class="aspect-video rounded-2xl overflow-hidden bg-black mb-10 shadow-2xl">
       <video
         src={video}
         controls
@@ -32,20 +41,20 @@ const { title, description, cover, video, tags } = project.data;
       </video>
     </div>
 
-    <h1 class="text-3xl font-bold mb-4">{title[lang]}</h1>
-    <p class="text-[var(--color-text-muted)] text-lg mb-6">{description[lang]}</p>
+    <!-- 项目信息 -->
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-bold mb-4 text-[var(--color-text)]">{title[lang]}</h1>
+      <p class="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-8">{description[lang]}</p>
 
-    <div class="mb-8">
-      <h2 class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wide mb-3">{t.project.techStack}</h2>
-      <div class="flex flex-wrap gap-2">
-        {tags.map(tag => (
-          <span class="text-sm px-3 py-1 rounded-full bg-[var(--color-bg-alt)] text-[var(--color-text)] border border-[var(--color-border)]">{tag}</span>
-        ))}
+      <!-- 技术栈 -->
+      <div class="p-6 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-light)]">
+        <h2 class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wide mb-4">{t.project.techStack}</h2>
+        <div class="flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span class="tag bg-white text-[var(--color-text-secondary)] border border-[var(--color-border)]">{tag}</span>
+          ))}
+        </div>
       </div>
     </div>
-
-    <a href="/zh/unity" class="inline-flex items-center text-[var(--color-primary)] hover:underline">
-      &larr; {t.project.back}
-    </a>
   </article>
 </Base>

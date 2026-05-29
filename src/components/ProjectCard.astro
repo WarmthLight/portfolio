@@ -3,21 +3,29 @@ const { project, lang, basePath } = Astro.props;
 const { title, description, cover, tags } = project.data;
 ---
 
-<a href={`${basePath}/${project.id}`} class="group block rounded-xl border border-[var(--color-border)] overflow-hidden hover:border-[var(--color-primary)] hover:shadow-lg transition-all">
-  <div class="aspect-video bg-[var(--color-bg-alt)] overflow-hidden">
+<a href={`${basePath}/${project.id}`} class="group block rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white card-hover">
+  <div class="aspect-video bg-[var(--color-bg-alt)] overflow-hidden relative">
     <img
       src={cover}
       alt={title[lang]}
-      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       loading="lazy"
     />
+    <!-- 悬浮播放按钮 -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+      <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+        <svg class="w-6 h-6 text-[var(--color-primary)] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+    </div>
   </div>
-  <div class="p-5">
-    <h3 class="text-lg font-semibold mb-2 group-hover:text-[var(--color-primary)] transition-colors">{title[lang]}</h3>
-    <p class="text-sm text-[var(--color-text-muted)] mb-3 line-clamp-2">{description[lang]}</p>
+  <div class="p-6">
+    <h3 class="text-lg font-semibold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">{title[lang]}</h3>
+    <p class="text-sm text-[var(--color-text-muted)] mb-4 line-clamp-2 leading-relaxed">{description[lang]}</p>
     <div class="flex flex-wrap gap-2">
       {tags.map(tag => (
-        <span class="text-xs px-2 py-1 rounded-full bg-[var(--color-bg-alt)] text-[var(--color-text-muted)] border border-[var(--color-border)]">{tag}</span>
+        <span class="tag bg-[var(--color-bg-alt)] text-[var(--color-text-muted)] border border-[var(--color-border-light)]">{tag}</span>
       ))}
     </div>
   </div>

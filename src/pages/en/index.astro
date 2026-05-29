@@ -5,25 +5,79 @@ import { site } from '../../data/site';
 const lang = 'en';
 
 const directions = [
-  { href: '/en/unity', title: 'Unity Game Dev', desc: 'Interactive experiences & game creation', icon: '🎮' },
-  { href: '/en/uiux', title: 'UI/UX Design', desc: 'User interface & experience design', icon: '🎨' },
-  { href: '/en/aigc', title: 'AIGC Generation', desc: 'AI-powered creative content', icon: '🤖' },
+  {
+    href: '/en/unity',
+    title: 'Unity Game Dev',
+    desc: 'Interactive experiences & game creation',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v6c0 1.243 1.007 2.25 2.25 2.25h9a2.25 2.25 0 002.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087V4.5a2.25 2.25 0 00-2.25-2.25h-4.5A2.25 2.25 0 005.25 4.5v1.587"/></svg>`,
+    gradient: 'from-blue-500 to-cyan-400',
+    bgGradient: 'from-blue-50 to-cyan-50',
+  },
+  {
+    href: '/en/uiux',
+    title: 'UI/UX Design',
+    desc: 'User interface & experience design',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
+    gradient: 'from-purple-500 to-pink-400',
+    bgGradient: 'from-purple-50 to-pink-50',
+  },
+  {
+    href: '/en/aigc',
+    title: 'AIGC Generation',
+    desc: 'AI-powered creative content',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>`,
+    gradient: 'from-amber-500 to-orange-400',
+    bgGradient: 'from-amber-50 to-orange-50',
+  },
 ];
 ---
 
 <Base lang={lang} title={site.name[lang]}>
-  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
-    <h1 class="text-5xl font-bold mb-4">{site.name[lang]}</h1>
-    <p class="text-xl text-[var(--color-text-muted)]">{site.tagline[lang]}</p>
+  <section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-primary-50)] rounded-full blur-3xl opacity-60"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-60"></div>
+    </div>
+
+    <div class="animate-fade-in-up">
+      <p class="text-sm font-medium text-[var(--color-primary)] tracking-widest uppercase mb-6">Portfolio</p>
+      <h1 class="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
+        <span class="gradient-text">{site.name[lang]}</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
+        {site.tagline[lang]}
+      </p>
+    </div>
+
+    <div class="absolute bottom-12 animate-bounce">
+      <svg class="w-6 h-6 text-[var(--color-text-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 pb-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {directions.map(d => (
-        <a href={d.href} class="group block p-8 rounded-xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-lg transition-all">
-          <div class="text-4xl mb-4">{d.icon}</div>
-          <h2 class="text-xl font-semibold mb-2 group-hover:text-[var(--color-primary)] transition-colors">{d.title}</h2>
-          <p class="text-[var(--color-text-muted)]">{d.desc}</p>
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="text-center mb-12">
+      <p class="text-sm text-[var(--color-text-muted)] tracking-wide">Explore My Work</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {directions.map((d, i) => (
+        <a
+          href={d.href}
+          class={`group relative block p-8 rounded-2xl border border-[var(--color-border)] bg-white card-hover animate-fade-in-up animate-delay-${(i + 1) * 100}`}
+        >
+          <div class={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${d.gradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <Fragment set:html={d.icon} />
+          </div>
+          <h2 class="text-xl font-semibold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+            {d.title}
+          </h2>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">{d.desc}</p>
+          <div class="absolute top-8 right-8 text-[var(--color-text-light)] group-hover:text-[var(--color-primary)] group-hover:translate-x-1 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
         </a>
       ))}
     </div>

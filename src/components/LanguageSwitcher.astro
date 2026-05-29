@@ -5,6 +5,9 @@ const otherLabel = lang === 'zh' ? 'EN' : '中文';
 const newPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
 ---
 
-<a href={newPath} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
+<a
+  href={newPath}
+  class="px-3 py-1.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-50)] transition-all border border-[var(--color-border)] hover:border-[var(--color-primary)]"
+>
   {otherLabel}
 </a>
