@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "一款融合游戏化激励机制的智能健身追踪应用"
   en: "A Smart Fitness Tracking App with Gamified Motivation"
-cover: "/images/projects/placeholder-cover.svg"
+cover: "/images/case-studies/glowfit-cover.svg"
 role:
   zh: "UI/UX 设计师 · 产品设计师"
   en: "UI/UX Designer · Product Designer"

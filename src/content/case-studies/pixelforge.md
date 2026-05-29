@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "为独立开发者打造的智能美术工作流"
   en: "Intelligent Art Workflow for Indie Developers"
-cover: "/images/projects/placeholder-cover.svg"
+cover: "/images/case-studies/pixelforge-cover.svg"
 role:
   zh: "UI/UX 设计师 & 产品负责人"
   en: "UI/UX Designer & Product Lead"

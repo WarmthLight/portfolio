@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "为非技术用户打造的企业级数据分析体验"
   en: "Enterprise analytics experience designed for non-technical users"
-cover: "/images/projects/placeholder-cover.svg"
+cover: "/images/case-studies/datapulse-cover.svg"
 role:
   zh: "UI/UX 设计负责人"
   en: "Lead UI/UX Designer"

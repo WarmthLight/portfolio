@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "让笔记像思维一样流动，让 AI 帮你整理知识脉络"
   en: "Let notes flow like thoughts, let AI organize your knowledge"
-cover: "/images/projects/placeholder-cover.svg"
+cover: "/images/case-studies/flownote-cover.svg"
 role:
   zh: "UI/UX 设计师"
   en: "UI/UX Designer"

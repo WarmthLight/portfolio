@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "用 AI 重新定义旅行规划体验，让每一次出发都充满期待"
   en: "Redefining travel planning with AI — making every journey as exciting as the destination"
-cover: "/images/projects/placeholder-cover.svg"
+cover: "/images/case-studies/tripwise-cover.svg"
 role:
   zh: "主导 UI/UX 设计师"
   en: "Lead UI/UX Designer"
