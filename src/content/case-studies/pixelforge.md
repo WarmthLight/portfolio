@@ -978,7 +978,7 @@ Generate 6 Variants
 
 ### 高保真原型四：Mobile Companion（移动端）
 
-<div class="my-8 mx-auto max-w-[320px] rounded-xl border border-zinc-700 overflow-hidden shadow-2xl bg-zinc-900">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-zinc-700 overflow-hidden shadow-2xl bg-zinc-900">
 <div class="h-7 bg-zinc-800 flex items-center justify-between px-4 border-b border-zinc-700">
 <span class="text-zinc-400 text-[10px] font-medium">9:41</span>
 <div class="flex items-center gap-1">

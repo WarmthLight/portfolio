@@ -258,7 +258,7 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ### 屏幕一：目的地探索页
 
-<div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-900 overflow-hidden shadow-2xl bg-white">
 <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
 <span class="text-white/90 text-[11px] font-medium">9:41</span>
 <div class="flex items-center gap-1">
@@ -373,7 +373,7 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ### 屏幕二：AI 行程编辑器
 
-<div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-900 overflow-hidden shadow-2xl bg-white">
 <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
 <span class="text-white/90 text-[11px] font-medium">9:41</span>
 <div class="flex items-center gap-1">
@@ -495,7 +495,7 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ### 屏幕三：旅行详情页
 
-<div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-900 overflow-hidden shadow-2xl bg-white">
 <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
 <span class="text-white/90 text-[11px] font-medium">9:41</span>
 <div class="flex items-center gap-1">
@@ -607,7 +607,7 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ### 屏幕四：实时导航模式
 
-<div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-900 overflow-hidden shadow-2xl bg-white">
 <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
 <span class="text-white/90 text-[11px] font-medium">9:41</span>
 <div class="flex items-center gap-1">
@@ -721,7 +721,7 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ### 屏幕五：社交分享动态卡
 
-<div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-900 overflow-hidden shadow-2xl bg-white">
 <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
 <span class="text-white/90 text-[11px] font-medium">9:41</span>
 <div class="flex items-center gap-1">
