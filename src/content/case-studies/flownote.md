@@ -183,13 +183,103 @@ FlowNote 采用移动端标准的底部标签栏导航，五个核心入口：
 
 首页采用卡片瀑布流布局，顶部是一个固定的搜索栏（支持语音输入和快捷搜索），下方是 AI 自动生成的笔记卡片网格。每张卡片包含标题预览、首段摘要、AI 标签胶囊、以及关联笔记数。卡片支持左右滑动快速浏览，长按进入批量管理模式。顶部还设有一个"今日洞察"横幅，展示 AI 发现的跨笔记知识关联。
 
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-4 space-y-3">
+<div class="h-8 bg-gray-100 rounded-lg"></div>
+<div class="flex gap-2">
+<div class="h-6 w-12 bg-gray-200 rounded-full"></div>
+<div class="h-6 w-12 bg-gray-200 rounded-full"></div>
+<div class="h-6 w-12 bg-gray-200 rounded-full"></div>
+</div>
+<div class="h-16 bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+<div class="h-2 bg-gray-100 rounded w-full mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-2/3"></div>
+</div>
+<div class="h-16 bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="h-3 bg-gray-200 rounded w-1/2 mb-2"></div>
+<div class="h-2 bg-gray-100 rounded w-full mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-3/4"></div>
+</div>
+<div class="h-16 bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="h-3 bg-gray-200 rounded w-2/3 mb-2"></div>
+<div class="h-2 bg-gray-100 rounded w-full mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-1/2"></div>
+</div>
+</div>
+<div class="h-14 border-t border-gray-200 flex items-center justify-around">
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+</div>
+</div>
+
 ### 编辑器界面
 
 编辑器占据全屏空间，顶部是轻量工具栏（标题、加粗、列表、图片插入等），中部是沉浸式文本编辑区域。关键创新在于右侧的 AI 助手面板——可以收起为一个小浮标，展开后显示实时 AI 建议：推荐标签、关联笔记、内容摘要、语法优化。AI 面板支持上下滑动浏览建议列表，点击即可一键应用。
 
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="h-10 bg-gray-50 border-b border-gray-200 flex items-center px-3 gap-2">
+<div class="w-5 h-5 bg-gray-200 rounded"></div>
+<div class="w-5 h-5 bg-gray-200 rounded"></div>
+<div class="w-5 h-5 bg-gray-200 rounded"></div>
+<div class="w-5 h-5 bg-gray-200 rounded"></div>
+<div class="ml-auto w-5 h-5 bg-gray-300 rounded"></div>
+</div>
+<div class="flex">
+<div class="flex-1 p-4 space-y-2">
+<div class="h-4 bg-gray-200 rounded w-1/3"></div>
+<div class="h-2 bg-gray-100 rounded w-full"></div>
+<div class="h-2 bg-gray-100 rounded w-full"></div>
+<div class="h-2 bg-gray-100 rounded w-3/4"></div>
+<div class="h-2 bg-gray-100 rounded w-full"></div>
+<div class="h-2 bg-gray-100 rounded w-2/3"></div>
+</div>
+<div class="w-20 bg-gray-50 border-l border-gray-200 p-2 space-y-2">
+<div class="h-4 bg-gray-200 rounded w-full"></div>
+<div class="h-3 bg-gray-100 rounded w-full"></div>
+<div class="h-3 bg-gray-100 rounded w-full"></div>
+<div class="h-3 bg-gray-100 rounded w-2/3"></div>
+</div>
+</div>
+</div>
+
 ### 知识图谱
 
 知识图谱采用力导向图布局，节点代表笔记，连线代表笔记间的语义关联强度。节点大小反映笔记的重要性（基于引用次数和关联度），颜色代表所属主题分类。底部提供一个半透明的筛选面板，支持按时间范围、主题、标签进行图谱过滤。点击任意节点会弹出笔记预览卡片，双击进入详情。
+
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="relative h-[500px] bg-gray-50 flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 500">
+<line x1="100" y1="150" x2="180" y2="200" stroke="#d1d5db" stroke-width="2"/>
+<line x1="180" y1="200" x2="240" y2="160" stroke="#d1d5db" stroke-width="2"/>
+<line x1="180" y1="200" x2="160" y2="300" stroke="#d1d5db" stroke-width="2"/>
+<line x1="160" y1="300" x2="80" y2="350" stroke="#d1d5db" stroke-width="2"/>
+<line x1="240" y1="160" x2="280" y2="250" stroke="#d1d5db" stroke-width="1.5"/>
+</svg>
+<div class="absolute top-[130px] left-[80px] w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-[8px] text-gray-600">3</div>
+<div class="absolute top-[180px] left-[160px] w-14 h-14 bg-gray-400 rounded-full flex items-center justify-center text-[8px] text-white">5</div>
+<div class="absolute top-[140px] left-[220px] w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-[8px] text-gray-600">2</div>
+<div class="absolute top-[280px] left-[140px] w-12 h-12 bg-gray-350 rounded-full flex items-center justify-center text-[8px] text-gray-600">4</div>
+<div class="absolute top-[330px] left-[60px] w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-[8px] text-gray-600">1</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-t border-gray-200 p-3 flex gap-2">
+<div class="h-6 px-3 bg-gray-200 rounded-full text-[8px] flex items-center text-gray-500">全部</div>
+<div class="h-6 px-3 bg-gray-100 rounded-full text-[8px] flex items-center text-gray-400">学习</div>
+<div class="h-6 px-3 bg-gray-100 rounded-full text-[8px] flex items-center text-gray-400">工作</div>
+</div>
+</div>
 
 ---
 

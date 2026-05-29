@@ -195,21 +195,136 @@ Export Center 导出到游戏引擎
 
 ### 线框图一：主工作台
 
-主工作台采用经典的三栏布局。左侧 40px 宽的图标工具栏提供快速工具切换，工具栏右侧可展开为 200px 的属性面板。中央区域为无限画布，支持缩放和拖拽平移。右侧 240px 的面板用于图层管理和属性编辑。底部 160px 的可折叠区域为资产库快速访问条，以缩略图网格展示最近使用的资产。
+主工作台采用经典的三栏布局。
 
-画布中央显示当前编辑的 sprite，四周留有足够的灰度空间以区分画布边界。右上角显示当前缩放比例和画布尺寸信息。
+<div class="my-10 rounded-xl border-2 border-gray-400 overflow-hidden bg-zinc-900">
+<div class="h-8 bg-zinc-800 flex items-center px-3 gap-3 border-b border-zinc-700">
+<div class="h-3 bg-zinc-600 rounded w-16"></div>
+<div class="flex gap-2 ml-4">
+<div class="h-3 bg-zinc-700 rounded w-8"></div>
+<div class="h-3 bg-zinc-700 rounded w-8"></div>
+<div class="h-3 bg-zinc-700 rounded w-8"></div>
+<div class="h-3 bg-zinc-700 rounded w-8"></div>
+</div>
+</div>
+<div class="flex h-[350px]">
+<div class="w-10 bg-zinc-800 border-r border-zinc-700 flex flex-col items-center py-2 gap-2">
+<div class="w-5 h-5 bg-zinc-600 rounded"></div>
+<div class="w-5 h-5 bg-zinc-700 rounded"></div>
+<div class="w-5 h-5 bg-zinc-700 rounded"></div>
+<div class="w-5 h-5 bg-zinc-700 rounded"></div>
+<div class="w-5 h-5 bg-zinc-700 rounded"></div>
+<div class="w-5 h-5 bg-zinc-700 rounded"></div>
+</div>
+<div class="w-44 bg-zinc-800 border-r border-zinc-700 p-2 space-y-2">
+<div class="h-2 bg-zinc-500 rounded w-16 mb-1"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+<div class="h-2 bg-zinc-500 rounded w-12 mt-2 mb-1"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+</div>
+<div class="flex-1 bg-zinc-950 flex items-center justify-center relative">
+<div class="w-32 h-32 bg-zinc-800 border border-zinc-700 rounded" style="background-image: repeating-conic-gradient(#27272a 0% 25%, #18181b 0% 50%); background-size: 8px 8px;"></div>
+<div class="absolute top-2 right-2 text-[8px] text-zinc-500">128×128 — 60%</div>
+</div>
+<div class="w-52 bg-zinc-800 border-l border-zinc-700 p-2 space-y-2">
+<div class="h-2 bg-zinc-500 rounded w-12 mb-1"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+<div class="h-5 bg-zinc-700 rounded"></div>
+<div class="h-2 bg-zinc-500 rounded w-12 mt-2 mb-1"></div>
+<div class="h-16 bg-zinc-700 rounded"></div>
+</div>
+</div>
+<div class="h-20 bg-zinc-800 border-t border-zinc-700 p-2 flex gap-1">
+<div class="w-10 h-10 bg-zinc-700 rounded"></div>
+<div class="w-10 h-10 bg-zinc-700 rounded"></div>
+<div class="w-10 h-10 bg-zinc-700 rounded"></div>
+<div class="w-10 h-10 bg-zinc-700 rounded"></div>
+<div class="w-10 h-10 bg-zinc-700 rounded"></div>
+</div>
+</div>
 
 ### 线框图二：AI 生成面板
 
-AI 生成面板采用左右分割布局。左侧 40% 为输入区域，包含：提示词文本框（支持多行输入和标签补全）、风格预设网格（6-8 个预设卡片，点击选择）、生成参数滑块组（迭代步数、引导强度、种子值、批量数量）。底部为醒目的"Generate"按钮。
+AI 生成面板采用左右分割布局。
 
-右侧 60% 为结果展示区，采用 2x2 或 3x3 网格展示生成的变体。每个变体卡片支持缩放预览、拖拽到画布、收藏和版本标记。选中的变体以品红色边框高亮，底部出现"Refine"和"Export"操作按钮。
+<div class="my-10 rounded-xl border-2 border-gray-400 overflow-hidden bg-zinc-900">
+<div class="h-8 bg-zinc-800 flex items-center px-3 gap-3 border-b border-zinc-700">
+<div class="h-3 bg-zinc-600 rounded w-16"></div>
+<div class="flex gap-2 ml-4">
+<div class="h-3 bg-zinc-700 rounded w-12"></div>
+<div class="h-3 bg-zinc-700 rounded w-12"></div>
+</div>
+</div>
+<div class="flex h-[350px]">
+<div class="w-2/5 bg-zinc-800 border-r border-zinc-700 p-4 space-y-3">
+<div class="h-2 bg-zinc-500 rounded w-16 mb-1"></div>
+<div class="h-20 bg-zinc-700 rounded-lg p-2">
+<div class="h-2 bg-zinc-500 rounded w-full mb-1"></div>
+<div class="h-2 bg-zinc-600 rounded w-3/4"></div>
+</div>
+<div class="h-2 bg-zinc-500 rounded w-20 mb-1"></div>
+<div class="grid grid-cols-3 gap-1.5">
+<div class="h-12 bg-zinc-700 rounded border border-zinc-600"></div>
+<div class="h-12 bg-zinc-700 rounded border border-fuchsia-500"></div>
+<div class="h-12 bg-zinc-700 rounded border border-zinc-600"></div>
+<div class="h-12 bg-zinc-700 rounded border border-zinc-600"></div>
+<div class="h-12 bg-zinc-700 rounded border border-zinc-600"></div>
+<div class="h-12 bg-zinc-700 rounded border border-zinc-600"></div>
+</div>
+<div class="h-8 bg-fuchsia-600 rounded-lg flex items-center justify-center">
+<div class="h-2 bg-white/50 rounded w-16"></div>
+</div>
+</div>
+<div class="flex-1 bg-zinc-850 p-4">
+<div class="grid grid-cols-3 gap-2 h-full">
+<div class="bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="bg-zinc-800 rounded-lg border border-fuchsia-500"></div>
+<div class="bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="bg-zinc-800 rounded-lg border border-zinc-700"></div>
+</div>
+</div>
+</div>
+</div>
 
 ### 线框图三：资产库
 
-资产库采用全屏浏览模式。顶部为搜索栏和筛选器行（类型、风格、颜色、尺寸、日期）。主区域为响应式网格布局，根据屏幕宽度自动调整列数（4-6 列）。每个资产卡片显示缩略图、名称、标签、尺寸和创建时间。鼠标悬停时卡片轻微放大并显示快捷操作按钮（编辑、导出、删除、详情）。
+资产库采用全屏浏览模式。
 
-左侧提供分类树形导航：按项目分组、按类型分组（角色/环境/UI/特效）、按风格分组。右上角切换网格/列表视图。
+<div class="my-10 rounded-xl border-2 border-gray-400 overflow-hidden bg-zinc-900">
+<div class="h-8 bg-zinc-800 flex items-center px-3 gap-3 border-b border-zinc-700">
+<div class="h-3 bg-zinc-600 rounded w-16"></div>
+<div class="h-5 bg-zinc-700 rounded flex-1 max-w-xs ml-4"></div>
+</div>
+<div class="flex h-[350px]">
+<div class="w-44 bg-zinc-800 border-r border-zinc-700 p-2 space-y-1">
+<div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2">角色</div>
+<div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2 pl-4">环境</div>
+<div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2 pl-4">UI</div>
+<div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2 pl-4">特效</div>
+<div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2">道具</div>
+</div>
+<div class="flex-1 p-3">
+<div class="grid grid-cols-4 gap-2">
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+<div class="aspect-square bg-zinc-800 rounded-lg border border-zinc-700"></div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 

@@ -192,28 +192,143 @@ GlowFit 的信息架构围绕四个核心功能模块构建，采用底部标签
 
 线框图展示了首页的核心布局：顶部区域放置环形进度组件，三个同心圆分别代表步数、卡路里和活跃分钟数。中部区域为每日运动摘要卡片，包含最近一次运动记录和今日小贴士。底部为快捷操作区域，中心的圆形按钮为运动记录入口。
 
-关键布局原则：
-- 进度环占据屏幕上方 40% 的视觉空间，确保核心信息一目了然
-- 信息密度由上至下递减，引导用户视线自然流动
-- 留白充足，避免信息过载
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-4">
+<div class="text-[10px] text-gray-400 mb-1">2025年6月12日 · 周四</div>
+<div class="h-4 bg-gray-300 rounded w-20 mb-4"></div>
+<div class="flex justify-center mb-4">
+<div class="relative w-32 h-32">
+<div class="absolute inset-0 rounded-full border-[6px] border-gray-200"></div>
+<div class="absolute inset-2 rounded-full border-[6px] border-gray-300 border-t-transparent rotate-45"></div>
+<div class="absolute inset-4 rounded-full border-[6px] border-gray-200"></div>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<div class="h-5 bg-gray-300 rounded w-12 mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-8"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-4">
+<div class="text-center"><div class="h-3 bg-gray-200 rounded w-8 mx-auto mb-1"></div><div class="h-2 bg-gray-100 rounded w-6 mx-auto"></div></div>
+<div class="text-center"><div class="h-3 bg-gray-200 rounded w-8 mx-auto mb-1"></div><div class="h-2 bg-gray-100 rounded w-6 mx-auto"></div></div>
+<div class="text-center"><div class="h-3 bg-gray-200 rounded w-8 mx-auto mb-1"></div><div class="h-2 bg-gray-100 rounded w-6 mx-auto"></div></div>
+</div>
+<div class="bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="h-3 bg-gray-200 rounded w-1/3 mb-2"></div>
+<div class="h-2 bg-gray-100 rounded w-full mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-2/3"></div>
+</div>
+</div>
+<div class="h-14 border-t border-gray-200 flex items-center justify-around">
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+</div>
+</div>
 
 **页面二：活动详情**
 
 线框图展示了单次运动的完整数据视图：顶部为运动类型和时间信息，中部为地图轨迹区域（支持 3D 视角切换），下方依次为心率曲线图、配速分析图和核心数据网格（距离、时间、配速、卡路里）。
 
-设计考量：
-- 地图区域采用可折叠设计，用户可选择沉浸式查看或收起以查看更多数据
-- 心率曲线支持双指缩放，查看具体时段的心率数据
-- 底部数据网格采用 2x2 布局，确保每个数据点有足够的点击区域
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-3">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="h-3 bg-gray-300 rounded w-24"></div>
+</div>
+<div class="h-32 bg-gray-100 rounded-xl mb-3 relative overflow-hidden">
+<svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 128">
+<polyline points="20,100 60,80 100,90 140,60 180,70 220,40 260,50 290,30" fill="none" stroke="#9ca3af" stroke-width="2"/>
+</svg>
+</div>
+<div class="h-20 bg-gray-50 rounded-xl border border-gray-200 p-2 mb-3">
+<div class="h-2 bg-gray-200 rounded w-16 mb-2"></div>
+<svg class="w-full h-10" viewBox="0 0 260 40">
+<polyline points="0,30 30,25 60,20 90,28 120,15 150,22 180,10 210,18 240,12 260,20" fill="none" stroke="#d1d5db" stroke-width="1.5"/>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="h-4 bg-gray-300 rounded w-12 mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-8 mx-auto"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="h-4 bg-gray-300 rounded w-12 mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-8 mx-auto"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="h-4 bg-gray-300 rounded w-12 mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-8 mx-auto"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="h-4 bg-gray-300 rounded w-12 mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-8 mx-auto"></div>
+</div>
+</div>
+</div>
+</div>
 
 **页面三：挑战看板**
 
 线框图展示了社交挑战的核心界面：顶部为进行中挑战列表，每个挑战卡片包含参与好友头像、目标进度条和剩余时间。中部为好友排行榜，展示本周运动积分排名。底部为挑战发现区域，推荐适合用户的新挑战。
 
-社交设计要点：
-- 好友头像采用圆形裁切，支持点击查看详情
-- 进度条使用品牌色彩，完成时触发庆祝动画
-- 排行榜支持左右滑动切换"本周"和"总排行"视图
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-3 space-y-3">
+<div class="h-4 bg-gray-300 rounded w-24 mb-2"></div>
+<div class="bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex -space-x-1">
+<div class="w-5 h-5 bg-gray-300 rounded-full border border-white"></div>
+<div class="w-5 h-5 bg-gray-200 rounded-full border border-white"></div>
+<div class="w-5 h-5 bg-gray-200 rounded-full border border-white"></div>
+</div>
+<div class="h-2 bg-gray-200 rounded w-16 ml-auto"></div>
+</div>
+<div class="h-2 bg-gray-200 rounded-full mb-1">
+<div class="h-2 bg-gray-300 rounded-full w-2/3"></div>
+</div>
+<div class="h-2 bg-gray-100 rounded w-12"></div>
+</div>
+<div class="bg-gray-50 rounded-xl border border-gray-200 p-3">
+<div class="flex items-center gap-2 mb-2">
+<div class="flex -space-x-1">
+<div class="w-5 h-5 bg-gray-200 rounded-full border border-white"></div>
+<div class="w-5 h-5 bg-gray-300 rounded-full border border-white"></div>
+</div>
+<div class="h-2 bg-gray-200 rounded w-20 ml-auto"></div>
+</div>
+<div class="h-2 bg-gray-200 rounded-full mb-1">
+<div class="h-2 bg-gray-300 rounded-full w-1/2"></div>
+</div>
+<div class="h-2 bg-gray-100 rounded w-12"></div>
+</div>
+<div class="h-4 bg-gray-300 rounded w-20 mt-2"></div>
+<div class="flex gap-2">
+<div class="flex-1 bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="w-8 h-8 bg-gray-200 rounded-full mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-12 mx-auto"></div>
+</div>
+<div class="flex-1 bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="w-8 h-8 bg-gray-200 rounded-full mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-12 mx-auto"></div>
+</div>
+<div class="flex-1 bg-gray-50 rounded-lg border border-gray-200 p-2 text-center">
+<div class="w-8 h-8 bg-gray-200 rounded-full mx-auto mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-12 mx-auto"></div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 

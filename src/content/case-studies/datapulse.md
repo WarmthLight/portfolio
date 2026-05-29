@@ -169,15 +169,158 @@ DataPulse 采用五大核心模块架构，以仪表盘为中心，围绕数据�
 
 **页面一：仪表盘概览**
 
-仪表盘概览是用户登录后的默认页面，采用经典的"顶部概览 + 下方详情"布局。顶部排列 4-6 个核心 KPI 卡片，每个卡片显示指标名称、当前值、趋势箭头和同比变化率。下方区域以 2 列或 3 列网格排列图表组件，包括柱状图（按渠道的转化率对比）、折线图（近 30 天用户增长趋势）和饼图（收入来源占比）。左侧边栏固定导航，右侧为主内容区，支持响应式布局。
+仪表盘概览是用户登录后的默认页面，采用经典的"顶部概览 + 下方详情"布局。
+
+<div class="my-10 rounded-xl border-2 border-gray-300 overflow-hidden bg-white">
+<div class="h-8 bg-gray-100 flex items-center px-3 gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="h-3 bg-gray-200 rounded w-20 ml-4"></div>
+</div>
+<div class="flex h-[400px]">
+<div class="w-44 bg-gray-50 border-r border-gray-200 p-3 space-y-2">
+<div class="h-8 bg-gray-200 rounded-lg"></div>
+<div class="h-7 bg-gray-200 rounded-lg"></div>
+<div class="h-7 bg-gray-100 rounded-lg"></div>
+<div class="h-7 bg-gray-100 rounded-lg"></div>
+<div class="h-7 bg-gray-100 rounded-lg"></div>
+</div>
+<div class="flex-1 p-4">
+<div class="grid grid-cols-4 gap-3 mb-4">
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3">
+<div class="h-2 bg-gray-200 rounded w-12 mb-2"></div>
+<div class="h-4 bg-gray-300 rounded w-16 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-8"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3">
+<div class="h-2 bg-gray-200 rounded w-12 mb-2"></div>
+<div class="h-4 bg-gray-300 rounded w-16 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-8"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3">
+<div class="h-2 bg-gray-200 rounded w-12 mb-2"></div>
+<div class="h-4 bg-gray-300 rounded w-16 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-8"></div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3">
+<div class="h-2 bg-gray-200 rounded w-12 mb-2"></div>
+<div class="h-4 bg-gray-300 rounded w-16 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-8"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3 h-36">
+<div class="h-2 bg-gray-200 rounded w-16 mb-2"></div>
+<div class="flex items-end gap-1 h-24">
+<div class="w-1/6 bg-gray-200 rounded-t" style="height:40%"></div>
+<div class="w-1/6 bg-gray-300 rounded-t" style="height:60%"></div>
+<div class="w-1/6 bg-gray-200 rounded-t" style="height:45%"></div>
+<div class="w-1/6 bg-gray-300 rounded-t" style="height:80%"></div>
+<div class="w-1/6 bg-gray-200 rounded-t" style="height:55%"></div>
+<div class="w-1/6 bg-gray-300 rounded-t" style="height:70%"></div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3 h-36">
+<div class="h-2 bg-gray-200 rounded w-16 mb-2"></div>
+<div class="flex items-center justify-center h-24">
+<div class="w-20 h-20 rounded-full border-[8px] border-gray-200 border-t-gray-300 border-r-gray-300"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 **页面二：报表构建器**
 
-报表构建器采用三栏布局。左侧为组件面板，按类型分为"图表类"（柱状图、折线图、饼图、散点图）、"数据类"（数据表、指标卡、进度条）和"装饰类"（分隔线、标题文本、图片），每个组件可直接拖拽到中间画布。中间区域是报表画布，支持网格吸附和自由布局两种模式，已放置的组件可拖拽调整位置和大小。右侧为属性面板，当选中某个组件时，显示数据绑定（选择数据源和字段）、样式配置（颜色、字体、间距）和交互设置（筛选器关联、钻取路径）。顶部工具栏包含保存、预览、导出和撤销/重做按钮。
+报表构建器采用三栏布局。左侧为组件面板，中间为画布，右侧为属性面板。
+
+<div class="my-10 rounded-xl border-2 border-gray-300 overflow-hidden bg-white">
+<div class="h-8 bg-gray-100 flex items-center px-3 gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="h-3 bg-gray-200 rounded w-20 ml-4"></div>
+<div class="ml-auto flex gap-2">
+<div class="h-5 w-12 bg-gray-200 rounded"></div>
+<div class="h-5 w-12 bg-gray-200 rounded"></div>
+</div>
+</div>
+<div class="flex h-[400px]">
+<div class="w-40 bg-gray-50 border-r border-gray-200 p-2 space-y-1">
+<div class="text-[8px] text-gray-400 font-medium mb-1">图表类</div>
+<div class="h-7 bg-white rounded border border-gray-200 flex items-center px-2"><div class="w-3 h-3 bg-gray-200 rounded mr-1"></div><div class="h-1.5 bg-gray-200 rounded w-8"></div></div>
+<div class="h-7 bg-white rounded border border-gray-200 flex items-center px-2"><div class="w-3 h-3 bg-gray-200 rounded mr-1"></div><div class="h-1.5 bg-gray-200 rounded w-8"></div></div>
+<div class="h-7 bg-white rounded border border-gray-200 flex items-center px-2"><div class="w-3 h-3 bg-gray-200 rounded mr-1"></div><div class="h-1.5 bg-gray-200 rounded w-8"></div></div>
+<div class="text-[8px] text-gray-400 font-medium mt-2 mb-1">数据类</div>
+<div class="h-7 bg-white rounded border border-gray-200 flex items-center px-2"><div class="w-3 h-3 bg-gray-200 rounded mr-1"></div><div class="h-1.5 bg-gray-200 rounded w-8"></div></div>
+<div class="h-7 bg-white rounded border border-gray-200 flex items-center px-2"><div class="w-3 h-3 bg-gray-200 rounded mr-1"></div><div class="h-1.5 bg-gray-200 rounded w-6"></div></div>
+</div>
+<div class="flex-1 bg-gray-100 p-4">
+<div class="bg-white rounded-lg border-2 border-dashed border-gray-300 h-full p-3">
+<div class="h-3 bg-gray-200 rounded w-24 mb-3"></div>
+<div class="h-24 bg-gray-50 rounded border border-gray-200 mb-2"></div>
+<div class="grid grid-cols-2 gap-2">
+<div class="h-20 bg-gray-50 rounded border border-gray-200"></div>
+<div class="h-20 bg-gray-50 rounded border border-gray-200"></div>
+</div>
+</div>
+</div>
+<div class="w-48 bg-gray-50 border-l border-gray-200 p-3 space-y-3">
+<div class="h-2 bg-gray-300 rounded w-16"></div>
+<div class="h-6 bg-white rounded border border-gray-200"></div>
+<div class="h-2 bg-gray-200 rounded w-12 mt-2"></div>
+<div class="h-6 bg-white rounded border border-gray-200"></div>
+<div class="h-2 bg-gray-200 rounded w-12 mt-2"></div>
+<div class="h-6 bg-white rounded border border-gray-200"></div>
+</div>
+</div>
+</div>
 
 **页面三：数据探索**
 
-数据探索模块面向有一定技术背景的用户，提供三种查询模式：可视化查询构建器（拖拽字段到"维度"和"度量"区域）、SQL 编辑器（直接编写查询语句，支持语法高亮和自动补全）、自然语言查询（输入中文问题自动生成查询）。查询结果以数据表格形式展示，支持列排序、筛选、分组和导出。底部显示查询执行时间和影响行数，方便用户评估查询性能。
+数据探索模块提供可视化查询构建器和结果表格。
+
+<div class="my-10 rounded-xl border-2 border-gray-300 overflow-hidden bg-white">
+<div class="h-8 bg-gray-100 flex items-center px-3 gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+<div class="h-3 bg-gray-200 rounded w-20 ml-4"></div>
+</div>
+<div class="flex h-[400px]">
+<div class="w-44 bg-gray-50 border-r border-gray-200 p-3 space-y-2">
+<div class="h-7 bg-gray-200 rounded-lg"></div>
+<div class="h-7 bg-gray-100 rounded-lg"></div>
+<div class="h-7 bg-gray-100 rounded-lg"></div>
+</div>
+<div class="flex-1 p-4">
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-3 mb-3">
+<div class="flex gap-2 mb-2">
+<div class="h-6 px-2 bg-white rounded border border-gray-200 flex items-center"><div class="h-1.5 bg-gray-200 rounded w-8"></div></div>
+<div class="h-6 px-2 bg-white rounded border border-gray-200 flex items-center"><div class="h-1.5 bg-gray-200 rounded w-6"></div></div>
+<div class="h-6 px-2 bg-gray-200 rounded flex items-center"><div class="h-1.5 bg-gray-400 rounded w-10"></div></div>
+</div>
+<div class="h-8 bg-white rounded border border-gray-200 flex items-center px-3">
+<div class="h-2 bg-gray-300 rounded w-32"></div>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<div class="bg-gray-50 border-b border-gray-200 flex">
+<div class="flex-1 px-3 py-1.5 text-[8px] text-gray-400 border-r border-gray-200">名称</div>
+<div class="w-20 px-3 py-1.5 text-[8px] text-gray-400 border-r border-gray-200">类型</div>
+<div class="w-20 px-3 py-1.5 text-[8px] text-gray-400 border-r border-gray-200">状态</div>
+<div class="w-16 px-3 py-1.5 text-[8px] text-gray-400">操作</div>
+</div>
+<div class="border-b border-gray-100 flex"><div class="flex-1 px-3 py-1.5"><div class="h-1.5 bg-gray-200 rounded w-20"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-10"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-8"></div></div><div class="w-16 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-6"></div></div></div>
+<div class="border-b border-gray-100 flex"><div class="flex-1 px-3 py-1.5"><div class="h-1.5 bg-gray-200 rounded w-16"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-10"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-8"></div></div><div class="w-16 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-6"></div></div></div>
+<div class="flex"><div class="flex-1 px-3 py-1.5"><div class="h-1.5 bg-gray-200 rounded w-24"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-10"></div></div><div class="w-20 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-8"></div></div><div class="w-16 px-3 py-1.5"><div class="h-1.5 bg-gray-100 rounded w-6"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 

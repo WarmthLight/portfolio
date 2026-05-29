@@ -180,25 +180,116 @@ TripWise
 
 探索页采用沉浸式设计，以大尺寸目的地图片为主视觉。顶部设置搜索栏，支持语音输入和自然语言搜索（如"冬天适合泡温泉的地方"）。搜索栏下方横向滚动展示分类标签：海岛、城市、雪山、美食等。
 
-中部区域采用瀑布流卡片布局，展示个性化推荐的目的地。每张卡片包含目的地名称、封面图、热度标签和 AI 匹配度评分。底部为固定标签栏，当前"探索"标签高亮。
-
-交互设计上，卡片支持向上滑动查看详细信息，长按收藏。搜索栏点击后展开为全屏搜索界面，支持历史搜索和热门话题。
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-3 space-y-3">
+<div class="h-8 bg-gray-100 rounded-lg flex items-center px-3">
+<div class="w-4 h-4 bg-gray-300 rounded mr-2"></div>
+<div class="h-2 bg-gray-200 rounded w-1/3"></div>
+</div>
+<div class="flex gap-2 overflow-hidden">
+<div class="h-6 px-3 bg-gray-300 rounded-full flex-shrink-0"></div>
+<div class="h-6 px-3 bg-gray-100 rounded-full flex-shrink-0"></div>
+<div class="h-6 px-3 bg-gray-100 rounded-full flex-shrink-0"></div>
+<div class="h-6 px-3 bg-gray-100 rounded-full flex-shrink-0"></div>
+</div>
+<div class="h-32 bg-gray-200 rounded-xl relative">
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<div class="h-4 w-16 bg-white/80 rounded"></div>
+<div class="h-4 w-8 bg-white/80 rounded"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="h-24 bg-gray-100 rounded-lg border border-gray-200"></div>
+<div class="h-24 bg-gray-100 rounded-lg border border-gray-200"></div>
+</div>
+</div>
+<div class="h-14 border-t border-gray-200 flex items-center justify-around">
+<div class="w-6 h-6 bg-gray-300 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+<div class="w-6 h-6 bg-gray-200 rounded"></div>
+</div>
+</div>
 
 ### 线框图二：行程编辑器
 
 行程编辑器采用纵向时间轴布局，左侧为日期导航条（Day 1、Day 2...），右侧为主编辑区域。
 
-每个日程以时间线形式排列，活动卡片包含：时间标签、活动名称、地点、预计时长、交通方式。卡片之间以连线表示行程流转。
-
-支持拖拽排序、左右滑动删除、双指缩放调整时间块。顶部固定显示行程概览（日期范围、目的地数量、总预算）。右下角浮动 AI 优化按钮，点击可触发行程智能优化。
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="p-3">
+<div class="h-6 bg-gray-100 rounded mb-3"></div>
+<div class="flex gap-2 mb-3">
+<div class="h-7 w-12 bg-gray-300 rounded-full"></div>
+<div class="h-7 w-12 bg-gray-100 rounded-full"></div>
+<div class="h-7 w-12 bg-gray-100 rounded-full"></div>
+</div>
+<div class="relative pl-6 space-y-3">
+<div class="absolute left-2 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+<div class="relative">
+<div class="absolute -left-4 top-2 w-3 h-3 bg-gray-300 rounded-full border-2 border-white"></div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2">
+<div class="h-2 bg-gray-200 rounded w-1/3 mb-1"></div>
+<div class="h-3 bg-gray-300 rounded w-2/3 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-1/2"></div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-4 top-2 w-3 h-3 bg-gray-200 rounded-full border-2 border-white"></div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2">
+<div class="h-2 bg-gray-200 rounded w-1/4 mb-1"></div>
+<div class="h-3 bg-gray-300 rounded w-1/2 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-2/3"></div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-4 top-2 w-3 h-3 bg-gray-200 rounded-full border-2 border-white"></div>
+<div class="bg-gray-50 rounded-lg border border-gray-200 p-2">
+<div class="h-2 bg-gray-200 rounded w-1/3 mb-1"></div>
+<div class="h-3 bg-gray-300 rounded w-3/4 mb-1"></div>
+<div class="h-2 bg-gray-100 rounded w-1/2"></div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-16 right-4 w-10 h-10 bg-gray-300 rounded-full"></div>
+</div>
+</div>
 
 ### 线框图三：实时旅行视图
 
 实时旅行视图在旅行进行中使用，采用全屏地图为背景，叠加行程信息面板。
 
-顶部半透明信息栏显示当前活动名称和剩余时间。中部为地图区域，标记当前位置和下一个目的地。底部上拉面板展示当日时间线，当前活动高亮显示。
-
-离线状态下，顶部显示离线指示器，地图区域切换为预缓存的离线地图数据。每个目的地卡片提供"已到达"和"跳过"操作按钮。
+<div class="my-10 mx-auto max-w-[320px] rounded-[2.5rem] border-[3px] border-gray-300 overflow-hidden bg-white">
+<div class="h-7 bg-gray-100 flex items-center justify-center">
+<div class="w-16 h-1 rounded-full bg-gray-300"></div>
+</div>
+<div class="relative h-[500px] bg-gray-100">
+<div class="absolute top-3 left-3 right-3 bg-white/90 rounded-lg p-2 flex items-center justify-between">
+<div>
+<div class="h-3 bg-gray-300 rounded w-20 mb-1"></div>
+<div class="h-2 bg-gray-200 rounded w-16"></div>
+</div>
+<div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+</div>
+<div class="absolute top-20 left-1/2 -translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-2 border-white shadow"></div>
+<div class="absolute top-36 right-8 w-3 h-3 bg-gray-300 rounded-full"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-3 space-y-2">
+<div class="h-3 bg-gray-200 rounded w-1/3 mb-2"></div>
+<div class="h-10 bg-gray-50 rounded-lg border border-gray-200 flex items-center px-3">
+<div class="w-3 h-3 bg-gray-300 rounded-full mr-2"></div>
+<div class="h-2 bg-gray-200 rounded w-1/2"></div>
+</div>
+<div class="h-10 bg-gray-50 rounded-lg border border-gray-200 flex items-center px-3">
+<div class="w-3 h-3 bg-gray-200 rounded-full mr-2"></div>
+<div class="h-2 bg-gray-200 rounded w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
 
 ---
 
