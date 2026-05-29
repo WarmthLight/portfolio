@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C2D12"/>
+      <stop offset="50%" style="stop-color:#9A3412"/>
+      <stop offset="100%" style="stop-color:#C2410C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="200" cy="150" r="80" fill="#FB923C" opacity="0.12"/>
+  <circle cx="1000" cy="500" r="100" fill="#FDBA74" opacity="0.08"/>
+  <rect x="400" y="100" width="400" height="480" rx="24" fill="#7C2D12" stroke="#9A3412" stroke-width="1.5"/>
+  <rect x="400" y="100" width="400" height="40" rx="24" fill="#9A3412"/>
+  <circle cx="420" cy="120" r="6" fill="#F87171"/>
+  <circle cx="440" cy="120" r="6" fill="#FBBF24"/>
+  <circle cx="460" cy="120" r="6" fill="#34D399"/>
+  <rect x="430" y="170" width="340" height="200" rx="12" fill="#9A3412"/>
+  <rect x="450" y="190" width="80" height="60" rx="6" fill="#FB923C" opacity="0.3"/>
+  <rect x="550" y="190" width="80" height="60" rx="6" fill="#FB923C" opacity="0.2"/>
+  <rect x="650" y="190" width="80" height="60" rx="6" fill="#FB923C" opacity="0.15"/>
+  <rect x="430" y="400" width="340" height="12" rx="6" fill="#FB923C" opacity="0.4"/>
+  <rect x="430" y="430" width="200" height="8" rx="4" fill="#9A3412"/>
+  <rect x="430" y="460" width="160" height="40" rx="8" fill="#C2410C" opacity="0.3"/>
+  <rect x="620" y="460" width="120" height="40" rx="8" fill="#FB923C" opacity="0.2"/>
+  <text x="600" y="570" text-anchor="middle" fill="#FED7AA" font-family="system-ui, sans-serif" font-size="28" font-weight="700">TripWise</text>
+  <text x="600" y="600" text-anchor="middle" fill="#FB923C" font-family="system-ui, sans-serif" font-size="14">AI Travel Planner</text>
+</svg>
