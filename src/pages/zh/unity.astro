@@ -6,7 +6,7 @@ import { ui } from '../../data/i18n';
 
 const lang = 'zh';
 const t = ui[lang];
-const base = import.meta.env.BASE_URL;
+
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
