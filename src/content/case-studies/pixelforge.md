@@ -207,7 +207,7 @@ Export Center 导出到游戏引擎
 <div class="h-3 bg-zinc-700 rounded w-8"></div>
 </div>
 </div>
-<div class="flex h-[350px]">
+<div class="flex h-[420px]">
 <div class="w-10 bg-zinc-800 border-r border-zinc-700 flex flex-col items-center py-2 gap-2">
 <div class="w-5 h-5 bg-zinc-600 rounded"></div>
 <div class="w-5 h-5 bg-zinc-700 rounded"></div>
@@ -257,7 +257,7 @@ AI 生成面板采用左右分割布局。
 <div class="h-3 bg-zinc-700 rounded w-12"></div>
 </div>
 </div>
-<div class="flex h-[350px]">
+<div class="flex h-[420px]">
 <div class="w-2/5 bg-zinc-800 border-r border-zinc-700 p-4 space-y-3">
 <div class="h-2 bg-zinc-500 rounded w-16 mb-1"></div>
 <div class="h-20 bg-zinc-700 rounded-lg p-2">
@@ -299,7 +299,7 @@ AI 生成面板采用左右分割布局。
 <div class="h-3 bg-zinc-600 rounded w-16"></div>
 <div class="h-5 bg-zinc-700 rounded flex-1 max-w-xs ml-4"></div>
 </div>
-<div class="flex h-[350px]">
+<div class="flex h-[420px]">
 <div class="w-44 bg-zinc-800 border-r border-zinc-700 p-2 space-y-1">
 <div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2">角色</div>
 <div class="h-5 bg-zinc-700 rounded text-[8px] text-zinc-400 flex items-center px-2 pl-4">环境</div>
