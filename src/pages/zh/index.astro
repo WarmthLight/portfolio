@@ -43,7 +43,7 @@ const directions = [
 
     <div class="animate-fade-in-up">
       <p class="text-xs sm:text-sm font-medium text-[var(--color-primary)] tracking-widest uppercase mb-4 sm:mb-6">Portfolio</p>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight">
         <span class="gradient-text">{site.name[lang]}</span>
       </h1>
       <p class="text-base sm:text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
@@ -60,11 +60,11 @@ const directions = [
   </section>
 
   <!-- 方向入口 -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
     <div class="text-center mb-12">
       <p class="text-sm text-[var(--color-text-muted)] tracking-wide">探索我的作品</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       {directions.map((d, i) => (
         <a
           href={d.href}
