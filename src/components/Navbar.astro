@@ -18,8 +18,8 @@ const navLinks = [
 <nav class="fixed top-0 left-0 right-0 z-50 glass-nav" id="navbar">
   <div class="px-6 sm:px-8 lg:px-16 h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href={`/${lang}/`} class="flex items-center gap-2 group flex-shrink-0">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center">
+    <a href={`/${lang}/`} class="flex items-center gap-2.5 group flex-shrink-0">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
         <span class="text-white text-sm font-bold">P</span>
       </div>
       <span class="text-lg font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors hidden sm:inline">
@@ -28,20 +28,26 @@ const navLinks = [
     </a>
 
     <!-- 桌面端导航 -->
-    <div class="hidden md:flex items-center gap-1">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class={`px-3 py-1.5 rounded-lg text-sm transition-all ${
-            currentPath.startsWith(link.href)
-              ? 'text-[var(--color-primary)] bg-[var(--color-primary-50)] font-medium'
-              : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
-          }`}
-        >
-          {link.label}
-        </a>
-      ))}
-      <div class="w-px h-5 bg-[var(--color-border)] mx-2"></div>
+    <div class="hidden md:flex items-center gap-0.5">
+      {navLinks.map(link => {
+        const isActive = currentPath.startsWith(link.href);
+        return (
+          <a
+            href={link.href}
+            class={`relative px-4 py-2 rounded-lg text-sm transition-all duration-200 ${
+              isActive
+                ? 'text-[var(--color-primary)] font-medium'
+                : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
+            }`}
+          >
+            {link.label}
+            {isActive && (
+              <span class="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-[var(--color-primary)]"></span>
+            )}
+          </a>
+        );
+      })}
+      <div class="w-px h-5 bg-[var(--color-border)] mx-3"></div>
       <LanguageSwitcher lang={lang} currentPath={currentPath} />
     </div>
 
@@ -89,13 +95,11 @@ const navLinks = [
   const closeIcon = document.getElementById('menu-close');
 
   toggle?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
     menu?.classList.toggle('hidden');
     openIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
   });
 
-  // 点击链接后关闭菜单
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu?.classList.add('hidden');
