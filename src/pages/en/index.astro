@@ -1,8 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { site } from '../../data/site';
+import { ui } from '../../data/i18n';
 
 const lang = 'en';
+const t = ui[lang];
 
 const directions = [
   {
@@ -11,7 +13,7 @@ const directions = [
     desc: 'Interactive experiences & game creation',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v6c0 1.243 1.007 2.25 2.25 2.25h9a2.25 2.25 0 002.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087V4.5a2.25 2.25 0 00-2.25-2.25h-4.5A2.25 2.25 0 005.25 4.5v1.587"/></svg>`,
     gradient: 'from-blue-500 via-blue-400 to-cyan-400',
-    lightBg: 'bg-blue-50',
+    shadow: 'hover:shadow-blue-500/10',
     tag: 'Game Dev',
   },
   {
@@ -20,7 +22,7 @@ const directions = [
     desc: 'User interface & experience design',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
     gradient: 'from-violet-500 via-purple-400 to-fuchsia-400',
-    lightBg: 'bg-purple-50',
+    shadow: 'hover:shadow-purple-500/10',
     tag: 'Design',
   },
   {
@@ -29,7 +31,7 @@ const directions = [
     desc: 'AI-powered creative content',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>`,
     gradient: 'from-amber-500 via-orange-400 to-rose-400',
-    lightBg: 'bg-amber-50',
+    shadow: 'hover:shadow-amber-500/10',
     tag: 'AI',
   },
 ];
@@ -42,8 +44,8 @@ const directions = [
       <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-50 rounded-full blur-3xl opacity-50"></div>
     </div>
 
-    <div class="animate-fade-in-up py-12 sm:py-16">
-      <p class="text-xs sm:text-sm font-medium text-[var(--color-primary)] tracking-[0.2em] uppercase mb-4 sm:mb-5">Portfolio</p>
+    <div class="animate-fade-in-up opacity-0 py-12 sm:py-16">
+      <p class="text-xs sm:text-sm font-medium text-[var(--color-primary)] tracking-[0.2em] uppercase mb-4 sm:mb-5">{t.home.label}</p>
       <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] font-bold mb-4 sm:mb-5 tracking-tight">
         <span class="gradient-text">{site.name[lang]}</span>
       </h1>
@@ -58,7 +60,7 @@ const directions = [
       {directions.map((d, i) => (
         <a
           href={d.href}
-          class={`group relative flex flex-col rounded-2xl overflow-hidden border border-[var(--color-border)] bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-500 animate-fade-in-up animate-delay-${(i + 1) * 100}`}
+          class={`group relative flex flex-col rounded-2xl overflow-hidden border border-[var(--color-border)] bg-white ${d.shadow} hover:shadow-2xl hover:-translate-y-1 opacity-0 animate-fade-in-up animate-delay-${(i + 1) * 100} transition-all duration-500`}
         >
           <div class={`relative h-36 sm:h-44 bg-gradient-to-br ${d.gradient} overflow-hidden`}>
             <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10"></div>
@@ -73,15 +75,15 @@ const directions = [
             </div>
           </div>
 
-          <div class="flex flex-col flex-1 p-6 sm:p-7">
+          <div class="flex flex-col flex-1 p-6 sm:p-7 text-center">
             <h2 class="text-xl sm:text-2xl font-bold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
               {d.title}
             </h2>
             <p class="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed flex-1">{d.desc}</p>
-            <div class="mt-5 pt-5 border-t border-[var(--color-border-light)] flex items-center justify-between">
-              <span class="text-sm font-medium text-[var(--color-primary)]">Explore Projects</span>
-              <div class="w-8 h-8 rounded-full bg-[var(--color-primary-50)] flex items-center justify-center group-hover:bg-[var(--color-primary)] transition-colors duration-300">
-                <svg class="w-4 h-4 text-[var(--color-primary)] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mt-5 pt-5 border-t border-[var(--color-border-light)] flex items-center justify-center gap-2">
+              <span class="text-sm font-medium text-[var(--color-primary)]">{t.home.viewProject}</span>
+              <div class="w-7 h-7 rounded-full bg-[var(--color-primary-50)] flex items-center justify-center group-hover:bg-[var(--color-primary)] transition-colors duration-300">
+                <svg class="w-3.5 h-3.5 text-[var(--color-primary)] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
               </div>

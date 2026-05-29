@@ -40,7 +40,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-primary-50);
+  background: rgba(37, 99, 235, 0.2);
   color: var(--color-primary-hover);
 }
 
