@@ -1,0 +1,79 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+const lang = 'zh';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('caseStudies');
+  return caseStudies.map(study => ({
+    params: { slug: study.id },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+const { title, subtitle, cover, role, timeline, tags, metrics } = study.data;
+const { Content } = await render(study);
+---
+
+<Base lang={lang} title={`${title[lang]} - UI/UX 设计`}>
+  <article class="px-6 sm:px-8 lg:px-16 pt-16 sm:pt-24 pb-16 sm:pb-24">
+    <!-- 返回按钮 -->
+    <a href="/zh/uiux" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group">
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      返回列表
+    </a>
+
+    <!-- 案例头部 -->
+    <div class="mb-12">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-50)] px-3 py-1 rounded-lg">{role[lang]}</span>
+        <span class="text-sm text-[var(--color-text-muted)]">{timeline}</span>
+      </div>
+      <h1 class="text-4xl font-bold text-[var(--color-text)] mb-3">{title[lang]}</h1>
+      <p class="text-xl text-[var(--color-text-muted)]">{subtitle[lang]}</p>
+    </div>
+
+    <!-- 封面图 -->
+    <div class="aspect-video rounded-2xl overflow-hidden bg-[var(--color-bg-alt)] mb-12">
+      <img src={cover} alt={title[lang]} class="w-full h-full object-cover" />
+    </div>
+
+    <!-- 指标卡片 -->
+    {metrics && metrics.length > 0 && (
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {metrics.map(m => (
+          <div class="p-5 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-light)] text-center">
+            <div class="text-2xl font-bold text-[var(--color-primary)] mb-1">{m.value}</div>
+            <div class="text-sm text-[var(--color-text-muted)]">{m.label[lang]}</div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    <!-- 标签 -->
+    <div class="flex flex-wrap gap-2 mb-12">
+      {tags.map(tag => (
+        <span class="text-sm px-3 py-1.5 rounded-full bg-[var(--color-bg-alt)] text-[var(--color-text-secondary)] border border-[var(--color-border)]">{tag}</span>
+      ))}
+    </div>
+
+    <!-- 案例内容 -->
+    <div class="prose prose-lg max-w-none prose-headings:text-[var(--color-text)] prose-p:text-[var(--color-text-secondary)] prose-a:text-[var(--color-primary)] prose-strong:text-[var(--color-text)]">
+      <Content />
+    </div>
+
+    <!-- 底部返回 -->
+    <div class="mt-16 pt-8 border-t border-[var(--color-border)]">
+      <a href="/zh/uiux" class="inline-flex items-center gap-2 text-[var(--color-primary)] hover:underline">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        返回所有案例
+      </a>
+    </div>
+  </article>
+</Base>
