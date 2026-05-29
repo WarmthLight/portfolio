@@ -1,0 +1,21 @@
+---
+const { title, device = 'mobile', class: className } = Astro.props;
+---
+
+<div class={`mockup-container my-8 ${className || ''}`}>
+  {title && (
+    <p class="text-sm font-medium text-[var(--color-text-muted)] mb-3 text-center">{title}</p>
+  )}
+  <div class={`mx-auto overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white shadow-2xl ${
+    device === 'mobile' ? 'max-w-[320px]' : device === 'tablet' ? 'max-w-[768px]' : 'max-w-full'
+  }`}>
+    {device === 'mobile' && (
+      <div class="h-7 bg-[var(--color-bg-alt)] border-b border-[var(--color-border-light)] flex items-center justify-center">
+        <div class="w-16 h-1 rounded-full bg-[var(--color-border)]"></div>
+      </div>
+    )}
+    <div class="mockup-content">
+      <slot />
+    </div>
+  </div>
+</div>

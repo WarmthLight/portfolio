@@ -1,0 +1,55 @@
+---
+const { title, subtitle, role, timeline, tags, metrics, lang } = Astro.props;
+import { ui } from '../../data/i18n';
+const t = ui[lang];
+---
+
+<section class="px-6 sm:px-8 lg:px-16 pt-16 sm:pt-24 pb-12 sm:pb-16">
+  <div class="max-w-4xl mx-auto">
+    <!-- 返回按钮 -->
+    <a href={`/${lang}/work`} class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-8 group">
+      <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      {t.work.back}
+    </a>
+
+    <h1 class="text-4xl sm:text-5xl font-bold text-[var(--color-text)] mb-4">{title}</h1>
+    <p class="text-xl text-[var(--color-text-secondary)] mb-8 leading-relaxed">{subtitle}</p>
+
+    <!-- 元信息 -->
+    <div class="flex flex-wrap gap-4 mb-8 text-sm">
+      <div class="flex items-center gap-2 text-[var(--color-text-muted)]">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+        <span>{t.work.role}: {role}</span>
+      </div>
+      <div class="flex items-center gap-2 text-[var(--color-text-muted)]">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+        </svg>
+        <span>{t.work.timeline}: {timeline}</span>
+      </div>
+    </div>
+
+    <!-- 标签 -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      {tags.map(tag => (
+        <span class="tag bg-[var(--color-primary-50)] text-[var(--color-primary)] border border-[var(--color-primary)]/20">{tag}</span>
+      ))}
+    </div>
+
+    <!-- 指标卡片 -->
+    {metrics && metrics.length > 0 && (
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {metrics.map(m => (
+          <div class="p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-light)] text-center">
+            <div class="text-2xl font-bold text-[var(--color-primary)] mb-1">{m.value}</div>
+            <div class="text-xs text-[var(--color-text-muted)]">{m.label[lang]}</div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

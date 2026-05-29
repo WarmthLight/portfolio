@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+import Hero from '../components/case-study/Hero.astro';
+import SectionNav from '../components/case-study/SectionNav.astro';
+import { ui } from '../data/i18n';
+
+const { caseStudy, lang } = Astro.props;
+const t = ui[lang];
+const { title, subtitle, role, timeline, tags, metrics } = caseStudy.data;
+
+const sections = [
+  { id: 'background', label: t.work.sections.background },
+  { id: 'research', label: t.work.sections.research },
+  { id: 'architecture', label: t.work.sections.architecture },
+  { id: 'wireframe', label: t.work.sections.wireframe },
+  { id: 'visual', label: t.work.sections.visual },
+  { id: 'high-fidelity', label: t.work.sections.highFidelity },
+  { id: 'interaction', label: t.work.sections.interaction },
+  { id: 'results', label: t.work.sections.results },
+];
+---
+
+<Base lang={lang} title={`${title[lang]} - 作品集`}>
+  <Hero
+    title={title[lang]}
+    subtitle={subtitle[lang]}
+    role={role[lang]}
+    timeline={timeline}
+    tags={tags}
+    metrics={metrics}
+    lang={lang}
+  />
+
+  <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 pb-16 sm:pb-24">
+    <SectionNav sections={sections} lang={lang} />
+
+    <article class="max-w-4xl mx-auto lg:ml-[calc(50%-32rem+8rem)] lg:mr-auto">
+      <slot />
+    </article>
+  </div>
+</Base>

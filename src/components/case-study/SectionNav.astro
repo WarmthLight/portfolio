@@ -1,0 +1,42 @@
+---
+const { sections, lang } = Astro.props;
+---
+
+<nav class="hidden lg:block fixed left-8 top-1/2 -translate-y-1/2 z-40">
+  <div class="flex flex-col gap-1">
+    {sections.map(section => (
+      <a
+        href={`#${section.id}`}
+        class="section-nav-link text-xs text-[var(--color-text-light)] hover:text-[var(--color-primary)] transition-colors py-1.5 pl-3 border-l-2 border-transparent hover:border-[var(--color-primary)]"
+        data-section={section.id}
+      >
+        {section.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.section-nav-link').forEach(link => {
+            link.classList.remove('text-[var(--color-primary)]', 'border-[var(--color-primary)]', 'font-medium');
+            link.classList.add('text-[var(--color-text-light)]', 'border-transparent');
+          });
+          const activeLink = document.querySelector(`[data-section="${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('text-[var(--color-primary)]', 'border-[var(--color-primary)]', 'font-medium');
+            activeLink.classList.remove('text-[var(--color-text-light)]', 'border-transparent');
+          }
+        }
+      });
+    },
+    { rootMargin: '-20% 0px -60% 0px' }
+  );
+
+  document.querySelectorAll('section[id]').forEach(section => {
+    observer.observe(section);
+  });
+</script>

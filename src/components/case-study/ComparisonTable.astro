@@ -1,0 +1,29 @@
+---
+const { title, headers, rows } = Astro.props;
+---
+
+<div class="my-8 overflow-x-auto">
+  {title && (
+    <h4 class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wide mb-4">{title}</h4>
+  )}
+  <table class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="border-b border-[var(--color-border)]">
+        <th class="text-left py-3 px-4 font-semibold text-[var(--color-text)]">竞品</th>
+        {headers.map(h => (
+          <th class="text-center py-3 px-4 font-semibold text-[var(--color-text)]">{h}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(row => (
+        <tr class="border-b border-[var(--color-border-light)]">
+          <td class="py-3 px-4 font-medium text-[var(--color-text)]">{row.name}</td>
+          {headers.map(h => (
+            <td class="text-center py-3 px-4 text-[var(--color-text-muted)]">{row.features[h] || '—'}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

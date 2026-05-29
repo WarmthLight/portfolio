@@ -1,0 +1,29 @@
+---
+const { title, steps } = Astro.props;
+---
+
+<div class="my-8 p-6 rounded-2xl bg-[var(--color-bg-alt)] border border-[var(--color-border-light)]">
+  {title && (
+    <h4 class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wide mb-6">{title}</h4>
+  )}
+  <div class="flex flex-wrap items-center justify-center gap-2">
+    {steps.map((step, i) => (
+      <div class="flex items-center gap-2">
+        <div class="flex flex-col items-center gap-1.5 px-4 py-3 rounded-xl bg-white border border-[var(--color-border)] min-w-[120px] text-center shadow-sm">
+          <div class="w-8 h-8 rounded-full bg-[var(--color-primary)] text-white text-sm font-bold flex items-center justify-center">
+            {i + 1}
+          </div>
+          <span class="text-xs font-medium text-[var(--color-text)]">{step.label}</span>
+          {step.description && (
+            <span class="text-[10px] text-[var(--color-text-muted)] leading-tight">{step.description}</span>
+          )}
+        </div>
+        {i < steps.length - 1 && (
+          <svg class="w-5 h-5 text-[var(--color-text-light)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        )}
+      </div>
+    ))}
+  </div>
+</div>

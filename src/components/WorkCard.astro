@@ -1,0 +1,33 @@
+---
+const { caseStudy, lang, basePath } = Astro.props;
+const { title, subtitle, tags } = caseStudy.data;
+import { ui } from '../data/i18n';
+const t = ui[lang];
+---
+
+<a href={`${basePath}/${caseStudy.id}`} class="group block rounded-2xl border border-[var(--color-border)] overflow-hidden bg-white card-hover">
+  <div class="aspect-[16/10] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] overflow-hidden relative">
+    <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-white/10"></div>
+    <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/10"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <h3 class="text-2xl font-bold mb-2">{title[lang]}</h3>
+        <p class="text-sm text-white/80">{subtitle[lang]}</p>
+      </div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+      <div class="px-5 py-2.5 rounded-full bg-white/90 text-sm font-medium text-[var(--color-primary)] shadow-lg">
+        {t.work.viewCaseStudy}
+      </div>
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-lg font-semibold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">{title[lang]}</h3>
+    <p class="text-sm text-[var(--color-text-muted)] mb-4 line-clamp-2 leading-relaxed">{subtitle[lang]}</p>
+    <div class="flex flex-wrap gap-2">
+      {tags.map(tag => (
+        <span class="tag bg-[var(--color-bg-alt)] text-[var(--color-text-muted)] border border-[var(--color-border-light)]">{tag}</span>
+      ))}
+    </div>
+  </div>
+</a>

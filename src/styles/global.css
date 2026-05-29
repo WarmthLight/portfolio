@@ -125,3 +125,22 @@ video {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-light);
 }
+
+/* Mockup 容器样式 */
+.mockup-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 章节锚点滚动偏移 */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* 移动端章节导航隐藏 */
+@media (max-width: 1023px) {
+  .section-nav-link {
+    display: none;
+  }
+}

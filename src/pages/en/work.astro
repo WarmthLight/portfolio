@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import { getCollection } from 'astro:content';
+import { ui } from '../../data/i18n';
+
+const lang = 'en';
+const t = ui[lang];
+
+const caseStudies = (await getCollection('caseStudies')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base lang={lang} title="Work - Portfolio">
+  <section class="px-6 sm:px-8 lg:px-16 pt-16 sm:pt-24 pb-16 sm:pb-24">
+    <div class="mb-12 text-center">
+      <p class="text-sm font-medium text-[var(--color-primary)] tracking-wide uppercase mb-3">{t.work.label}</p>
+      <h1 class="text-4xl font-bold text-[var(--color-text)]">{t.work.title}</h1>
+      <p class="mt-4 text-[var(--color-text-muted)] text-lg max-w-2xl mx-auto">{t.work.subtitle}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+      {caseStudies.map(cs => (
+        <WorkCard caseStudy={cs} lang={lang} basePath="/en/work" />
+      ))}
+    </div>
+  </section>
+</Base>
