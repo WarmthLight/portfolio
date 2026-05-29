@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+
+const lang = 'zh';
+
+const directions = [
+  { href: '/zh/unity', title: 'Unity 游戏开发', desc: '互动体验与游戏创作', icon: '🎮' },
+  { href: '/zh/uiux', title: 'UI/UX 设计', desc: '用户界面与体验设计', icon: '🎨' },
+  { href: '/zh/aigc', title: 'AIGC 生成', desc: 'AI 驱动的创意内容', icon: '🤖' },
+];
+---
+
+<Base lang={lang} title={site.name[lang]}>
+  <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-5xl font-bold mb-4">{site.name[lang]}</h1>
+    <p class="text-xl text-[var(--color-text-muted)]">{site.tagline[lang]}</p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {directions.map(d => (
+        <a href={d.href} class="group block p-8 rounded-xl border border-[var(--color-border)] hover:border-[var(--color-primary)] hover:shadow-lg transition-all">
+          <div class="text-4xl mb-4">{d.icon}</div>
+          <h2 class="text-xl font-semibold mb-2 group-hover:text-[var(--color-primary)] transition-colors">{d.title}</h2>
+          <p class="text-[var(--color-text-muted)]">{d.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

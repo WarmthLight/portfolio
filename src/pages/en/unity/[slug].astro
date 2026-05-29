@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { ui } from '../../../data/i18n';
+
+const lang = 'en';
+const t = ui[lang];
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { title, description, cover, video, tags } = project.data;
+---
+
+<Base lang={lang} title={`${title[lang]} - Portfolio`}>
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="aspect-video rounded-xl overflow-hidden bg-black mb-8">
+      <video
+        src={video}
+        controls
+        preload="metadata"
+        class="w-full h-full"
+        poster={cover}
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <h1 class="text-3xl font-bold mb-4">{title[lang]}</h1>
+    <p class="text-[var(--color-text-muted)] text-lg mb-6">{description[lang]}</p>
+
+    <div class="mb-8">
+      <h2 class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wide mb-3">{t.project.techStack}</h2>
+      <div class="flex flex-wrap gap-2">
+        {tags.map(tag => (
+          <span class="text-sm px-3 py-1 rounded-full bg-[var(--color-bg-alt)] text-[var(--color-text)] border border-[var(--color-border)]">{tag}</span>
+        ))}
+      </div>
+    </div>
+
+    <a href="/en/unity" class="inline-flex items-center text-[var(--color-primary)] hover:underline">
+      &larr; {t.project.back}
+    </a>
+  </article>
+</Base>

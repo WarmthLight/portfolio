@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const lang = 'zh';
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base lang={lang} title="Unity 开发 - 作品集">
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-bold mb-8">Unity 游戏开发</h1>
+    {projects.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map(project => (
+          <ProjectCard project={project} lang={lang} basePath="/zh/unity" />
+        ))}
+      </div>
+    ) : (
+      <p class="text-[var(--color-text-muted)] text-center py-16">暂无项目</p>
+    )}
+  </section>
+</Base>
