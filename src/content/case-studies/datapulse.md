@@ -248,821 +248,773 @@ DataPulse 的设计系统建立在"清晰、高效、专业"三个核心原则�
 ### 界面一：仪表盘概览
 
 <div class="my-8 rounded-xl border border-gray-200 overflow-hidden shadow-lg bg-white">
-  <!-- Top bar -->
-  <div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
-    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-    <span class="text-slate-400 text-xs ml-2">DataPulse</span>
-    <div class="ml-auto flex items-center gap-2">
-      <div class="bg-slate-700 rounded-md px-3 py-1 text-xs text-slate-300 flex items-center gap-1">
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        搜索数据或报表...
-      </div>
-      <div class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white text-[10px] font-bold">张</div>
-    </div>
-  </div>
-  <div class="flex h-[600px]">
-    <!-- Sidebar -->
-    <div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
-      <div class="flex items-center gap-2 px-3 py-2 mb-2">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        </div>
-        <span class="font-bold text-slate-800 text-sm">DataPulse</span>
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        仪表盘
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
-        报表中心
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
-        数据探索
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
-        团队协作
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg>
-        系统设置
-      </div>
-      <div class="mt-auto flex items-center gap-3 px-3 py-2 border-t border-gray-200 pt-3">
-        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">张</div>
-        <div class="text-xs">
-          <div class="font-medium text-slate-700">张明</div>
-          <div class="text-slate-400">产品经理</div>
-        </div>
-      </div>
-    </div>
-    <!-- Main content -->
-    <div class="flex-1 p-6 bg-gray-50 overflow-auto">
-      <!-- Page header -->
-      <div class="flex items-center justify-between mb-6">
-        <div>
-          <h1 class="text-xl font-bold text-slate-800">产品数据概览</h1>
-          <p class="text-sm text-slate-500 mt-1">实时更新 · 最后刷新：2 分钟前</p>
-        </div>
-        <div class="flex items-center gap-2">
-          <div class="px-3 py-1.5 rounded-lg border border-gray-200 text-sm text-slate-600 bg-white flex items-center gap-1 cursor-pointer">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            最近 30 天
-          </div>
-          <button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium flex items-center gap-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-            导出报告
-          </button>
-        </div>
-      </div>
-      <!-- KPI Cards -->
-      <div class="grid grid-cols-4 gap-4 mb-6">
-        <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-slate-500 font-medium">月活用户</span>
-            <span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+12.5%</span>
-          </div>
-          <div class="text-2xl font-bold text-slate-800">24,831</div>
-          <div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full bg-blue-500 rounded-full" style="width: 78%"></div>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-slate-500 font-medium">转化率</span>
-            <span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+3.2%</span>
-          </div>
-          <div class="text-2xl font-bold text-slate-800">8.47%</div>
-          <div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full bg-emerald-500 rounded-full" style="width: 65%"></div>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-slate-500 font-medium">平均停留时长</span>
-            <span class="text-xs px-1.5 py-0.5 rounded bg-amber-50 text-amber-600 font-medium">-1.8%</span>
-          </div>
-          <div class="text-2xl font-bold text-slate-800">12m 34s</div>
-          <div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full bg-amber-500 rounded-full" style="width: 52%"></div>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs text-slate-500 font-medium">月收入</span>
-            <span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+8.1%</span>
-          </div>
-          <div class="text-2xl font-bold text-slate-800">¥284.6万</div>
-          <div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full bg-indigo-500 rounded-full" style="width: 85%"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Charts Row -->
-      <div class="grid grid-cols-3 gap-4 mb-4">
-        <!-- Bar Chart -->
-        <div class="col-span-2 bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-sm font-semibold text-slate-700">渠道转化率对比</span>
-            <span class="text-xs text-slate-400">单位：%</span>
-          </div>
-          <div class="flex items-end gap-3 h-40">
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-blue-500 rounded-t-md" style="height: 120px"></div>
-              <span class="text-[10px] text-slate-500">官网</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-blue-400 rounded-t-md" style="height: 85px"></div>
-              <span class="text-[10px] text-slate-500">SEM</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-blue-300 rounded-t-md" style="height: 100px"></div>
-              <span class="text-[10px] text-slate-500">社交</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-indigo-500 rounded-t-md" style="height: 140px"></div>
-              <span class="text-[10px] text-slate-500">邮件</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-blue-600 rounded-t-md" style="height: 65px"></div>
-              <span class="text-[10px] text-slate-500">内容</span>
-            </div>
-            <div class="flex-1 flex flex-col items-center gap-1">
-              <div class="w-full bg-blue-400 rounded-t-md" style="height: 95px"></div>
-              <span class="text-[10px] text-slate-500">推荐</span>
-            </div>
-          </div>
-        </div>
-        <!-- Pie Chart -->
-        <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-          <span class="text-sm font-semibold text-slate-700">收入来源占比</span>
-          <div class="flex items-center justify-center h-32 mt-3">
-            <div class="relative w-28 h-28">
-              <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#1E40AF 0% 42%, #3B82F6 42% 68%, #6366F1 68% 85%, #93C5FD 85% 100%);"></div>
-              <div class="absolute inset-4 rounded-full bg-white"></div>
-            </div>
-          </div>
-          <div class="mt-3 space-y-1.5">
-            <div class="flex items-center gap-2 text-xs">
-              <div class="w-2.5 h-2.5 rounded-sm bg-blue-800"></div>
-              <span class="text-slate-600">企业订阅</span>
-              <span class="ml-auto font-medium text-slate-700">42%</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs">
-              <div class="w-2.5 h-2.5 rounded-sm bg-blue-500"></div>
-              <span class="text-slate-600">专业版</span>
-              <span class="ml-auto font-medium text-slate-700">26%</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs">
-              <div class="w-2.5 h-2.5 rounded-sm bg-indigo-500"></div>
-              <span class="text-slate-600">定制服务</span>
-              <span class="ml-auto font-medium text-slate-700">17%</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs">
-              <div class="w-2.5 h-2.5 rounded-sm bg-blue-300"></div>
-              <span class="text-slate-600">其他</span>
-              <span class="ml-auto font-medium text-slate-700">15%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Line Chart -->
-      <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
-        <div class="flex items-center justify-between mb-4">
-          <span class="text-sm font-semibold text-slate-700">近 30 天用户增长趋势</span>
-          <div class="flex items-center gap-4 text-xs">
-            <div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-blue-500"></div><span class="text-slate-500">新增用户</span></div>
-            <div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span class="text-slate-500">活跃用户</span></div>
-          </div>
-        </div>
-        <div class="relative h-32">
-          <svg class="w-full h-full" viewBox="0 0 600 100" preserveAspectRatio="none">
-            <polyline points="0,70 50,60 100,65 150,50 200,55 250,40 300,45 350,30 400,35 450,25 500,28 550,20 600,15" fill="none" stroke="#10B981" stroke-width="2"/>
-            <polyline points="0,85 50,80 100,82 150,75 200,72 250,68 300,65 350,60 400,58 450,52 500,48 550,45 600,40" fill="none" stroke="#3B82F6" stroke-width="2"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+<span class="text-slate-400 text-xs ml-2">DataPulse</span>
+<div class="ml-auto flex items-center gap-2">
+<div class="bg-slate-700 rounded-md px-3 py-1 text-xs text-slate-300 flex items-center gap-1">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+搜索数据或报表...
+</div>
+<div class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white text-[10px] font-bold">张</div>
+</div>
+</div>
+<div class="flex h-[600px]">
+<div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
+<div class="flex items-center gap-2 px-3 py-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+</div>
+<span class="font-bold text-slate-800 text-sm">DataPulse</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+仪表盘
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+报表中心
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+数据探索
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
+团队协作
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg>
+系统设置
+</div>
+<div class="mt-auto flex items-center gap-3 px-3 py-2 border-t border-gray-200 pt-3">
+<div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">张</div>
+<div class="text-xs">
+<div class="font-medium text-slate-700">张明</div>
+<div class="text-slate-400">产品经理</div>
+</div>
+</div>
+</div>
+<div class="flex-1 p-6 bg-gray-50 overflow-auto">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h1 class="text-xl font-bold text-slate-800">产品数据概览</h1>
+<p class="text-sm text-slate-500 mt-1">实时更新 · 最后刷新：2 分钟前</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1.5 rounded-lg border border-gray-200 text-sm text-slate-600 bg-white flex items-center gap-1 cursor-pointer">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+最近 30 天
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium flex items-center gap-1">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+导出报告
+</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4 mb-6">
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 font-medium">月活用户</span>
+<span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+12.5%</span>
+</div>
+<div class="text-2xl font-bold text-slate-800">24,831</div>
+<div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 font-medium">转化率</span>
+<span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+3.2%</span>
+</div>
+<div class="text-2xl font-bold text-slate-800">8.47%</div>
+<div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 font-medium">平均停留时长</span>
+<span class="text-xs px-1.5 py-0.5 rounded bg-amber-50 text-amber-600 font-medium">-1.8%</span>
+</div>
+<div class="text-2xl font-bold text-slate-800">12m 34s</div>
+<div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" style="width: 52%"></div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-slate-500 font-medium">月收入</span>
+<span class="text-xs px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600 font-medium">+8.1%</span>
+</div>
+<div class="text-2xl font-bold text-slate-800">¥284.6万</div>
+<div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-indigo-500 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-4">
+<div class="col-span-2 bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-semibold text-slate-700">渠道转化率对比</span>
+<span class="text-xs text-slate-400">单位：%</span>
+</div>
+<div class="flex items-end gap-3 h-40">
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-blue-500 rounded-t-md" style="height: 120px"></div>
+<span class="text-[10px] text-slate-500">官网</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-blue-400 rounded-t-md" style="height: 85px"></div>
+<span class="text-[10px] text-slate-500">SEM</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-blue-300 rounded-t-md" style="height: 100px"></div>
+<span class="text-[10px] text-slate-500">社交</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-indigo-500 rounded-t-md" style="height: 140px"></div>
+<span class="text-[10px] text-slate-500">邮件</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-blue-600 rounded-t-md" style="height: 65px"></div>
+<span class="text-[10px] text-slate-500">内容</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<div class="w-full bg-blue-400 rounded-t-md" style="height: 95px"></div>
+<span class="text-[10px] text-slate-500">推荐</span>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<span class="text-sm font-semibold text-slate-700">收入来源占比</span>
+<div class="flex items-center justify-center h-32 mt-3">
+<div class="relative w-28 h-28">
+<div class="absolute inset-0 rounded-full" style="background: conic-gradient(#1E40AF 0% 42%, #3B82F6 42% 68%, #6366F1 68% 85%, #93C5FD 85% 100%);"></div>
+<div class="absolute inset-4 rounded-full bg-white"></div>
+</div>
+</div>
+<div class="mt-3 space-y-1.5">
+<div class="flex items-center gap-2 text-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-blue-800"></div>
+<span class="text-slate-600">企业订阅</span>
+<span class="ml-auto font-medium text-slate-700">42%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-blue-500"></div>
+<span class="text-slate-600">专业版</span>
+<span class="ml-auto font-medium text-slate-700">26%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-indigo-500"></div>
+<span class="text-slate-600">定制服务</span>
+<span class="ml-auto font-medium text-slate-700">17%</span>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<div class="w-2.5 h-2.5 rounded-sm bg-blue-300"></div>
+<span class="text-slate-600">其他</span>
+<span class="ml-auto font-medium text-slate-700">15%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-4 border border-gray-200 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-semibold text-slate-700">近 30 天用户增长趋势</span>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-blue-500"></div><span class="text-slate-500">新增用户</span></div>
+<div class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span class="text-slate-500">活跃用户</span></div>
+</div>
+</div>
+<div class="relative h-32">
+<svg class="w-full h-full" viewBox="0 0 600 100" preserveAspectRatio="none">
+<polyline points="0,70 50,60 100,65 150,50 200,55 250,40 300,45 350,30 400,35 450,25 500,28 550,20 600,15" fill="none" stroke="#10B981" stroke-width="2"/>
+<polyline points="0,85 50,80 100,82 150,75 200,72 250,68 300,65 350,60 400,58 450,52 500,48 550,45 600,40" fill="none" stroke="#3B82F6" stroke-width="2"/>
+</svg>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 ### 界面二：报表构建器
 
 <div class="my-8 rounded-xl border border-gray-200 overflow-hidden shadow-lg bg-white">
-  <!-- Top bar -->
-  <div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
-    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-    <span class="text-slate-400 text-xs ml-2">DataPulse</span>
-    <div class="ml-auto flex items-center gap-2">
-      <span class="text-slate-400 text-xs">报表构建器 — 产品月度经营报告</span>
-    </div>
-  </div>
-  <div class="flex h-[600px]">
-    <!-- Sidebar -->
-    <div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
-      <div class="flex items-center gap-2 px-3 py-2 mb-2">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        </div>
-        <span class="font-bold text-slate-800 text-sm">DataPulse</span>
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        仪表盘
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
-        报表中心
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
-        数据探索
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
-        团队协作
-      </div>
-    </div>
-    <!-- Component palette -->
-    <div class="w-56 border-r border-gray-200 bg-white p-3 overflow-auto">
-      <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-1">组件面板</div>
-      <!-- Charts -->
-      <div class="mb-4">
-        <div class="text-xs text-slate-400 mb-2 px-1">图表类</div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 flex items-end gap-0.5">
-              <div class="w-1.5 bg-blue-400 rounded-t" style="height: 60%"></div>
-              <div class="w-1.5 bg-blue-500 rounded-t" style="height: 100%"></div>
-              <div class="w-1.5 bg-blue-400 rounded-t" style="height: 40%"></div>
-            </div>
-            柱状图
-          </div>
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 flex items-end">
-              <svg class="w-full h-full" viewBox="0 0 32 24"><polyline points="2,20 8,12 14,15 20,6 26,10 30,4" fill="none" stroke="#3B82F6" stroke-width="2"/></svg>
-            </div>
-            折线图
-          </div>
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 flex items-center justify-center">
-              <div class="w-5 h-5 rounded-full border-4 border-blue-400 border-t-blue-200"></div>
-            </div>
-            饼图
-          </div>
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 flex items-center justify-center">
-              <div class="grid grid-cols-3 gap-0.5 w-6 h-5">
-                <div class="bg-blue-200 rounded-sm"></div>
-                <div class="bg-blue-400 rounded-sm"></div>
-                <div class="bg-blue-300 rounded-sm"></div>
-                <div class="bg-blue-500 rounded-sm"></div>
-                <div class="bg-blue-100 rounded-sm"></div>
-                <div class="bg-blue-400 rounded-sm"></div>
-              </div>
-            </div>
-            热力图
-          </div>
-        </div>
-      </div>
-      <!-- Data -->
-      <div class="mb-4">
-        <div class="text-xs text-slate-400 mb-2 px-1">数据类</div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 bg-gray-100 rounded border border-gray-300 flex flex-col justify-center gap-0.5 px-1">
-              <div class="h-0.5 bg-gray-300 rounded"></div>
-              <div class="h-0.5 bg-gray-300 rounded w-3/4"></div>
-              <div class="h-0.5 bg-gray-300 rounded"></div>
-            </div>
-            数据表
-          </div>
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-6 bg-blue-50 rounded flex items-center justify-center">
-              <span class="text-[8px] font-bold text-blue-600">24.8K</span>
-            </div>
-            指标卡
-          </div>
-        </div>
-      </div>
-      <!-- Decorative -->
-      <div>
-        <div class="text-xs text-slate-400 mb-2 px-1">装饰类</div>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-0.5 bg-gray-300"></div>
-            分隔线
-          </div>
-          <div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
-            <div class="w-8 h-4 bg-gray-200 rounded flex items-center justify-center">
-              <span class="text-[6px] font-bold text-gray-500">H</span>
-            </div>
-            标题文本
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Canvas area -->
-    <div class="flex-1 flex flex-col bg-gray-100 overflow-auto">
-      <!-- Toolbar -->
-      <div class="h-12 bg-white border-b border-gray-200 flex items-center px-4 gap-2">
-        <button class="p-1.5 rounded hover:bg-gray-100 text-slate-500">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
-        </button>
-        <button class="p-1.5 rounded hover:bg-gray-100 text-slate-500">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </button>
-        <div class="w-px h-5 bg-gray-200 mx-1"></div>
-        <span class="text-xs text-slate-400">网格吸附</span>
-        <div class="w-8 h-4 bg-blue-500 rounded-full cursor-pointer relative">
-          <div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow"></div>
-        </div>
-        <div class="w-px h-5 bg-gray-200 mx-1"></div>
-        <button class="px-3 py-1 rounded border border-gray-200 text-xs text-slate-600 hover:bg-gray-50">预览</button>
-        <button class="px-3 py-1 rounded bg-blue-600 text-white text-xs font-medium">保存</button>
-      </div>
-      <!-- Canvas -->
-      <div class="flex-1 p-6 overflow-auto">
-        <div class="bg-white rounded-xl border border-gray-200 shadow-sm min-h-[400px] p-6 relative">
-          <!-- Dropped widgets -->
-          <div class="border-2 border-dashed border-blue-300 rounded-lg p-3 bg-blue-50/30 absolute top-4 left-4 right-4" style="height: 120px">
-            <span class="text-[10px] text-blue-500 font-medium">月度收入趋势</span>
-            <div class="flex items-end gap-2 h-16 mt-2">
-              <div class="flex-1 bg-blue-200 rounded-t" style="height: 40%"></div>
-              <div class="flex-1 bg-blue-300 rounded-t" style="height: 55%"></div>
-              <div class="flex-1 bg-blue-400 rounded-t" style="height: 45%"></div>
-              <div class="flex-1 bg-blue-500 rounded-t" style="height: 70%"></div>
-              <div class="flex-1 bg-blue-400 rounded-t" style="height: 60%"></div>
-              <div class="flex-1 bg-blue-600 rounded-t" style="height: 85%"></div>
-            </div>
-          </div>
-          <div class="border-2 border-dashed border-indigo-300 rounded-lg p-3 bg-indigo-50/30 absolute top-[150px] left-4 w-1/2" style="height: 130px">
-            <span class="text-[10px] text-indigo-500 font-medium">用户留存率</span>
-            <div class="flex items-end justify-around h-16 mt-2">
-              <div class="w-10 bg-indigo-300 rounded-t" style="height: 90%"></div>
-              <div class="w-10 bg-indigo-400 rounded-t" style="height: 65%"></div>
-              <div class="w-10 bg-indigo-500 rounded-t" style="height: 50%"></div>
-              <div class="w-10 bg-indigo-400 rounded-t" style="height: 42%"></div>
-            </div>
-          </div>
-          <div class="border-2 border-dashed border-emerald-300 rounded-lg p-3 bg-emerald-50/30 absolute top-[150px] right-4 w-[calc(50%-1rem)]" style="height: 130px">
-            <span class="text-[10px] text-emerald-500 font-medium">功能使用分布</span>
-            <div class="flex items-center justify-center mt-2">
-              <div class="relative w-20 h-20">
-                <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#10B981 0% 35%, #3B82F6 35% 65%, #6366F1 65% 85%, #D1D5DB 85% 100%);"></div>
-                <div class="absolute inset-3 rounded-full bg-white"></div>
-              </div>
-            </div>
-          </div>
-          <!-- Drop zone hint -->
-          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 border-2 border-dashed border-gray-300 rounded-lg px-8 py-4 text-center">
-            <div class="text-xs text-slate-400">拖拽组件到此处</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Properties panel -->
-    <div class="w-64 border-l border-gray-200 bg-white p-4 overflow-auto">
-      <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">属性配置</div>
-      <!-- Data binding -->
-      <div class="mb-4">
-        <div class="text-xs font-medium text-slate-700 mb-2">数据绑定</div>
-        <div class="space-y-2">
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">数据源</label>
-            <div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
-              <span>product_analytics</span>
-              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-          </div>
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">维度字段</label>
-            <div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
-              <span>created_at (月)</span>
-              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-          </div>
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">度量字段</label>
-            <div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
-              <span>revenue (SUM)</span>
-              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Visual style -->
-      <div class="mb-4">
-        <div class="text-xs font-medium text-slate-700 mb-2">视觉样式</div>
-        <div class="space-y-2">
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">主色调</label>
-            <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded bg-blue-600 border border-gray-200 cursor-pointer"></div>
-              <span class="text-xs text-slate-500">#1E40AF</span>
-            </div>
-          </div>
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">圆角</label>
-            <div class="w-full h-1 bg-gray-200 rounded-full relative">
-              <div class="absolute left-1/3 top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-600 rounded-full border-2 border-white shadow cursor-pointer"></div>
-            </div>
-          </div>
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">显示图例</label>
-            <div class="w-8 h-4 bg-blue-500 rounded-full cursor-pointer relative">
-              <div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Interaction -->
-      <div>
-        <div class="text-xs font-medium text-slate-700 mb-2">交互设置</div>
-        <div class="space-y-2">
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">点击行为</label>
-            <div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
-              <span>显示详情</span>
-              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-          </div>
-          <div>
-            <label class="text-[11px] text-slate-400 mb-1 block">筛选器关联</label>
-            <div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
-              <span>全局时间筛选</span>
-              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+<span class="text-slate-400 text-xs ml-2">DataPulse</span>
+<div class="ml-auto flex items-center gap-2">
+<span class="text-slate-400 text-xs">报表构建器 — 产品月度经营报告</span>
+</div>
+</div>
+<div class="flex h-[600px]">
+<div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
+<div class="flex items-center gap-2 px-3 py-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+</div>
+<span class="font-bold text-slate-800 text-sm">DataPulse</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+仪表盘
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+报表中心
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+数据探索
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
+团队协作
+</div>
+</div>
+<div class="w-56 border-r border-gray-200 bg-white p-3 overflow-auto">
+<div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-1">组件面板</div>
+<div class="mb-4">
+<div class="text-xs text-slate-400 mb-2 px-1">图表类</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 flex items-end gap-0.5">
+<div class="w-1.5 bg-blue-400 rounded-t" style="height: 60%"></div>
+<div class="w-1.5 bg-blue-500 rounded-t" style="height: 100%"></div>
+<div class="w-1.5 bg-blue-400 rounded-t" style="height: 40%"></div>
+</div>
+柱状图
+</div>
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 flex items-end">
+<svg class="w-full h-full" viewBox="0 0 32 24"><polyline points="2,20 8,12 14,15 20,6 26,10 30,4" fill="none" stroke="#3B82F6" stroke-width="2"/></svg>
+</div>
+折线图
+</div>
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 flex items-center justify-center">
+<div class="w-5 h-5 rounded-full border-4 border-blue-400 border-t-blue-200"></div>
+</div>
+饼图
+</div>
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 flex items-center justify-center">
+<div class="grid grid-cols-3 gap-0.5 w-6 h-5">
+<div class="bg-blue-200 rounded-sm"></div>
+<div class="bg-blue-400 rounded-sm"></div>
+<div class="bg-blue-300 rounded-sm"></div>
+<div class="bg-blue-500 rounded-sm"></div>
+<div class="bg-blue-100 rounded-sm"></div>
+<div class="bg-blue-400 rounded-sm"></div>
+</div>
+</div>
+热力图
+</div>
+</div>
+</div>
+<div class="mb-4">
+<div class="text-xs text-slate-400 mb-2 px-1">数据类</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 bg-gray-100 rounded border border-gray-300 flex flex-col justify-center gap-0.5 px-1">
+<div class="h-0.5 bg-gray-300 rounded"></div>
+<div class="h-0.5 bg-gray-300 rounded w-3/4"></div>
+<div class="h-0.5 bg-gray-300 rounded"></div>
+</div>
+数据表
+</div>
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-6 bg-blue-50 rounded flex items-center justify-center">
+<span class="text-[8px] font-bold text-blue-600">24.8K</span>
+</div>
+指标卡
+</div>
+</div>
+</div>
+<div>
+<div class="text-xs text-slate-400 mb-2 px-1">装饰类</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-0.5 bg-gray-300"></div>
+分隔线
+</div>
+<div class="flex items-center gap-2 px-2 py-2 rounded-lg border border-dashed border-gray-300 text-xs text-slate-600 cursor-move hover:border-blue-400 hover:bg-blue-50 transition-colors">
+<div class="w-8 h-4 bg-gray-200 rounded flex items-center justify-center">
+<span class="text-[6px] font-bold text-gray-500">H</span>
+</div>
+标题文本
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col bg-gray-100 overflow-auto">
+<div class="h-12 bg-white border-b border-gray-200 flex items-center px-4 gap-2">
+<button class="p-1.5 rounded hover:bg-gray-100 text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-gray-100 text-slate-500">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+</button>
+<div class="w-px h-5 bg-gray-200 mx-1"></div>
+<span class="text-xs text-slate-400">网格吸附</span>
+<div class="w-8 h-4 bg-blue-500 rounded-full cursor-pointer relative">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow"></div>
+</div>
+<div class="w-px h-5 bg-gray-200 mx-1"></div>
+<button class="px-3 py-1 rounded border border-gray-200 text-xs text-slate-600 hover:bg-gray-50">预览</button>
+<button class="px-3 py-1 rounded bg-blue-600 text-white text-xs font-medium">保存</button>
+</div>
+<div class="flex-1 p-6 overflow-auto">
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm min-h-[400px] p-6 relative">
+<div class="border-2 border-dashed border-blue-300 rounded-lg p-3 bg-blue-50/30 absolute top-4 left-4 right-4" style="height: 120px">
+<span class="text-[10px] text-blue-500 font-medium">月度收入趋势</span>
+<div class="flex items-end gap-2 h-16 mt-2">
+<div class="flex-1 bg-blue-200 rounded-t" style="height: 40%"></div>
+<div class="flex-1 bg-blue-300 rounded-t" style="height: 55%"></div>
+<div class="flex-1 bg-blue-400 rounded-t" style="height: 45%"></div>
+<div class="flex-1 bg-blue-500 rounded-t" style="height: 70%"></div>
+<div class="flex-1 bg-blue-400 rounded-t" style="height: 60%"></div>
+<div class="flex-1 bg-blue-600 rounded-t" style="height: 85%"></div>
+</div>
+</div>
+<div class="border-2 border-dashed border-indigo-300 rounded-lg p-3 bg-indigo-50/30 absolute top-[150px] left-4 w-1/2" style="height: 130px">
+<span class="text-[10px] text-indigo-500 font-medium">用户留存率</span>
+<div class="flex items-end justify-around h-16 mt-2">
+<div class="w-10 bg-indigo-300 rounded-t" style="height: 90%"></div>
+<div class="w-10 bg-indigo-400 rounded-t" style="height: 65%"></div>
+<div class="w-10 bg-indigo-500 rounded-t" style="height: 50%"></div>
+<div class="w-10 bg-indigo-400 rounded-t" style="height: 42%"></div>
+</div>
+</div>
+<div class="border-2 border-dashed border-emerald-300 rounded-lg p-3 bg-emerald-50/30 absolute top-[150px] right-4 w-[calc(50%-1rem)]" style="height: 130px">
+<span class="text-[10px] text-emerald-500 font-medium">功能使用分布</span>
+<div class="flex items-center justify-center mt-2">
+<div class="relative w-20 h-20">
+<div class="absolute inset-0 rounded-full" style="background: conic-gradient(#10B981 0% 35%, #3B82F6 35% 65%, #6366F1 65% 85%, #D1D5DB 85% 100%);"></div>
+<div class="absolute inset-3 rounded-full bg-white"></div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 border-2 border-dashed border-gray-300 rounded-lg px-8 py-4 text-center">
+<div class="text-xs text-slate-400">拖拽组件到此处</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-64 border-l border-gray-200 bg-white p-4 overflow-auto">
+<div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">属性配置</div>
+<div class="mb-4">
+<div class="text-xs font-medium text-slate-700 mb-2">数据绑定</div>
+<div class="space-y-2">
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">数据源</label>
+<div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
+<span>product_analytics</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">维度字段</label>
+<div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
+<span>created_at (月)</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">度量字段</label>
+<div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
+<span>revenue (SUM)</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<div class="text-xs font-medium text-slate-700 mb-2">视觉样式</div>
+<div class="space-y-2">
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">主色调</label>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-blue-600 border border-gray-200 cursor-pointer"></div>
+<span class="text-xs text-slate-500">#1E40AF</span>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">圆角</label>
+<div class="w-full h-1 bg-gray-200 rounded-full relative">
+<div class="absolute left-1/3 top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-600 rounded-full border-2 border-white shadow cursor-pointer"></div>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">显示图例</label>
+<div class="w-8 h-4 bg-blue-500 rounded-full cursor-pointer relative">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="text-xs font-medium text-slate-700 mb-2">交互设置</div>
+<div class="space-y-2">
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">点击行为</label>
+<div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
+<span>显示详情</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-slate-400 mb-1 block">筛选器关联</label>
+<div class="w-full px-2 py-1.5 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50 flex items-center justify-between">
+<span>全局时间筛选</span>
+<svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 ### 界面三：数据探索
 
 <div class="my-8 rounded-xl border border-gray-200 overflow-hidden shadow-lg bg-white">
-  <!-- Top bar -->
-  <div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
-    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-    <span class="text-slate-400 text-xs ml-2">DataPulse</span>
-  </div>
-  <div class="flex h-[600px]">
-    <!-- Sidebar -->
-    <div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
-      <div class="flex items-center gap-2 px-3 py-2 mb-2">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        </div>
-        <span class="font-bold text-slate-800 text-sm">DataPulse</span>
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        仪表盘
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
-        报表中心
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
-        数据探索
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
-        团队协作
-      </div>
-    </div>
-    <!-- Main content -->
-    <div class="flex-1 flex flex-col overflow-auto">
-      <!-- Query mode tabs -->
-      <div class="h-12 border-b border-gray-200 flex items-center px-6 gap-4 bg-white">
-        <div class="px-3 py-1.5 text-sm font-medium text-blue-600 border-b-2 border-blue-600 cursor-pointer">可视化查询</div>
-        <div class="px-3 py-1.5 text-sm text-slate-500 cursor-pointer hover:text-slate-700">SQL 编辑器</div>
-        <div class="px-3 py-1.5 text-sm text-slate-500 cursor-pointer hover:text-slate-700">自然语言</div>
-        <div class="ml-auto flex items-center gap-2">
-          <button class="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-medium">执行查询</button>
-        </div>
-      </div>
-      <!-- Query builder -->
-      <div class="bg-gray-50 border-b border-gray-200 p-4">
-        <div class="bg-white rounded-xl border border-gray-200 p-4">
-          <div class="flex items-center gap-4 mb-3">
-            <div class="flex-1">
-              <label class="text-[11px] text-slate-400 mb-1.5 block font-medium">数据源</label>
-              <div class="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50">product_analytics</div>
-            </div>
-            <div class="flex-1">
-              <label class="text-[11px] text-slate-400 mb-1.5 block font-medium">时间范围</label>
-              <div class="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50">最近 30 天</div>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex-1">
-              <label class="text-[11px] text-slate-400 mb-1.5 block font-medium">维度（分组）</label>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[11px] rounded-md flex items-center gap-1">渠道来源 <span class="text-blue-400 cursor-pointer">×</span></span>
-                <span class="px-2 py-1 bg-blue-50 text-blue-700 text-[11px] rounded-md flex items-center gap-1">注册日期 <span class="text-blue-400 cursor-pointer">×</span></span>
-                <span class="px-2 py-1 border border-dashed border-gray-300 text-slate-400 text-[11px] rounded-md cursor-pointer hover:border-blue-400">+ 添加维度</span>
-              </div>
-            </div>
-            <div class="flex-1">
-              <label class="text-[11px] text-slate-400 mb-1.5 block font-medium">度量（指标）</label>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[11px] rounded-md flex items-center gap-1">用户数 (COUNT) <span class="text-emerald-400 cursor-pointer">×</span></span>
-                <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[11px] rounded-md flex items-center gap-1">转化率 (AVG) <span class="text-emerald-400 cursor-pointer">×</span></span>
-                <span class="px-2 py-1 border border-dashed border-gray-300 text-slate-400 text-[11px] rounded-md cursor-pointer hover:border-emerald-400">+ 添加度量</span>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3">
-            <label class="text-[11px] text-slate-400 mb-1.5 block font-medium">筛选条件</label>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[11px] rounded-md flex items-center gap-1">注册日期 ≥ 2024-10-01 <span class="text-amber-400 cursor-pointer">×</span></span>
-              <span class="px-2 py-1 bg-amber-50 text-amber-700 text-[11px] rounded-md flex items-center gap-1">用户状态 = "活跃" <span class="text-amber-400 cursor-pointer">×</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Results table -->
-      <div class="flex-1 p-6 overflow-auto">
-        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <!-- Table header info -->
-          <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-            <div class="text-xs text-slate-500">
-              查询结果 · 共 <span class="font-medium text-slate-700">1,247</span> 行 · 耗时 <span class="font-medium text-slate-700">0.34s</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">导出 CSV</button>
-              <button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">可视化</button>
-            </div>
-          </div>
-          <!-- Table -->
-          <table class="w-full text-xs">
-            <thead>
-              <tr class="bg-slate-50 border-b border-gray-200">
-                <th class="text-left px-4 py-2.5 font-medium text-slate-500">
-                  <div class="flex items-center gap-1">渠道来源 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
-                </th>
-                <th class="text-left px-4 py-2.5 font-medium text-slate-500">
-                  <div class="flex items-center gap-1">注册日期 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
-                </th>
-                <th class="text-right px-4 py-2.5 font-medium text-slate-500">
-                  <div class="flex items-center gap-1 justify-end">用户数 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
-                </th>
-                <th class="text-right px-4 py-2.5 font-medium text-slate-500">
-                  <div class="flex items-center gap-1 justify-end">转化率 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">官网直接访问</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">3,842</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">12.3%</span></td>
-              </tr>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">SEM 搜索广告</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">2,156</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">8.7%</span></td>
-              </tr>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">社交媒体</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">1,893</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-amber-600 font-medium">6.2%</span></td>
-              </tr>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">邮件营销</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-14</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">1,247</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">15.1%</span></td>
-              </tr>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">内容营销</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-14</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">987</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-amber-600 font-medium">5.8%</span></td>
-              </tr>
-              <tr class="border-b border-gray-100 hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">用户推荐</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-13</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">654</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">22.4%</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-2.5 text-slate-700">合作伙伴</td>
-                <td class="px-4 py-2.5 text-slate-500">2024-11-13</td>
-                <td class="px-4 py-2.5 text-right font-medium text-slate-700">423</td>
-                <td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">18.9%</span></td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Pagination -->
-          <div class="flex items-center justify-between px-4 py-3 border-t border-gray-200 bg-slate-50">
-            <span class="text-[11px] text-slate-400">显示 1-7 / 共 1,247 行</span>
-            <div class="flex items-center gap-1">
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs cursor-not-allowed">&lt;</div>
-              <div class="w-7 h-7 rounded bg-blue-600 text-white flex items-center justify-center text-xs font-medium">1</div>
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">2</div>
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">3</div>
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs">...</div>
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">179</div>
-              <div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">&gt;</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+<span class="text-slate-400 text-xs ml-2">DataPulse</span>
+</div>
+<div class="flex h-[600px]">
+<div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
+<div class="flex items-center gap-2 px-3 py-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+</div>
+<span class="font-bold text-slate-800 text-sm">DataPulse</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+仪表盘
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+报表中心
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+数据探索
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
+团队协作
+</div>
+</div>
+<div class="flex-1 flex flex-col overflow-auto">
+<div class="h-12 border-b border-gray-200 flex items-center px-6 gap-4 bg-white">
+<div class="px-3 py-1.5 text-sm font-medium text-blue-600 border-b-2 border-blue-600 cursor-pointer">可视化查询</div>
+<div class="px-3 py-1.5 text-sm text-slate-500 cursor-pointer hover:text-slate-700">SQL 编辑器</div>
+<div class="px-3 py-1.5 text-sm text-slate-500 cursor-pointer hover:text-slate-700">自然语言</div>
+<div class="ml-auto flex items-center gap-2">
+<button class="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-medium">执行查询</button>
+</div>
+</div>
+<div class="bg-gray-50 border-b border-gray-200 p-4">
+<div class="bg-white rounded-xl border border-gray-200 p-4">
+<div class="flex items-center gap-4 mb-3">
+<div class="flex-1">
+<label class="text-[11px] text-slate-400 mb-1.5 block font-medium">数据源</label>
+<div class="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50">product_analytics</div>
+</div>
+<div class="flex-1">
+<label class="text-[11px] text-slate-400 mb-1.5 block font-medium">时间范围</label>
+<div class="w-full px-3 py-2 border border-gray-200 rounded-lg text-xs text-slate-700 bg-gray-50">最近 30 天</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-1">
+<label class="text-[11px] text-slate-400 mb-1.5 block font-medium">维度（分组）</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-blue-50 text-blue-700 text-[11px] rounded-md flex items-center gap-1">渠道来源 <span class="text-blue-400 cursor-pointer">×</span></span>
+<span class="px-2 py-1 bg-blue-50 text-blue-700 text-[11px] rounded-md flex items-center gap-1">注册日期 <span class="text-blue-400 cursor-pointer">×</span></span>
+<span class="px-2 py-1 border border-dashed border-gray-300 text-slate-400 text-[11px] rounded-md cursor-pointer hover:border-blue-400">+ 添加维度</span>
+</div>
+</div>
+<div class="flex-1">
+<label class="text-[11px] text-slate-400 mb-1.5 block font-medium">度量（指标）</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[11px] rounded-md flex items-center gap-1">用户数 (COUNT) <span class="text-emerald-400 cursor-pointer">×</span></span>
+<span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[11px] rounded-md flex items-center gap-1">转化率 (AVG) <span class="text-emerald-400 cursor-pointer">×</span></span>
+<span class="px-2 py-1 border border-dashed border-gray-300 text-slate-400 text-[11px] rounded-md cursor-pointer hover:border-emerald-400">+ 添加度量</span>
+</div>
+</div>
+</div>
+<div class="mt-3">
+<label class="text-[11px] text-slate-400 mb-1.5 block font-medium">筛选条件</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 bg-amber-50 text-amber-700 text-[11px] rounded-md flex items-center gap-1">注册日期 ≥ 2024-10-01 <span class="text-amber-400 cursor-pointer">×</span></span>
+<span class="px-2 py-1 bg-amber-50 text-amber-700 text-[11px] rounded-md flex items-center gap-1">用户状态 = "活跃" <span class="text-amber-400 cursor-pointer">×</span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 p-6 overflow-auto">
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+<div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+<div class="text-xs text-slate-500">
+查询结果 · 共 <span class="font-medium text-slate-700">1,247</span> 行 · 耗时 <span class="font-medium text-slate-700">0.34s</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">导出 CSV</button>
+<button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">可视化</button>
+</div>
+</div>
+<table class="w-full text-xs">
+<thead>
+<tr class="bg-slate-50 border-b border-gray-200">
+<th class="text-left px-4 py-2.5 font-medium text-slate-500">
+<div class="flex items-center gap-1">渠道来源 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
+</th>
+<th class="text-left px-4 py-2.5 font-medium text-slate-500">
+<div class="flex items-center gap-1">注册日期 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
+</th>
+<th class="text-right px-4 py-2.5 font-medium text-slate-500">
+<div class="flex items-center gap-1 justify-end">用户数 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
+</th>
+<th class="text-right px-4 py-2.5 font-medium text-slate-500">
+<div class="flex items-center gap-1 justify-end">转化率 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path></svg></div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">官网直接访问</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">3,842</td>
+<td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">12.3%</span></td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">SEM 搜索广告</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">2,156</td>
+<td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">8.7%</span></td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">社交媒体</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-15</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">1,893</td>
+<td class="px-4 py-2.5 text-right"><span class="text-amber-600 font-medium">6.2%</span></td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">邮件营销</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-14</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">1,247</td>
+<td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">15.1%</span></td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">内容营销</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-14</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">987</td>
+<td class="px-4 py-2.5 text-right"><span class="text-amber-600 font-medium">5.8%</span></td>
+</tr>
+<tr class="border-b border-gray-100 hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">用户推荐</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-13</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">654</td>
+<td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">22.4%</span></td>
+</tr>
+<tr class="hover:bg-slate-50">
+<td class="px-4 py-2.5 text-slate-700">合作伙伴</td>
+<td class="px-4 py-2.5 text-slate-500">2024-11-13</td>
+<td class="px-4 py-2.5 text-right font-medium text-slate-700">423</td>
+<td class="px-4 py-2.5 text-right"><span class="text-emerald-600 font-medium">18.9%</span></td>
+</tr>
+</tbody>
+</table>
+<div class="flex items-center justify-between px-4 py-3 border-t border-gray-200 bg-slate-50">
+<span class="text-[11px] text-slate-400">显示 1-7 / 共 1,247 行</span>
+<div class="flex items-center gap-1">
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs cursor-not-allowed">&lt;</div>
+<div class="w-7 h-7 rounded bg-blue-600 text-white flex items-center justify-center text-xs font-medium">1</div>
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">2</div>
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">3</div>
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-400 text-xs">...</div>
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">179</div>
+<div class="w-7 h-7 rounded flex items-center justify-center text-slate-600 text-xs hover:bg-gray-100 cursor-pointer">&gt;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 ### 界面四：团队协作
 
 <div class="my-8 rounded-xl border border-gray-200 overflow-hidden shadow-lg bg-white">
-  <!-- Top bar -->
-  <div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
-    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-    <span class="text-slate-400 text-xs ml-2">DataPulse</span>
-    <div class="ml-auto flex items-center gap-2">
-      <span class="text-slate-400 text-xs">团队协作 — 产品数据概览</span>
-    </div>
-  </div>
-  <div class="flex h-[600px]">
-    <!-- Sidebar -->
-    <div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
-      <div class="flex items-center gap-2 px-3 py-2 mb-2">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        </div>
-        <span class="font-bold text-slate-800 text-sm">DataPulse</span>
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
-        仪表盘
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
-        报表中心
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
-        数据探索
-      </div>
-      <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
-        团队协作
-      </div>
-    </div>
-    <!-- Dashboard area (dimmed background) -->
-    <div class="flex-1 relative overflow-hidden">
-      <!-- Dashboard content behind -->
-      <div class="p-6 opacity-40">
-        <div class="grid grid-cols-4 gap-4 mb-4">
-          <div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">月活用户</div><div class="text-lg font-bold text-slate-800">24,831</div></div>
-          <div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">转化率</div><div class="text-lg font-bold text-slate-800">8.47%</div></div>
-          <div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">停留时长</div><div class="text-lg font-bold text-slate-800">12m 34s</div></div>
-          <div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">月收入</div><div class="text-lg font-bold text-slate-800">¥284.6万</div></div>
-        </div>
-        <div class="bg-white rounded-xl h-40 border border-gray-200"></div>
-      </div>
-      <!-- Collaboration panel (overlay from right) -->
-      <div class="absolute top-0 right-0 w-96 h-full bg-white border-l border-gray-200 shadow-2xl flex flex-col">
-        <!-- Panel header -->
-        <div class="h-14 border-b border-gray-200 flex items-center justify-between px-4">
-          <div class="flex items-center gap-3">
-            <span class="font-semibold text-sm text-slate-800">协作讨论</span>
-            <span class="px-1.5 py-0.5 bg-blue-100 text-blue-700 text-[10px] rounded-full font-medium">3 条新消息</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <div class="flex -space-x-2">
-              <div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">张</div>
-              <div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">李</div>
-              <div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">王</div>
-            </div>
-            <button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">分享</button>
-          </div>
-        </div>
-        <!-- Sharing controls -->
-        <div class="px-4 py-3 border-b border-gray-100 bg-slate-50">
-          <div class="text-[11px] text-slate-400 mb-2">分享设置</div>
-          <div class="flex items-center gap-2">
-            <div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600">
-              <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-              团队可见
-            </div>
-            <div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600">
-              可编辑
-            </div>
-            <div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600 ml-auto cursor-pointer">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"></path></svg>
-              复制链接
-            </div>
-          </div>
-        </div>
-        <!-- Comment threads -->
-        <div class="flex-1 overflow-auto p-4 space-y-4">
-          <!-- Thread 1 -->
-          <div class="bg-blue-50/50 rounded-xl p-3 border border-blue-100">
-            <div class="flex items-start gap-2.5 mb-2">
-              <div class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">李</div>
-              <div>
-                <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-xs font-semibold text-slate-700">李薇</span>
-                  <span class="text-[10px] text-slate-400">10 分钟前</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">邮件渠道的转化率 15.1% 明显高于其他渠道，建议下周做一次 A/B 测试，看看是不是邮件标题优化带来的效果。</p>
-              </div>
-            </div>
-            <!-- Reply -->
-            <div class="ml-9 mt-2 pl-3 border-l-2 border-blue-200">
-              <div class="flex items-start gap-2">
-                <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[7px] font-bold flex-shrink-0">王</div>
-                <div>
-                  <div class="flex items-center gap-2 mb-0.5">
-                    <span class="text-[11px] font-semibold text-slate-700">王总</span>
-                    <span class="text-[10px] text-slate-400">3 分钟前</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">同意，我已经让运营团队准备了测试方案，下周一启动。</p>
-                </div>
-              </div>
-            </div>
-            <!-- Action buttons -->
-            <div class="ml-9 mt-2 flex items-center gap-2">
-              <div class="flex items-center gap-1 px-2 py-0.5 bg-white border border-gray-200 rounded text-[10px] text-slate-500 cursor-pointer hover:bg-gray-50">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
-                回复
-              </div>
-              <div class="flex items-center gap-1 px-2 py-0.5 bg-white border border-gray-200 rounded text-[10px] text-slate-500 cursor-pointer hover:bg-gray-50">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                标记已解决
-              </div>
-            </div>
-          </div>
-          <!-- Thread 2 -->
-          <div class="bg-amber-50/50 rounded-xl p-3 border border-amber-100">
-            <div class="flex items-start gap-2.5 mb-2">
-              <div class="w-7 h-7 rounded-full bg-purple-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">王</div>
-              <div>
-                <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-xs font-semibold text-slate-700">王总</span>
-                  <span class="text-[10px] text-slate-400">1 小时前</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">平均停留时长下降了 1.8%，这个趋势需要关注。@张明 能查一下是不是新版本上线后的影响？</p>
-              </div>
-            </div>
-            <!-- Assigned user -->
-            <div class="ml-9 mt-2 flex items-center gap-1.5 px-2 py-1 bg-white rounded-lg border border-gray-200 w-fit">
-              <div class="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-white text-[6px] font-bold">张</div>
-              <span class="text-[10px] text-slate-500">已指派给 张明</span>
-              <span class="text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">待处理</span>
-            </div>
-          </div>
-          <!-- Thread 3 -->
-          <div class="rounded-xl p-3 border border-gray-200">
-            <div class="flex items-start gap-2.5">
-              <div class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">张</div>
-              <div>
-                <div class="flex items-center gap-2 mb-0.5">
-                  <span class="text-xs font-semibold text-slate-700">张明</span>
-                  <span class="text-[10px] text-slate-400">3 小时前</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">推荐渠道虽然用户量不大，但转化率高达 22.4%，是所有渠道中最高的。建议加大推荐激励力度。</p>
-              </div>
-            </div>
-            <div class="ml-9 mt-2 flex items-center gap-2 text-[10px] text-slate-400">
-              <span>2 人赞同</span>
-              <span>·</span>
-              <span>1 条回复</span>
-            </div>
-          </div>
-          <!-- Input area -->
-          <div class="sticky bottom-0 bg-white pt-3">
-            <div class="flex items-start gap-2 p-3 border border-gray-200 rounded-xl bg-gray-50">
-              <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-[8px] font-bold flex-shrink-0 mt-0.5">张</div>
-              <div class="flex-1">
-                <div class="text-xs text-slate-400 mb-1">@ 张明 · @ 李薇</div>
-                <div class="text-xs text-slate-300">输入评论或 @ 指派团队成员...</div>
-              </div>
-              <button class="px-2 py-1 bg-blue-600 text-white rounded-lg text-[10px] font-medium">发送</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="h-10 bg-slate-900 flex items-center px-4 gap-3">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+<span class="text-slate-400 text-xs ml-2">DataPulse</span>
+<div class="ml-auto flex items-center gap-2">
+<span class="text-slate-400 text-xs">团队协作 — 产品数据概览</span>
+</div>
+</div>
+<div class="flex h-[600px]">
+<div class="w-52 bg-slate-50 border-r border-gray-200 p-3 flex flex-col gap-1">
+<div class="flex items-center gap-2 px-3 py-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+</div>
+<span class="font-bold text-slate-800 text-sm">DataPulse</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+仪表盘
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path></svg>
+报表中心
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+数据探索
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 text-sm cursor-pointer">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg>
+团队协作
+</div>
+</div>
+<div class="flex-1 relative overflow-hidden">
+<div class="p-6 opacity-40">
+<div class="grid grid-cols-4 gap-4 mb-4">
+<div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">月活用户</div><div class="text-lg font-bold text-slate-800">24,831</div></div>
+<div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">转化率</div><div class="text-lg font-bold text-slate-800">8.47%</div></div>
+<div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">停留时长</div><div class="text-lg font-bold text-slate-800">12m 34s</div></div>
+<div class="bg-white rounded-xl p-3 border border-gray-200"><div class="text-xs text-slate-400">月收入</div><div class="text-lg font-bold text-slate-800">¥284.6万</div></div>
+</div>
+<div class="bg-white rounded-xl h-40 border border-gray-200"></div>
+</div>
+<div class="absolute top-0 right-0 w-96 h-full bg-white border-l border-gray-200 shadow-2xl flex flex-col">
+<div class="h-14 border-b border-gray-200 flex items-center justify-between px-4">
+<div class="flex items-center gap-3">
+<span class="font-semibold text-sm text-slate-800">协作讨论</span>
+<span class="px-1.5 py-0.5 bg-blue-100 text-blue-700 text-[10px] rounded-full font-medium">3 条新消息</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">张</div>
+<div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">李</div>
+<div class="w-6 h-6 rounded-full bg-purple-500 border-2 border-white flex items-center justify-center text-white text-[8px] font-bold">王</div>
+</div>
+<button class="px-2 py-1 rounded border border-gray-200 text-[11px] text-slate-600 hover:bg-gray-50">分享</button>
+</div>
+</div>
+<div class="px-4 py-3 border-b border-gray-100 bg-slate-50">
+<div class="text-[11px] text-slate-400 mb-2">分享设置</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+团队可见
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600">
+可编辑
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 rounded-lg text-[11px] text-slate-600 ml-auto cursor-pointer">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"></path></svg>
+复制链接
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-auto p-4 space-y-4">
+<div class="bg-blue-50/50 rounded-xl p-3 border border-blue-100">
+<div class="flex items-start gap-2.5 mb-2">
+<div class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">李</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="text-xs font-semibold text-slate-700">李薇</span>
+<span class="text-[10px] text-slate-400">10 分钟前</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">邮件渠道的转化率 15.1% 明显高于其他渠道，建议下周做一次 A/B 测试，看看是不是邮件标题优化带来的效果。</p>
+</div>
+</div>
+<div class="ml-9 mt-2 pl-3 border-l-2 border-blue-200">
+<div class="flex items-start gap-2">
+<div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[7px] font-bold flex-shrink-0">王</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="text-[11px] font-semibold text-slate-700">王总</span>
+<span class="text-[10px] text-slate-400">3 分钟前</span>
+</div>
+<p class="text-[11px] text-slate-600 leading-relaxed">同意，我已经让运营团队准备了测试方案，下周一启动。</p>
+</div>
+</div>
+</div>
+<div class="ml-9 mt-2 flex items-center gap-2">
+<div class="flex items-center gap-1 px-2 py-0.5 bg-white border border-gray-200 rounded text-[10px] text-slate-500 cursor-pointer hover:bg-gray-50">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
+回复
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 bg-white border border-gray-200 rounded text-[10px] text-slate-500 cursor-pointer hover:bg-gray-50">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+标记已解决
+</div>
+</div>
+</div>
+<div class="bg-amber-50/50 rounded-xl p-3 border border-amber-100">
+<div class="flex items-start gap-2.5 mb-2">
+<div class="w-7 h-7 rounded-full bg-purple-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">王</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="text-xs font-semibold text-slate-700">王总</span>
+<span class="text-[10px] text-slate-400">1 小时前</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">平均停留时长下降了 1.8%，这个趋势需要关注。@张明 能查一下是不是新版本上线后的影响？</p>
+</div>
+</div>
+<div class="ml-9 mt-2 flex items-center gap-1.5 px-2 py-1 bg-white rounded-lg border border-gray-200 w-fit">
+<div class="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-white text-[6px] font-bold">张</div>
+<span class="text-[10px] text-slate-500">已指派给 张明</span>
+<span class="text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded">待处理</span>
+</div>
+</div>
+<div class="rounded-xl p-3 border border-gray-200">
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0">张</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<span class="text-xs font-semibold text-slate-700">张明</span>
+<span class="text-[10px] text-slate-400">3 小时前</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">推荐渠道虽然用户量不大，但转化率高达 22.4%，是所有渠道中最高的。建议加大推荐激励力度。</p>
+</div>
+</div>
+<div class="ml-9 mt-2 flex items-center gap-2 text-[10px] text-slate-400">
+<span>2 人赞同</span>
+<span>·</span>
+<span>1 条回复</span>
+</div>
+</div>
+<div class="sticky bottom-0 bg-white pt-3">
+<div class="flex items-start gap-2 p-3 border border-gray-200 rounded-xl bg-gray-50">
+<div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-[8px] font-bold flex-shrink-0 mt-0.5">张</div>
+<div class="flex-1">
+<div class="text-xs text-slate-400 mb-1">@ 张明 · @ 李薇</div>
+<div class="text-xs text-slate-300">输入评论或 @ 指派团队成员...</div>
+</div>
+<button class="px-2 py-1 bg-blue-600 text-white rounded-lg text-[10px] font-medium">发送</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 ---

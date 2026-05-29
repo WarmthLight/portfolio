@@ -137,10 +137,10 @@ TripWise
 │   ├── 离线数据
 │   └── 旅行记录
 └── 我的 (Me)
-    ├── 旅行档案
-    ├── 偏好设置
-    ├── 离线包管理
-    └── 社交分享
+├── 旅行档案
+├── 偏好设置
+├── 离线包管理
+└── 社交分享
 ```
 
 ### 核心用户流程
@@ -149,16 +149,16 @@ TripWise
 
 ```
 浏览探索页 → 收藏灵感目的地 → 触发 AI 行程生成
-  → 设定旅行参数（日期/人数/风格）→ AI 生成初版行程
-  → 用户微调细节 → 确认行程 → 下载离线数据
+→ 设定旅行参数（日期/人数/风格）→ AI 生成初版行程
+→ 用户微调细节 → 确认行程 → 下载离线数据
 ```
 
 **流程二：旅途执行 → 即时调整 → 记录分享**
 
 ```
 开启旅行模式 → 查看当日行程 → 导航至目的地
-  → 完成活动打卡 → 临时调整后续行程 → 自动生成旅行日记
-  → 分享至社交平台
+→ 完成活动打卡 → 临时调整后续行程 → 自动生成旅行日记
+→ 分享至社交平台
 ```
 
 ### 导航结构
@@ -259,624 +259,577 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 ### 屏幕一：目的地探索页
 
 <div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
-  <!-- Status Bar -->
-  <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
-    <span class="text-white/90 text-[11px] font-medium">9:41</span>
-    <div class="flex items-center gap-1">
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
-    </div>
-  </div>
+<div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
+<span class="text-white/90 text-[11px] font-medium">9:41</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+</div>
+</div>
 
-  <!-- Search Bar -->
-  <div class="px-4 pt-3 pb-2">
-    <div class="flex items-center gap-2 bg-gray-100 rounded-xl px-3 py-2.5">
-      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <span class="text-gray-400 text-[13px]">搜索目的地、灵感或攻略...</span>
-      <div class="ml-auto w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pt-3 pb-2">
+<div class="flex items-center gap-2 bg-gray-100 rounded-xl px-3 py-2.5">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+<span class="text-gray-400 text-[13px]">搜索目的地、灵感或攻略...</span>
+<div class="ml-auto w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
+<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+</div>
+</div>
+</div>
 
-  <!-- Category Filters -->
-  <div class="px-4 pb-3 flex gap-2 overflow-x-auto">
-    <span class="flex-shrink-0 px-3 py-1 bg-teal-500 text-white text-[11px] font-medium rounded-full">全部</span>
-    <span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">海岛</span>
-    <span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">城市</span>
-    <span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">雪山</span>
-    <span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">美食</span>
-    <span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">温泉</span>
-  </div>
+<div class="px-4 pb-3 flex gap-2 overflow-x-auto">
+<span class="flex-shrink-0 px-3 py-1 bg-teal-500 text-white text-[11px] font-medium rounded-full">全部</span>
+<span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">海岛</span>
+<span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">城市</span>
+<span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">雪山</span>
+<span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">美食</span>
+<span class="flex-shrink-0 px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full">温泉</span>
+</div>
 
-  <!-- Featured Card -->
-  <div class="px-4 pb-3">
-    <div class="relative rounded-2xl overflow-hidden h-40">
-      <div class="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-teal-600"></div>
-      <div class="absolute inset-0 flex flex-col justify-end p-4">
-        <div class="flex items-center gap-1.5 mb-1">
-          <span class="px-1.5 py-0.5 bg-white/20 backdrop-blur-sm rounded text-[9px] text-white">AI推荐</span>
-          <span class="px-1.5 py-0.5 bg-orange-400/80 backdrop-blur-sm rounded text-[9px] text-white">热度98</span>
-        </div>
-        <h3 class="text-white font-bold text-lg leading-tight">日本京都</h3>
-        <p class="text-white/80 text-[11px] mt-0.5">千年古都，春日樱花季 · 5天4晚</p>
-        <div class="flex items-center gap-1 mt-1.5">
-          <div class="w-4 h-4 rounded-full bg-white/30"></div>
-          <div class="w-4 h-4 rounded-full bg-white/30 -ml-2"></div>
-          <div class="w-4 h-4 rounded-full bg-white/30 -ml-2"></div>
-          <span class="text-white/70 text-[9px] ml-1">1.2万人收藏</span>
-        </div>
-      </div>
-      <div class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pb-3">
+<div class="relative rounded-2xl overflow-hidden h-40">
+<div class="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-teal-600"></div>
+<div class="absolute inset-0 flex flex-col justify-end p-4">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-1.5 py-0.5 bg-white/20 backdrop-blur-sm rounded text-[9px] text-white">AI推荐</span>
+<span class="px-1.5 py-0.5 bg-orange-400/80 backdrop-blur-sm rounded text-[9px] text-white">热度98</span>
+</div>
+<h3 class="text-white font-bold text-lg leading-tight">日本京都</h3>
+<p class="text-white/80 text-[11px] mt-0.5">千年古都，春日樱花季 · 5天4晚</p>
+<div class="flex items-center gap-1 mt-1.5">
+<div class="w-4 h-4 rounded-full bg-white/30"></div>
+<div class="w-4 h-4 rounded-full bg-white/30 -ml-2"></div>
+<div class="w-4 h-4 rounded-full bg-white/30 -ml-2"></div>
+<span class="text-white/70 text-[9px] ml-1">1.2万人收藏</span>
+</div>
+</div>
+<div class="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+</div>
+</div>
+</div>
 
-  <!-- Destination Grid -->
-  <div class="px-4 pb-2">
-    <div class="flex justify-between items-center mb-2">
-      <span class="text-[13px] font-bold text-gray-800">为你推荐</span>
-      <span class="text-[11px] text-teal-500">查看更多</span>
-    </div>
-    <div class="flex gap-2">
-      <div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
-        <div class="h-20 bg-gradient-to-br from-amber-300 to-orange-400"></div>
-        <div class="p-2">
-          <p class="text-[11px] font-semibold text-gray-800">清迈</p>
-          <p class="text-[9px] text-gray-500">泰北玫瑰 · 4天</p>
-          <div class="flex items-center gap-0.5 mt-1">
-            <svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span class="text-[9px] text-gray-500">4.8</span>
-          </div>
-        </div>
-      </div>
-      <div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
-        <div class="h-20 bg-gradient-to-br from-sky-300 to-blue-500"></div>
-        <div class="p-2">
-          <p class="text-[11px] font-semibold text-gray-800">冰岛</p>
-          <p class="text-[9px] text-gray-500">极光之旅 · 7天</p>
-          <div class="flex items-center gap-0.5 mt-1">
-            <svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span class="text-[9px] text-gray-500">4.9</span>
-          </div>
-        </div>
-      </div>
-      <div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
-        <div class="h-20 bg-gradient-to-br from-emerald-300 to-teal-500"></div>
-        <div class="p-2">
-          <p class="text-[11px] font-semibold text-gray-800">巴厘岛</p>
-          <p class="text-[9px] text-gray-500">海岛度假 · 5天</p>
-          <div class="flex items-center gap-0.5 mt-1">
-            <svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span class="text-[9px] text-gray-500">4.7</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pb-2">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[13px] font-bold text-gray-800">为你推荐</span>
+<span class="text-[11px] text-teal-500">查看更多</span>
+</div>
+<div class="flex gap-2">
+<div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
+<div class="h-20 bg-gradient-to-br from-amber-300 to-orange-400"></div>
+<div class="p-2">
+<p class="text-[11px] font-semibold text-gray-800">清迈</p>
+<p class="text-[9px] text-gray-500">泰北玫瑰 · 4天</p>
+<div class="flex items-center gap-0.5 mt-1">
+<svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<span class="text-[9px] text-gray-500">4.8</span>
+</div>
+</div>
+</div>
+<div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
+<div class="h-20 bg-gradient-to-br from-sky-300 to-blue-500"></div>
+<div class="p-2">
+<p class="text-[11px] font-semibold text-gray-800">冰岛</p>
+<p class="text-[9px] text-gray-500">极光之旅 · 7天</p>
+<div class="flex items-center gap-0.5 mt-1">
+<svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<span class="text-[9px] text-gray-500">4.9</span>
+</div>
+</div>
+</div>
+<div class="flex-1 rounded-xl overflow-hidden bg-gray-100">
+<div class="h-20 bg-gradient-to-br from-emerald-300 to-teal-500"></div>
+<div class="p-2">
+<p class="text-[11px] font-semibold text-gray-800">巴厘岛</p>
+<p class="text-[9px] text-gray-500">海岛度假 · 5天</p>
+<div class="flex items-center gap-0.5 mt-1">
+<svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<span class="text-[9px] text-gray-500">4.7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- Bottom Nav -->
-  <div class="h-14 border-t border-gray-100 flex items-center justify-around px-2 mt-2">
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-      <span class="text-[9px] font-medium text-teal-500">探索</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="text-[9px] text-gray-400">规划</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      <span class="text-[9px] text-gray-400">旅行</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="text-[9px] text-gray-400">我的</span>
-    </div>
-  </div>
+<div class="h-14 border-t border-gray-100 flex items-center justify-around px-2 mt-2">
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+<span class="text-[9px] font-medium text-teal-500">探索</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<span class="text-[9px] text-gray-400">规划</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+<span class="text-[9px] text-gray-400">旅行</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<span class="text-[9px] text-gray-400">我的</span>
+</div>
+</div>
 </div>
 
 ### 屏幕二：AI 行程编辑器
 
 <div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
-  <!-- Status Bar -->
-  <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
-    <span class="text-white/90 text-[11px] font-medium">9:41</span>
-    <div class="flex items-center gap-1">
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
-    </div>
-  </div>
+<div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
+<span class="text-white/90 text-[11px] font-medium">9:41</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+</div>
+</div>
 
-  <!-- Header -->
-  <div class="px-4 pt-3 pb-2">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-        <div>
-          <h3 class="text-[14px] font-bold text-gray-800">京都5日游</h3>
-          <p class="text-[10px] text-gray-400">AI 生成 · 可自由编辑</p>
-        </div>
-      </div>
-      <div class="w-8 h-8 bg-teal-50 rounded-full flex items-center justify-center">
-        <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pt-3 pb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+<div>
+<h3 class="text-[14px] font-bold text-gray-800">京都5日游</h3>
+<p class="text-[10px] text-gray-400">AI 生成 · 可自由编辑</p>
+</div>
+</div>
+<div class="w-8 h-8 bg-teal-50 rounded-full flex items-center justify-center">
+<svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+</div>
+</div>
+</div>
 
-  <!-- Day Tabs -->
-  <div class="px-4 pb-3 flex gap-1.5">
-    <span class="flex-shrink-0 px-3 py-1.5 bg-teal-500 text-white text-[11px] font-semibold rounded-lg">Day 1</span>
-    <span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 2</span>
-    <span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 3</span>
-    <span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 4</span>
-    <span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 5</span>
-  </div>
+<div class="px-4 pb-3 flex gap-1.5">
+<span class="flex-shrink-0 px-3 py-1.5 bg-teal-500 text-white text-[11px] font-semibold rounded-lg">Day 1</span>
+<span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 2</span>
+<span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 3</span>
+<span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 4</span>
+<span class="flex-shrink-0 px-3 py-1.5 bg-gray-100 text-gray-500 text-[11px] rounded-lg">Day 5</span>
+</div>
 
-  <!-- Timeline -->
-  <div class="px-4 relative">
-    <!-- Timeline line -->
-    <div class="absolute left-[23px] top-4 bottom-4 w-0.5 bg-teal-200"></div>
+<div class="px-4 relative">
+<div class="absolute left-[23px] top-4 bottom-4 w-0.5 bg-teal-200"></div>
 
-    <!-- Activity 1 -->
-    <div class="relative flex gap-3 pb-4">
-      <div class="relative z-10 w-4 h-4 bg-teal-500 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
-      <div class="flex-1 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
-        <div class="flex justify-between items-start mb-1">
-          <span class="text-[10px] text-teal-500 font-semibold">09:00 - 12:00</span>
-          <div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
-            <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-          </div>
-        </div>
-        <h4 class="text-[12px] font-bold text-gray-800">伏见稻荷大社</h4>
-        <p class="text-[10px] text-gray-500 mt-0.5">千本鸟居 · 建议3小时</p>
-        <div class="flex items-center gap-1.5 mt-2">
-          <span class="px-1.5 py-0.5 bg-blue-50 text-blue-600 text-[8px] rounded">JR奈良线</span>
-          <span class="text-[8px] text-gray-400">约20分钟</span>
-        </div>
-      </div>
-    </div>
+<div class="relative flex gap-3 pb-4">
+<div class="relative z-10 w-4 h-4 bg-teal-500 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
+<div class="flex-1 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] text-teal-500 font-semibold">09:00 - 12:00</span>
+<div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
+<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+</div>
+</div>
+<h4 class="text-[12px] font-bold text-gray-800">伏见稻荷大社</h4>
+<p class="text-[10px] text-gray-500 mt-0.5">千本鸟居 · 建议3小时</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-1.5 py-0.5 bg-blue-50 text-blue-600 text-[8px] rounded">JR奈良线</span>
+<span class="text-[8px] text-gray-400">约20分钟</span>
+</div>
+</div>
+</div>
 
-    <!-- Activity 2 -->
-    <div class="relative flex gap-3 pb-4">
-      <div class="relative z-10 w-4 h-4 bg-cyan-400 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
-      <div class="flex-1 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
-        <div class="flex justify-between items-start mb-1">
-          <span class="text-[10px] text-cyan-500 font-semibold">12:30 - 13:30</span>
-          <div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
-            <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-          </div>
-        </div>
-        <h4 class="text-[12px] font-bold text-gray-800">午餐 · 伏见美食</h4>
-        <p class="text-[10px] text-gray-500 mt-0.5">推荐：稻荷茶寮抹茶甜品</p>
-        <div class="flex items-center gap-1.5 mt-2">
-          <span class="px-1.5 py-0.5 bg-orange-50 text-orange-500 text-[8px] rounded">🍜 美食</span>
-          <span class="text-[8px] text-gray-400">步行5分钟</span>
-        </div>
-      </div>
-    </div>
+<div class="relative flex gap-3 pb-4">
+<div class="relative z-10 w-4 h-4 bg-cyan-400 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
+<div class="flex-1 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] text-cyan-500 font-semibold">12:30 - 13:30</span>
+<div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
+<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+</div>
+</div>
+<h4 class="text-[12px] font-bold text-gray-800">午餐 · 伏见美食</h4>
+<p class="text-[10px] text-gray-500 mt-0.5">推荐：稻荷茶寮抹茶甜品</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-1.5 py-0.5 bg-orange-50 text-orange-500 text-[8px] rounded">🍜 美食</span>
+<span class="text-[8px] text-gray-400">步行5分钟</span>
+</div>
+</div>
+</div>
 
-    <!-- Activity 3 -->
-    <div class="relative flex gap-3 pb-3">
-      <div class="relative z-10 w-4 h-4 bg-white border-2 border-teal-300 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
-      <div class="flex-1 bg-white border border-dashed border-teal-200 rounded-xl p-3">
-        <div class="flex justify-between items-start mb-1">
-          <span class="text-[10px] text-teal-400 font-semibold">14:00 - 17:00</span>
-          <div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
-            <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-          </div>
-        </div>
-        <h4 class="text-[12px] font-bold text-gray-800">清水寺</h4>
-        <p class="text-[10px] text-gray-500 mt-0.5">世界遗产 · 建议3小时</p>
-        <div class="flex items-center gap-1.5 mt-2">
-          <span class="px-1.5 py-0.5 bg-teal-50 text-teal-500 text-[8px] rounded">🚌 巴士</span>
-          <span class="text-[8px] text-gray-400">约30分钟</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="relative flex gap-3 pb-3">
+<div class="relative z-10 w-4 h-4 bg-white border-2 border-teal-300 rounded-full mt-1 flex-shrink-0 ring-2 ring-white"></div>
+<div class="flex-1 bg-white border border-dashed border-teal-200 rounded-xl p-3">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] text-teal-400 font-semibold">14:00 - 17:00</span>
+<div class="w-5 h-5 rounded-full bg-gray-50 flex items-center justify-center">
+<svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+</div>
+</div>
+<h4 class="text-[12px] font-bold text-gray-800">清水寺</h4>
+<p class="text-[10px] text-gray-500 mt-0.5">世界遗产 · 建议3小时</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-1.5 py-0.5 bg-teal-50 text-teal-500 text-[8px] rounded">🚌 巴士</span>
+<span class="text-[8px] text-gray-400">约30分钟</span>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- AI Optimize Button -->
-  <div class="px-4 pb-4">
-    <div class="flex items-center gap-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl px-4 py-3">
-      <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      </div>
-      <span class="text-white text-[12px] font-semibold">AI 智能优化行程</span>
-      <span class="text-white/70 text-[10px] ml-auto">考虑交通衔接</span>
-    </div>
-  </div>
+<div class="px-4 pb-4">
+<div class="flex items-center gap-2 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl px-4 py-3">
+<div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+</div>
+<span class="text-white text-[12px] font-semibold">AI 智能优化行程</span>
+<span class="text-white/70 text-[10px] ml-auto">考虑交通衔接</span>
+</div>
+</div>
 
-  <!-- Bottom Nav -->
-  <div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-      <span class="text-[9px] text-gray-400">探索</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="text-[9px] font-medium text-teal-500">规划</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      <span class="text-[9px] text-gray-400">旅行</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="text-[9px] text-gray-400">我的</span>
-    </div>
-  </div>
+<div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+<span class="text-[9px] text-gray-400">探索</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<span class="text-[9px] font-medium text-teal-500">规划</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+<span class="text-[9px] text-gray-400">旅行</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<span class="text-[9px] text-gray-400">我的</span>
+</div>
+</div>
 </div>
 
 ### 屏幕三：旅行详情页
 
 <div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
-  <!-- Status Bar -->
-  <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
-    <span class="text-white/90 text-[11px] font-medium">9:41</span>
-    <div class="flex items-center gap-1">
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
-    </div>
-  </div>
+<div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
+<span class="text-white/90 text-[11px] font-medium">9:41</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+</div>
+</div>
 
-  <!-- Map Area -->
-  <div class="relative h-44 bg-gradient-to-br from-teal-100 via-cyan-50 to-emerald-100">
-    <!-- Map grid lines -->
-    <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-      <defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0D9488" stroke-width="0.5"/></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#grid)"/>
-    </svg>
-    <!-- Route line -->
-    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 176">
-      <path d="M 40 140 Q 80 100 120 110 T 200 80 T 280 60" fill="none" stroke="#0D9488" stroke-width="2.5" stroke-dasharray="6 3"/>
-      <circle cx="40" cy="140" r="6" fill="#0D9488"/><text x="40" y="144" text-anchor="middle" fill="white" font-size="7" font-weight="bold">1</text>
-      <circle cx="120" cy="110" r="6" fill="#06B6D4"/><text x="120" y="114" text-anchor="middle" fill="white" font-size="7" font-weight="bold">2</text>
-      <circle cx="200" cy="80" r="6" fill="#06B6D4"/><text x="200" y="84" text-anchor="middle" fill="white" font-size="7" font-weight="bold">3</text>
-      <circle cx="280" cy="60" r="6" fill="#F97316"/><text x="280" y="64" text-anchor="middle" fill="white" font-size="7" font-weight="bold">4</text>
-    </svg>
-    <!-- Weather overlay -->
-    <div class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm rounded-lg px-2 py-1.5 flex items-center gap-1.5">
-      <span class="text-[14px]">🌤</span>
-      <div>
-        <span class="text-[10px] font-semibold text-gray-700">22°C</span>
-        <span class="text-[8px] text-gray-400 block">晴转多云</span>
-      </div>
-    </div>
-    <!-- Day indicator -->
-    <div class="absolute top-2 left-2 bg-teal-500/90 backdrop-blur-sm rounded-lg px-2.5 py-1">
-      <span class="text-white text-[10px] font-bold">Day 2 · 清水寺周边</span>
-    </div>
-  </div>
+<div class="relative h-44 bg-gradient-to-br from-teal-100 via-cyan-50 to-emerald-100">
+<svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0D9488" stroke-width="0.5"/></pattern></defs>
+<rect width="100%" height="100%" fill="url(#grid)"/>
+</svg>
+<svg class="absolute inset-0 w-full h-full" viewBox="0 0 320 176">
+<path d="M 40 140 Q 80 100 120 110 T 200 80 T 280 60" fill="none" stroke="#0D9488" stroke-width="2.5" stroke-dasharray="6 3"/>
+<circle cx="40" cy="140" r="6" fill="#0D9488"/><text x="40" y="144" text-anchor="middle" fill="white" font-size="7" font-weight="bold">1</text>
+<circle cx="120" cy="110" r="6" fill="#06B6D4"/><text x="120" y="114" text-anchor="middle" fill="white" font-size="7" font-weight="bold">2</text>
+<circle cx="200" cy="80" r="6" fill="#06B6D4"/><text x="200" y="84" text-anchor="middle" fill="white" font-size="7" font-weight="bold">3</text>
+<circle cx="280" cy="60" r="6" fill="#F97316"/><text x="280" y="64" text-anchor="middle" fill="white" font-size="7" font-weight="bold">4</text>
+</svg>
+<div class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm rounded-lg px-2 py-1.5 flex items-center gap-1.5">
+<span class="text-[14px]">🌤</span>
+<div>
+<span class="text-[10px] font-semibold text-gray-700">22°C</span>
+<span class="text-[8px] text-gray-400 block">晴转多云</span>
+</div>
+</div>
+<div class="absolute top-2 left-2 bg-teal-500/90 backdrop-blur-sm rounded-lg px-2.5 py-1">
+<span class="text-white text-[10px] font-bold">Day 2 · 清水寺周边</span>
+</div>
+</div>
 
-  <!-- Day Summary -->
-  <div class="px-4 py-3 border-b border-gray-100">
-    <div class="flex items-center justify-between">
-      <div>
-        <h3 class="text-[13px] font-bold text-gray-800">Day 2 行程</h3>
-        <p class="text-[10px] text-gray-500 mt-0.5">4个活动 · 步行2.3km</p>
-      </div>
-      <div class="flex gap-1">
-        <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] rounded-full font-medium">已完成 2</span>
-        <span class="px-2 py-0.5 bg-teal-50 text-teal-600 text-[9px] rounded-full font-medium">剩余 2</span>
-      </div>
-    </div>
-  </div>
+<div class="px-4 py-3 border-b border-gray-100">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-[13px] font-bold text-gray-800">Day 2 行程</h3>
+<p class="text-[10px] text-gray-500 mt-0.5">4个活动 · 步行2.3km</p>
+</div>
+<div class="flex gap-1">
+<span class="px-2 py-0.5 bg-green-50 text-green-600 text-[9px] rounded-full font-medium">已完成 2</span>
+<span class="px-2 py-0.5 bg-teal-50 text-teal-600 text-[9px] rounded-full font-medium">剩余 2</span>
+</div>
+</div>
+</div>
 
-  <!-- Activity List -->
-  <div class="px-4 py-3 space-y-2.5">
-    <!-- Completed -->
-    <div class="flex items-center gap-3 p-2.5 bg-gray-50 rounded-xl opacity-70">
-      <div class="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-        <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-semibold text-gray-500 line-through">伏见稻荷大社</p>
-        <p class="text-[9px] text-gray-400">09:00-12:00 · 已完成</p>
-      </div>
-    </div>
+<div class="px-4 py-3 space-y-2.5">
+<div class="flex items-center gap-3 p-2.5 bg-gray-50 rounded-xl opacity-70">
+<div class="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[11px] font-semibold text-gray-500 line-through">伏见稻荷大社</p>
+<p class="text-[9px] text-gray-400">09:00-12:00 · 已完成</p>
+</div>
+</div>
 
-    <!-- Completed -->
-    <div class="flex items-center gap-3 p-2.5 bg-gray-50 rounded-xl opacity-70">
-      <div class="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-        <svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-semibold text-gray-500 line-through">午餐 · 伏见美食</p>
-        <p class="text-[9px] text-gray-400">12:30-13:30 · 已完成</p>
-      </div>
-    </div>
+<div class="flex items-center gap-3 p-2.5 bg-gray-50 rounded-xl opacity-70">
+<div class="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+<svg class="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[11px] font-semibold text-gray-500 line-through">午餐 · 伏见美食</p>
+<p class="text-[9px] text-gray-400">12:30-13:30 · 已完成</p>
+</div>
+</div>
 
-    <!-- Current -->
-    <div class="flex items-center gap-3 p-2.5 bg-teal-50 border border-teal-200 rounded-xl">
-      <div class="w-7 h-7 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
-        <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-      </div>
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-bold text-teal-700">清水寺</p>
-        <p class="text-[9px] text-teal-600">14:00-17:00 · 进行中</p>
-      </div>
-      <svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
+<div class="flex items-center gap-3 p-2.5 bg-teal-50 border border-teal-200 rounded-xl">
+<div class="w-7 h-7 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+<svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[11px] font-bold text-teal-700">清水寺</p>
+<p class="text-[9px] text-teal-600">14:00-17:00 · 进行中</p>
+</div>
+<svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+</div>
 
-    <!-- Upcoming -->
-    <div class="flex items-center gap-3 p-2.5 bg-white border border-gray-100 rounded-xl">
-      <div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-        <span class="text-[10px] text-gray-400">4</span>
-      </div>
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-semibold text-gray-700">二年坂散步</p>
-        <p class="text-[9px] text-gray-500">17:30-18:30 · 即将开始</p>
-      </div>
-      <svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-  </div>
+<div class="flex items-center gap-3 p-2.5 bg-white border border-gray-100 rounded-xl">
+<div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+<span class="text-[10px] text-gray-400">4</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[11px] font-semibold text-gray-700">二年坂散步</p>
+<p class="text-[9px] text-gray-500">17:30-18:30 · 即将开始</p>
+</div>
+<svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+</div>
+</div>
 
-  <!-- Bottom Nav -->
-  <div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-      <span class="text-[9px] text-gray-400">探索</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="text-[9px] text-gray-400">规划</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      <span class="text-[9px] font-medium text-teal-500">旅行</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="text-[9px] text-gray-400">我的</span>
-    </div>
-  </div>
+<div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+<span class="text-[9px] text-gray-400">探索</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<span class="text-[9px] text-gray-400">规划</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+<span class="text-[9px] font-medium text-teal-500">旅行</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<span class="text-[9px] text-gray-400">我的</span>
+</div>
+</div>
 </div>
 
 ### 屏幕四：实时导航模式
 
 <div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
-  <!-- Status Bar -->
-  <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
-    <span class="text-white/90 text-[11px] font-medium">9:41</span>
-    <div class="flex items-center gap-1">
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
-    </div>
-  </div>
+<div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
+<span class="text-white/90 text-[11px] font-medium">9:41</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+</div>
+</div>
 
-  <!-- Current Activity Banner -->
-  <div class="bg-gradient-to-r from-teal-500 to-cyan-500 px-4 py-3">
-    <div class="flex items-center justify-between">
-      <div>
-        <p class="text-white/70 text-[9px] uppercase tracking-wider font-medium">当前位置</p>
-        <h3 class="text-white text-[15px] font-bold mt-0.5">清水寺</h3>
-      </div>
-      <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-      </div>
-    </div>
-    <div class="flex items-center gap-3 mt-2">
-      <div class="flex items-center gap-1">
-        <svg class="w-3 h-3 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span class="text-white/80 text-[10px]">已停留 1h 23m</span>
-      </div>
-      <div class="flex items-center gap-1">
-        <svg class="w-3 h-3 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="text-white/80 text-[10px]">清水区</span>
-      </div>
-    </div>
-  </div>
+<div class="bg-gradient-to-r from-teal-500 to-cyan-500 px-4 py-3">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-white/70 text-[9px] uppercase tracking-wider font-medium">当前位置</p>
+<h3 class="text-white text-[15px] font-bold mt-0.5">清水寺</h3>
+</div>
+<div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+</div>
+</div>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center gap-1">
+<svg class="w-3 h-3 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span class="text-white/80 text-[10px]">已停留 1h 23m</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-3 h-3 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<span class="text-white/80 text-[10px]">清水区</span>
+</div>
+</div>
+</div>
 
-  <!-- Offline Indicator -->
-  <div class="bg-amber-50 border-b border-amber-100 px-4 py-2 flex items-center gap-2">
-    <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-    <span class="text-amber-700 text-[10px] font-medium">离线模式 · 数据已缓存</span>
-    <div class="ml-auto flex items-center gap-1">
-      <div class="w-3 h-3 bg-amber-400 rounded-full flex items-center justify-center">
-        <svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 019 8.26m-5.38 1.68A10.94 10.94 0 014.34 12M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
-      </div>
-    </div>
-  </div>
+<div class="bg-amber-50 border-b border-amber-100 px-4 py-2 flex items-center gap-2">
+<div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+<span class="text-amber-700 text-[10px] font-medium">离线模式 · 数据已缓存</span>
+<div class="ml-auto flex items-center gap-1">
+<div class="w-3 h-3 bg-amber-400 rounded-full flex items-center justify-center">
+<svg class="w-2 h-2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 019 8.26m-5.38 1.68A10.94 10.94 0 014.34 12M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+</div>
+</div>
+</div>
 
-  <!-- Mini Map -->
-  <div class="relative h-28 bg-gradient-to-br from-teal-50 to-cyan-50 mx-4 mt-3 rounded-xl overflow-hidden">
-    <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-      <defs><pattern id="miniGrid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M 12 0 L 0 0 0 12" fill="none" stroke="#0D9488" stroke-width="0.3"/></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#miniGrid)"/>
-    </svg>
-    <!-- Route -->
-    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 290 112">
-      <path d="M 50 90 Q 100 50 150 60 T 240 30" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 2"/>
-      <!-- Current position -->
-      <circle cx="150" cy="60" r="8" fill="#0D9488" opacity="0.2"/><circle cx="150" cy="60" r="4" fill="#0D9488"/>
-      <!-- Next destination -->
-      <circle cx="240" cy="30" r="5" fill="#F97316"/>
-    </svg>
-    <div class="absolute bottom-1.5 left-1.5 bg-white/80 backdrop-blur-sm rounded px-1.5 py-0.5">
-      <span class="text-[8px] text-gray-600 font-medium">到下一站：步行 12 分钟</span>
-    </div>
-  </div>
+<div class="relative h-28 bg-gradient-to-br from-teal-50 to-cyan-50 mx-4 mt-3 rounded-xl overflow-hidden">
+<svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="miniGrid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M 12 0 L 0 0 0 12" fill="none" stroke="#0D9488" stroke-width="0.3"/></pattern></defs>
+<rect width="100%" height="100%" fill="url(#miniGrid)"/>
+</svg>
+<svg class="absolute inset-0 w-full h-full" viewBox="0 0 290 112">
+<path d="M 50 90 Q 100 50 150 60 T 240 30" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 2"/>
+<circle cx="150" cy="60" r="8" fill="#0D9488" opacity="0.2"/><circle cx="150" cy="60" r="4" fill="#0D9488"/>
+<circle cx="240" cy="30" r="5" fill="#F97316"/>
+</svg>
+<div class="absolute bottom-1.5 left-1.5 bg-white/80 backdrop-blur-sm rounded px-1.5 py-0.5">
+<span class="text-[8px] text-gray-600 font-medium">到下一站：步行 12 分钟</span>
+</div>
+</div>
 
-  <!-- Next Activity Card -->
-  <div class="mx-4 mt-3 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
-    <div class="flex items-center justify-between mb-1.5">
-      <span class="text-[9px] font-semibold text-orange-500 uppercase tracking-wider">下一站</span>
-      <span class="text-[9px] text-gray-400">17:30 开始</span>
-    </div>
-    <div class="flex items-center gap-2.5">
-      <div class="w-10 h-10 bg-gradient-to-br from-orange-200 to-amber-300 rounded-lg flex-shrink-0"></div>
-      <div class="flex-1">
-        <h4 class="text-[12px] font-bold text-gray-800">二年坂散步</h4>
-        <p class="text-[9px] text-gray-500 mt-0.5">京都最有韵味的老街</p>
-        <div class="flex items-center gap-2 mt-1">
-          <span class="text-[8px] text-gray-400">📍 步行 12分钟</span>
-          <span class="text-[8px] text-gray-400">⏱ 约1小时</span>
-        </div>
-      </div>
-      <svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </div>
-  </div>
+<div class="mx-4 mt-3 bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-[9px] font-semibold text-orange-500 uppercase tracking-wider">下一站</span>
+<span class="text-[9px] text-gray-400">17:30 开始</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 bg-gradient-to-br from-orange-200 to-amber-300 rounded-lg flex-shrink-0"></div>
+<div class="flex-1">
+<h4 class="text-[12px] font-bold text-gray-800">二年坂散步</h4>
+<p class="text-[9px] text-gray-500 mt-0.5">京都最有韵味的老街</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[8px] text-gray-400">📍 步行 12分钟</span>
+<span class="text-[8px] text-gray-400">⏱ 约1小时</span>
+</div>
+</div>
+<svg class="w-4 h-4 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+</div>
+</div>
 
-  <!-- Quick Actions -->
-  <div class="px-4 py-3">
-    <div class="flex gap-2">
-      <div class="flex-1 bg-green-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
-        <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        <span class="text-[10px] font-medium text-green-600">已到达</span>
-      </div>
-      <div class="flex-1 bg-orange-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
-        <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
-        <span class="text-[10px] font-medium text-orange-600">去用餐</span>
-      </div>
-      <div class="flex-1 bg-gray-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
-        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M5.07 19H18.93a2 2 0 001.737-3.002L13.737 4a2 2 0 00-3.474 0L3.333 15.998A2 2 0 005.07 19z"/></svg>
-        <span class="text-[10px] font-medium text-gray-600">需要帮助</span>
-      </div>
-    </div>
-  </div>
+<div class="px-4 py-3">
+<div class="flex gap-2">
+<div class="flex-1 bg-green-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
+<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+<span class="text-[10px] font-medium text-green-600">已到达</span>
+</div>
+<div class="flex-1 bg-orange-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
+<svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+<span class="text-[10px] font-medium text-orange-600">去用餐</span>
+</div>
+<div class="flex-1 bg-gray-50 rounded-xl py-2.5 flex flex-col items-center gap-1">
+<svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M5.07 19H18.93a2 2 0 001.737-3.002L13.737 4a2 2 0 00-3.474 0L3.333 15.998A2 2 0 005.07 19z"/></svg>
+<span class="text-[10px] font-medium text-gray-600">需要帮助</span>
+</div>
+</div>
+</div>
 
-  <!-- Bottom Nav -->
-  <div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-      <span class="text-[9px] text-gray-400">探索</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="text-[9px] text-gray-400">规划</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      <span class="text-[9px] font-medium text-teal-500">旅行</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="text-[9px] text-gray-400">我的</span>
-    </div>
-  </div>
+<div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+<span class="text-[9px] text-gray-400">探索</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<span class="text-[9px] text-gray-400">规划</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+<span class="text-[9px] font-medium text-teal-500">旅行</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<span class="text-[9px] text-gray-400">我的</span>
+</div>
+</div>
 </div>
 
 ### 屏幕五：社交分享动态卡
 
 <div class="my-8 mx-auto max-w-[320px] rounded-[2rem] border-2 border-gray-200 overflow-hidden shadow-2xl bg-white">
-  <!-- Status Bar -->
-  <div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
-    <span class="text-white/90 text-[11px] font-medium">9:41</span>
-    <div class="flex items-center gap-1">
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-      <svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
-    </div>
-  </div>
+<div class="h-11 bg-gradient-to-r from-teal-500 to-cyan-500 flex items-end justify-between px-6 pb-1.5">
+<span class="text-white/90 text-[11px] font-medium">9:41</span>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+<svg class="w-3.5 h-3.5 text-white/90" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+</div>
+</div>
 
-  <!-- Header -->
-  <div class="px-4 pt-3 pb-2 flex items-center justify-between">
-    <h3 class="text-[14px] font-bold text-gray-800">社区动态</h3>
-    <div class="flex items-center gap-1">
-      <div class="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center">
-        <svg class="w-3 h-3 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pt-3 pb-2 flex items-center justify-between">
+<h3 class="text-[14px] font-bold text-gray-800">社区动态</h3>
+<div class="flex items-center gap-1">
+<div class="w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center">
+<svg class="w-3 h-3 text-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+</div>
+</div>
+</div>
 
-  <!-- Story Bubbles -->
-  <div class="px-4 pb-3 flex gap-3">
-    <div class="flex flex-col items-center gap-1">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-cyan-400 p-0.5">
-        <div class="w-full h-full rounded-full bg-white p-0.5">
-          <div class="w-full h-full rounded-full bg-gradient-to-br from-teal-300 to-cyan-300"></div>
-        </div>
-      </div>
-      <span class="text-[8px] text-gray-500">我的旅程</span>
-    </div>
-    <div class="flex flex-col items-center gap-1">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-orange-400 p-0.5">
-        <div class="w-full h-full rounded-full bg-white p-0.5">
-          <div class="w-full h-full rounded-full bg-gradient-to-br from-rose-300 to-orange-300"></div>
-        </div>
-      </div>
-      <span class="text-[8px] text-gray-500">小鱼</span>
-    </div>
-    <div class="flex flex-col items-center gap-1">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-400 to-pink-400 p-0.5">
-        <div class="w-full h-full rounded-full bg-white p-0.5">
-          <div class="w-full h-full rounded-full bg-gradient-to-br from-violet-300 to-pink-300"></div>
-        </div>
-      </div>
-      <span class="text-[8px] text-gray-500">阿杰</span>
-    </div>
-    <div class="flex flex-col items-center gap-1">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-yellow-400 p-0.5">
-        <div class="w-full h-full rounded-full bg-white p-0.5">
-          <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-300 to-yellow-300"></div>
-        </div>
-      </div>
-      <span class="text-[8px] text-gray-500">旅行家</span>
-    </div>
-  </div>
+<div class="px-4 pb-3 flex gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-cyan-400 p-0.5">
+<div class="w-full h-full rounded-full bg-white p-0.5">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-teal-300 to-cyan-300"></div>
+</div>
+</div>
+<span class="text-[8px] text-gray-500">我的旅程</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-orange-400 p-0.5">
+<div class="w-full h-full rounded-full bg-white p-0.5">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-rose-300 to-orange-300"></div>
+</div>
+</div>
+<span class="text-[8px] text-gray-500">小鱼</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-400 to-pink-400 p-0.5">
+<div class="w-full h-full rounded-full bg-white p-0.5">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-violet-300 to-pink-300"></div>
+</div>
+</div>
+<span class="text-[8px] text-gray-500">阿杰</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-yellow-400 p-0.5">
+<div class="w-full h-full rounded-full bg-white p-0.5">
+<div class="w-full h-full rounded-full bg-gradient-to-br from-amber-300 to-yellow-300"></div>
+</div>
+</div>
+<span class="text-[8px] text-gray-500">旅行家</span>
+</div>
+</div>
 
-  <!-- Post Card -->
-  <div class="px-4 pb-3">
-    <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
-      <!-- User info -->
-      <div class="flex items-center gap-2.5 p-3 pb-2">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-orange-400"></div>
-        <div class="flex-1">
-          <p class="text-[11px] font-bold text-gray-800">小鱼的旅行日记</p>
-          <p class="text-[9px] text-gray-400">2小时前 · 京都</p>
-        </div>
-        <div class="flex items-center gap-1">
-          <span class="px-1.5 py-0.5 bg-teal-50 text-teal-500 text-[8px] rounded-full">AI生成</span>
-        </div>
-      </div>
-      <!-- Photo grid -->
-      <div class="grid grid-cols-2 gap-0.5 px-0.5">
-        <div class="h-24 bg-gradient-to-br from-teal-300 to-cyan-400"></div>
-        <div class="h-24 bg-gradient-to-br from-orange-300 to-rose-400"></div>
-        <div class="h-20 bg-gradient-to-br from-amber-200 to-orange-300"></div>
-        <div class="h-20 bg-gradient-to-br from-emerald-200 to-teal-300"></div>
-      </div>
-      <!-- AI generated caption -->
-      <div class="p-3">
-        <p class="text-[10px] text-gray-600 leading-relaxed">Day 2 的京都之旅完美收官！从千本鸟居到清水寺，每一步都像走在画里。AI 帮我规划的路线刚好避开了人流高峰，下午在清水寺看到了超美的日落...</p>
-        <div class="flex items-center gap-4 mt-2.5">
-          <div class="flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-rose-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span class="text-[10px] text-gray-500">328</span>
-          </div>
-          <div class="flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span class="text-[10px] text-gray-500">56</span>
-          </div>
-          <div class="flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span class="text-[10px] text-gray-500">分享</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="px-4 pb-3">
+<div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+<div class="flex items-center gap-2.5 p-3 pb-2">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-orange-400"></div>
+<div class="flex-1">
+<p class="text-[11px] font-bold text-gray-800">小鱼的旅行日记</p>
+<p class="text-[9px] text-gray-400">2小时前 · 京都</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.5 bg-teal-50 text-teal-500 text-[8px] rounded-full">AI生成</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-0.5 px-0.5">
+<div class="h-24 bg-gradient-to-br from-teal-300 to-cyan-400"></div>
+<div class="h-24 bg-gradient-to-br from-orange-300 to-rose-400"></div>
+<div class="h-20 bg-gradient-to-br from-amber-200 to-orange-300"></div>
+<div class="h-20 bg-gradient-to-br from-emerald-200 to-teal-300"></div>
+</div>
+<div class="p-3">
+<p class="text-[10px] text-gray-600 leading-relaxed">Day 2 的京都之旅完美收官！从千本鸟居到清水寺，每一步都像走在画里。AI 帮我规划的路线刚好避开了人流高峰，下午在清水寺看到了超美的日落...</p>
+<div class="flex items-center gap-4 mt-2.5">
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-rose-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+<span class="text-[10px] text-gray-500">328</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+<span class="text-[10px] text-gray-500">56</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+<span class="text-[10px] text-gray-500">分享</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- Bottom Nav -->
-  <div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-      <span class="text-[9px] text-gray-400">探索</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="text-[9px] text-gray-400">规划</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-      <span class="text-[9px] text-gray-400">旅行</span>
-    </div>
-    <div class="flex flex-col items-center gap-0.5">
-      <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="text-[9px] font-medium text-teal-500">我的</span>
-    </div>
-  </div>
+<div class="h-14 border-t border-gray-100 flex items-center justify-around px-2">
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+<span class="text-[9px] text-gray-400">探索</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<span class="text-[9px] text-gray-400">规划</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+<span class="text-[9px] text-gray-400">旅行</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<span class="text-[9px] font-medium text-teal-500">我的</span>
+</div>
+</div>
 </div>
 
 ---
