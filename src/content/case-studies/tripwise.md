@@ -31,7 +31,10 @@ metrics:
     value: "4.9/5"
 ---
 
-## background
+<div id="background"></div>
+
+## 项目背景
+
 
 ### 问题定义
 
@@ -59,7 +62,10 @@ metrics:
 
 ---
 
-## research
+<div id="research"></div>
+
+## 用户研究
+
 
 ### 用户访谈关键洞察
 
@@ -104,7 +110,10 @@ metrics:
 
 ---
 
-## architecture
+<div id="architecture"></div>
+
+## 信息架构
+
 
 ### 信息架构
 
@@ -163,7 +172,10 @@ TripWise
 
 ---
 
-## wireframe
+<div id="wireframe"></div>
+
+## 线框图
+
 
 ### 线框图一：目的地探索页
 
@@ -191,7 +203,10 @@ TripWise
 
 ---
 
-## visual
+<div id="visual"></div>
+
+## 视觉设计
+
 
 ### 设计理念："自在漫游，轻松规划"
 
@@ -236,7 +251,10 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ---
 
-## high-fidelity
+<div id="high-fidelity"></div>
+
+## 高保真设计
+
 
 ### 屏幕一：目的地探索页
 
@@ -863,7 +881,10 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ---
 
-## interaction
+<div id="interaction"></div>
+
+## 交互设计
+
 
 ### 地图交互
 
@@ -893,7 +914,10 @@ TripWise 的设计哲学核心是"减负"——减轻旅行规划的认知负担
 
 ---
 
-## results
+<div id="results"></div>
+
+## 结果与反思
+
 
 ### 核心数据指标
 
