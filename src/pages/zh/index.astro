@@ -5,11 +5,11 @@ import { ui } from '../../data/i18n';
 
 const lang = 'zh';
 const t = ui[lang];
-
+const base = import.meta.env.BASE_URL;
 
 const directions = [
   {
-    href: `/zh/unity`,
+    href: `${base}zh/unity`,
     title: 'Unity 游戏开发',
     desc: '互动体验与游戏创作',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v6c0 1.243 1.007 2.25 2.25 2.25h9a2.25 2.25 0 002.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087V4.5a2.25 2.25 0 00-2.25-2.25h-4.5A2.25 2.25 0 005.25 4.5v1.587"/></svg>`,

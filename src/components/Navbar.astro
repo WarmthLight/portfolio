@@ -5,21 +5,20 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 
 const { lang } = Astro.props;
 const t = ui[lang];
-
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: `/${lang}/unity`, label: t.nav.unity },
-  { href: `/${lang}/uiux`, label: t.nav.uiux },
-  { href: `/${lang}/aigc`, label: t.nav.aigc },
-  { href: `/${lang}/about`, label: t.nav.about },
+  { href: `${base}${lang}/unity`, label: t.nav.unity },
+  { href: `${base}${lang}/uiux`, label: t.nav.uiux },
+  { href: `${base}${lang}/aigc`, label: t.nav.aigc },
+  { href: `${base}${lang}/about`, label: t.nav.about },
 ];
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 glass-nav" id="navbar">
   <div class="px-6 sm:px-8 lg:px-16 h-16 flex items-center justify-between">
-    <!-- Logo -->
-    <a href={`/${lang}/`} class="flex items-center gap-2.5 group flex-shrink-0">
+    <a href={`${base}${lang}/`} class="flex items-center gap-2.5 group flex-shrink-0">
       <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
         <span class="text-white text-sm font-bold">P</span>
       </div>
@@ -27,11 +26,9 @@ const navLinks = [
         {site.name[lang]}
       </span>
     </a>
-
-    <!-- 桌面端导航 -->
     <div class="hidden md:flex items-center gap-0.5">
       {navLinks.map(link => {
-        const isActive = currentPath.startsWith(link.href);
+        const isActive = currentPath.includes(link.href);
         return (
           <a
             href={link.href}
@@ -51,8 +48,6 @@ const navLinks = [
       <div class="w-px h-5 bg-[var(--color-border)] mx-3"></div>
       <LanguageSwitcher lang={lang} currentPath={currentPath} />
     </div>
-
-    <!-- 移动端汉堡按钮 -->
     <button
       id="menu-toggle"
       class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors"
@@ -66,15 +61,13 @@ const navLinks = [
       </svg>
     </button>
   </div>
-
-  <!-- 移动端菜单 -->
   <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border-light)] bg-white/95 backdrop-blur-xl">
     <div class="px-4 py-4 space-y-1">
       {navLinks.map(link => (
         <a
           href={link.href}
           class={`block px-4 py-2.5 rounded-lg text-sm transition-all ${
-            currentPath.startsWith(link.href)
+            currentPath.includes(link.href)
               ? 'text-[var(--color-primary)] bg-[var(--color-primary-50)] font-medium'
               : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
           }`}
