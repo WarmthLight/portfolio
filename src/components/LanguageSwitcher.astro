@@ -1,0 +1,10 @@
+---
+const { lang, currentPath } = Astro.props;
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherLabel = lang === 'zh' ? 'EN' : '中文';
+const newPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+---
+
+<a href={newPath} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
+  {otherLabel}
+</a>

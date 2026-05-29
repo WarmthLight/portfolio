@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+
+const { lang } = Astro.props;
+---
+
+<footer class="border-t border-[var(--color-border)] py-8 mt-16">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between text-sm text-[var(--color-text-muted)]">
+    <span>&copy; {new Date().getFullYear()} {site.name[lang]}</span>
+    <a href={site.github} target="_blank" rel="noopener" class="hover:text-[var(--color-primary)] transition-colors">
+      GitHub
+    </a>
+  </div>
+</footer>
