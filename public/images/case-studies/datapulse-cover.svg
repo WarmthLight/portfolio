@@ -1,27 +1,95 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1E1B4B"/>
-      <stop offset="50%" style="stop-color:#1E3A5F"/>
-      <stop offset="100%" style="stop-color:#1E40AF"/>
+      <stop offset="0%" style="stop-color:#1E40AF"/>
+      <stop offset="50%" style="stop-color:#2563EB"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
     </linearGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
   </defs>
   <rect width="1200" height="675" fill="url(#bg)"/>
-  <circle cx="200" cy="150" r="80" fill="#60A5FA" opacity="0.12"/>
-  <circle cx="1000" cy="500" r="100" fill="#93C5FD" opacity="0.08"/>
-  <rect x="80" y="180" width="320" height="280" rx="12" fill="#1E1B4B" stroke="#1E3A5F" stroke-width="1"/>
-  <rect x="100" y="200" width="100" height="8" rx="4" fill="#60A5FA" opacity="0.6"/>
-  <rect x="100" y="220" width="200" height="6" rx="3" fill="#334155"/>
-  <rect x="100" y="250" width="80" height="90" rx="6" fill="#1E3A5F"/>
-  <rect x="200" y="250" width="80" height="90" rx="6" fill="#1E3A5F"/>
-  <rect x="100" y="360" width="280" height="8" rx="4" fill="#1E3A5F"/>
-  <rect x="100" y="385" width="180" height="6" rx="3" fill="#334155"/>
-  <rect x="800" y="160" width="320" height="300" rx="12" fill="#1E1B4B" stroke="#1E3A5F" stroke-width="1"/>
-  <rect x="820" y="180" width="120" height="8" rx="4" fill="#60A5FA" opacity="0.6"/>
-  <rect x="820" y="200" width="280" height="6" rx="3" fill="#334155"/>
-  <polyline points="820,350 880,300 940,320 1000,260 1060,280 1100,240" fill="none" stroke="#60A5FA" stroke-width="2.5" opacity="0.7"/>
-  <circle cx="1000" cy="260" r="5" fill="#60A5FA"/>
-  <rect x="820" y="380" width="280" height="40" rx="6" fill="#1E3A5F"/>
-  <text x="600" y="530" text-anchor="middle" fill="#DBEAFE" font-family="system-ui, sans-serif" font-size="32" font-weight="700">DataPulse</text>
-  <text x="600" y="560" text-anchor="middle" fill="#93C5FD" font-family="system-ui, sans-serif" font-size="14">Intelligent Analytics Platform</text>
+  <circle cx="150" cy="120" r="120" fill="#93C5FD" opacity="0.12"/>
+  <circle cx="1050" cy="550" r="150" fill="#BFDBFE" opacity="0.08"/>
+
+  <!-- 应用图标 -->
+  <g transform="translate(80, 200)">
+    <rect width="140" height="140" rx="28" fill="#2563EB" filter="url(#shadow1)"/>
+    <rect x="30" y="35" width="80" height="60" rx="4" fill="#fff" opacity="0.2"/>
+    <polyline points="40,75 55,55 70,65 85,40 100,50" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <circle cx="85" cy="40" r="4" fill="#fff"/>
+    <text x="70" y="135" text-anchor="middle" fill="#DBEAFE" font-family="system-ui, sans-serif" font-size="11" font-weight="600">DataPulse</text>
+  </g>
+
+  <!-- 桌面端界面 -->
+  <g transform="translate(280, 60)" filter="url(#shadow2)">
+    <rect width="580" height="400" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect width="580" height="28" rx="8" fill="#0F172A"/>
+    <rect y="20" width="580" height="8" fill="#0F172A"/>
+    <circle cx="14" cy="14" r="3.5" fill="#EF4444"/>
+    <circle cx="24" cy="14" r="3.5" fill="#F59E0B"/>
+    <circle cx="34" cy="14" r="3.5" fill="#22C55E"/>
+    <text x="48" y="18" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8">DataPulse</text>
+    <!-- 侧边栏 -->
+    <rect x="0" y="28" width="120" height="372" fill="#F8FAFC"/>
+    <rect x="8" y="36" width="104" height="20" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+    <text x="24" y="50" fill="#1E40AF" font-family="system-ui, sans-serif" font-size="7" font-weight="600">仪表盘</text>
+    <rect x="8" y="62" width="104" height="16" rx="3" fill="#F1F5F9"/>
+    <text x="24" y="74" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">报表中心</text>
+    <rect x="8" y="84" width="104" height="16" rx="3" fill="#F1F5F9"/>
+    <text x="24" y="96" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">数据探索</text>
+    <!-- 数据卡片 -->
+    <rect x="132" y="36" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="140" y="50" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">月活用户</text>
+    <text x="140" y="66" fill="#0F172A" font-family="system-ui, sans-serif" font-size="12" font-weight="700">24,831</text>
+    <rect x="140" y="74" width="64" height="4" rx="2" fill="#F1F5F9"/>
+    <rect x="140" y="74" width="50" height="4" rx="2" fill="#3B82F6"/>
+    <rect x="244" y="36" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="252" y="50" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">转化率</text>
+    <text x="252" y="66" fill="#0F172A" font-family="system-ui, sans-serif" font-size="12" font-weight="700">8.47%</text>
+    <rect x="252" y="74" width="64" height="4" rx="2" fill="#F1F5F9"/>
+    <rect x="252" y="74" width="42" height="4" rx="2" fill="#10B981"/>
+    <rect x="356" y="36" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="364" y="50" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">平均停留</text>
+    <text x="364" y="66" fill="#0F172A" font-family="system-ui, sans-serif" font-size="12" font-weight="700">12m 34s</text>
+    <rect x="364" y="74" width="64" height="4" rx="2" fill="#F1F5F9"/>
+    <rect x="364" y="74" width="34" height="4" rx="2" fill="#F59E0B"/>
+    <rect x="468" y="36" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="476" y="50" fill="#64748B" font-family="system-ui, sans-serif" font-size="6">月收入</text>
+    <text x="476" y="66" fill="#0F172A" font-family="system-ui, sans-serif" font-size="12" font-weight="700">¥284.6万</text>
+    <rect x="476" y="74" width="64" height="4" rx="2" fill="#F1F5F9"/>
+    <rect x="476" y="74" width="54" height="4" rx="2" fill="#6366F1"/>
+    <!-- 图表区域 -->
+    <rect x="132" y="100" width="280" height="140" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="140" y="116" fill="#0F172A" font-family="system-ui, sans-serif" font-size="7" font-weight="600">渠道转化率对比</text>
+    <rect x="148" y="190" width="22" height="36" rx="2" fill="#3B82F6"/>
+    <rect x="176" y="200" width="22" height="26" rx="2" fill="#60A5FA"/>
+    <rect x="204" y="195" width="22" height="31" rx="2" fill="#93C5FD"/>
+    <rect x="232" y="185" width="22" height="41" rx="2" fill="#2563EB"/>
+    <rect x="260" y="205" width="22" height="21" rx="2" fill="#1D4ED8"/>
+    <rect x="288" y="198" width="22" height="28" rx="2" fill="#60A5FA"/>
+    <rect x="316" y="210" width="22" height="16" rx="2" fill="#93C5FD"/>
+    <rect x="344" y="192" width="22" height="34" rx="2" fill="#3B82F6"/>
+    <rect x="420" y="100" width="152" height="140" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="428" y="116" fill="#0F172A" font-family="system-ui, sans-serif" font-size="7" font-weight="600">收入来源占比</text>
+    <circle cx="496" cy="175" r="30" fill="#2563EB"/>
+    <circle cx="496" cy="175" r="20" fill="#F8FAFC"/>
+    <rect x="428" y="218" width="6" height="6" rx="1" fill="#1E40AF"/>
+    <text x="440" y="224" fill="#64748B" font-family="system-ui, sans-serif" font-size="5">企业 42%</text>
+    <rect x="428" y="230" width="6" height="6" rx="1" fill="#3B82F6"/>
+    <text x="440" y="236" fill="#64748B" font-family="system-ui, sans-serif" font-size="5">个人 26%</text>
+    <!-- 底部趋势图 -->
+    <rect x="132" y="250" width="440" height="120" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <text x="140" y="266" fill="#0F172A" font-family="system-ui, sans-serif" font-size="7" font-weight="600">用户增长趋势</text>
+    <polyline points="148,340 188,325 228,330 268,310 308,315 348,295 388,300 428,285 468,290 508,275 548,280" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="548" cy="280" r="3" fill="#3B82F6"/>
+  </g>
+
+  <text x="600" y="560" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="32" font-weight="700">DataPulse</text>
+  <text x="600" y="590" text-anchor="middle" fill="#DBEAFE" font-family="system-ui, sans-serif" font-size="14">为非技术用户打造的企业级数据分析体验</text>
 </svg>

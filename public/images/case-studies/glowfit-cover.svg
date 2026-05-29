@@ -1,26 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#064E3B"/>
-      <stop offset="50%" style="stop-color:#065F46"/>
-      <stop offset="100%" style="stop-color:#047857"/>
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="50%" style="stop-color:#EA580C"/>
+      <stop offset="100%" style="stop-color:#DC2626"/>
     </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#EF4444"/>
+    </linearGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
   </defs>
   <rect width="1200" height="675" fill="url(#bg)"/>
-  <circle cx="250" cy="180" r="90" fill="#34D399" opacity="0.12"/>
-  <circle cx="950" cy="480" r="110" fill="#6EE7B7" opacity="0.08"/>
-  <rect x="80" y="200" width="280" height="300" rx="20" fill="#064E3B" stroke="#065F46" stroke-width="1.5"/>
-  <rect x="100" y="230" width="60" height="60" rx="12" fill="#10B981" opacity="0.3"/>
-  <rect x="100" y="310" width="180" height="10" rx="5" fill="#34D399" opacity="0.5"/>
-  <rect x="100" y="335" width="140" height="8" rx="4" fill="#065F46"/>
-  <rect x="100" y="370" width="100" height="80" rx="8" fill="#065F46"/>
-  <rect x="220" y="370" width="100" height="80" rx="8" fill="#065F46"/>
-  <rect x="100" y="470" width="220" height="30" rx="8" fill="#10B981" opacity="0.2"/>
-  <rect x="840" y="180" width="280" height="320" rx="20" fill="#064E3B" stroke="#065F46" stroke-width="1.5"/>
-  <rect x="860" y="210" width="240" height="140" rx="8" fill="#065F46"/>
-  <rect x="860" y="370" width="120" height="12" rx="6" fill="#34D399" opacity="0.4"/>
-  <rect x="860" y="400" width="180" height="8" rx="4" fill="#065F46"/>
-  <rect x="860" y="430" width="100" height="40" rx="8" fill="#10B981" opacity="0.2"/>
-  <text x="600" y="580" text-anchor="middle" fill="#D1FAE5" font-family="system-ui, sans-serif" font-size="32" font-weight="700">GlowFit</text>
-  <text x="600" y="610" text-anchor="middle" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="14">Health & Fitness Tracker</text>
+  <circle cx="150" cy="120" r="120" fill="#FDBA74" opacity="0.15"/>
+  <circle cx="1050" cy="550" r="150" fill="#FCA5A5" opacity="0.1"/>
+
+  <!-- 应用图标 -->
+  <g transform="translate(80, 180)">
+    <rect width="160" height="160" rx="32" fill="url(#iconGrad)" filter="url(#shadow1)"/>
+    <path d="M80 120 C50 100, 25 80, 25 58 C25 32, 45 18, 80 40 C115 18, 135 32, 135 58 C135 80, 110 100, 80 120" fill="#fff" opacity="0.95"/>
+    <polyline points="32,80 52,80 62,58 80,100 98,62 108,80 128,80" fill="none" stroke="#EA580C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="80" y="152" text-anchor="middle" fill="#FFF7ED" font-family="system-ui, sans-serif" font-size="12" font-weight="600">GlowFit</text>
+  </g>
+
+  <!-- 手机界面 - 今日概览 -->
+  <g transform="translate(340, 40)" filter="url(#shadow2)">
+    <rect width="240" height="480" rx="22" fill="#1F2937"/>
+    <rect x="8" y="8" width="224" height="464" rx="16" fill="#FFFFFF"/>
+    <!-- 状态栏 -->
+    <rect x="8" y="8" width="224" height="48" rx="16" fill="url(#bg)"/>
+    <text x="24" y="38" fill="#fff" font-family="system-ui, sans-serif" font-size="10">9:41</text>
+    <!-- 用户头像 -->
+    <circle cx="120" cy="80" r="22" fill="#F97316" opacity="0.2"/>
+    <circle cx="120" cy="80" r="18" fill="#FEF3C7"/>
+    <text x="120" y="85" text-anchor="middle" fill="#F97316" font-family="system-ui, sans-serif" font-size="12" font-weight="600">JS</text>
+    <!-- 进度环 -->
+    <g transform="translate(120, 160)">
+      <circle cx="0" cy="0" r="52" fill="none" stroke="#F3F4F6" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="none" stroke="url(#bg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="270 327" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#F3F4F6" stroke-width="8"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#22C55E" stroke-width="8" stroke-linecap="round" stroke-dasharray="200 251" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#F3F4F6" stroke-width="6"/>
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#EAB308" stroke-width="6" stroke-linecap="round" stroke-dasharray="140 176" transform="rotate(-90)"/>
+      <text x="0" y="5" text-anchor="middle" fill="#111827" font-family="system-ui, sans-serif" font-size="18" font-weight="700">7,246</text>
+      <text x="0" y="18" text-anchor="middle" fill="#6B7280" font-family="system-ui, sans-serif" font-size="8">/ 10,000 步</text>
+    </g>
+    <!-- 数据卡片 -->
+    <rect x="16" y="230" width="208" height="50" rx="10" fill="#FFF7ED"/>
+    <text x="28" y="248" fill="#F97316" font-family="system-ui, sans-serif" font-size="8" font-weight="600">今日建议</text>
+    <text x="28" y="268" fill="#C2410C" font-family="system-ui, sans-serif" font-size="8">再走 2,754 步即可完成目标</text>
+    <!-- 底部导航 -->
+    <rect x="0" y="420" width="240" height="52" rx="0" fill="#FFFFFF" stroke="#F3F4F6" stroke-width="1"/>
+    <text x="35" y="450" text-anchor="middle" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="8">今日</text>
+    <text x="85" y="450" text-anchor="middle" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="8">活动</text>
+    <circle cx="120" cy="435" r="16" fill="url(#bg)"/>
+    <text x="120" y="439" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14">+</text>
+    <text x="155" y="450" text-anchor="middle" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="8">挑战</text>
+    <text x="205" y="450" text-anchor="middle" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="8">我的</text>
+  </g>
+
+  <!-- 右侧卡片 -->
+  <g transform="translate(660, 80)" filter="url(#shadow2)">
+    <rect width="460" height="200" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="16" y="16" width="48" height="48" rx="12" fill="#FEF3C7"/>
+    <text x="40" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22">🏆</text>
+    <text x="76" y="36" fill="#111827" font-family="system-ui, sans-serif" font-size="15" font-weight="700">连续运动 30 天</text>
+    <text x="76" y="56" fill="#6B7280" font-family="system-ui, sans-serif" font-size="11">获得「健身达人」成就</text>
+    <circle cx="44" cy="100" r="20" fill="#FEF3C7"/>
+    <text x="44" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">💪</text>
+    <circle cx="100" cy="100" r="20" fill="#FEE2E2"/>
+    <text x="100" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">🔥</text>
+    <circle cx="156" cy="100" r="20" fill="#FEF9C3"/>
+    <text x="156" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">⭐</text>
+    <circle cx="212" cy="100" r="20" fill="#FCE7F3"/>
+    <text x="212" y="106" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16">🎯</text>
+    <text x="248" y="106" fill="#6B7280" font-family="system-ui, sans-serif" font-size="11">+12</text>
+    <rect x="16" y="140" width="428" height="8" rx="4" fill="#F3F4F6"/>
+    <rect x="16" y="140" width="320" height="8" rx="4" fill="#F97316"/>
+    <text x="16" y="168" fill="#6B7280" font-family="system-ui, sans-serif" font-size="10">距离下一个成就还需 7 天</text>
+  </g>
+
+  <g transform="translate(660, 320)" filter="url(#shadow2)">
+    <rect width="460" height="240" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="24" y="36" fill="#111827" font-family="system-ui, sans-serif" font-size="14" font-weight="700">本周排行</text>
+    <circle cx="40" cy="72" r="14" fill="#FEF3C7"/>
+    <text x="40" y="77" text-anchor="middle" fill="#F97316" font-family="system-ui, sans-serif" font-size="11" font-weight="700">1</text>
+    <circle cx="68" cy="72" r="14" fill="#F97316"/>
+    <text x="68" y="77" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="10">我</text>
+    <text x="92" y="77" fill="#111827" font-family="system-ui, sans-serif" font-size="11">我</text>
+    <text x="420" y="77" text-anchor="end" fill="#F97316" font-family="system-ui, sans-serif" font-size="12" font-weight="700">2,480</text>
+    <circle cx="40" cy="112" r="14" fill="#F3F4F6"/>
+    <text x="40" y="117" text-anchor="middle" fill="#6B7280" font-family="system-ui, sans-serif" font-size="11" font-weight="700">2</text>
+    <circle cx="68" cy="112" r="14" fill="#60A5FA"/>
+    <text x="68" y="117" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="10">林</text>
+    <text x="92" y="117" fill="#111827" font-family="system-ui, sans-serif" font-size="11">小林</text>
+    <text x="420" y="117" text-anchor="end" fill="#6B7280" font-family="system-ui, sans-serif" font-size="12" font-weight="600">2,150</text>
+    <circle cx="40" cy="152" r="14" fill="#F3F4F6"/>
+    <text x="40" y="157" text-anchor="middle" fill="#6B7280" font-family="system-ui, sans-serif" font-size="11" font-weight="700">3</text>
+    <circle cx="68" cy="152" r="14" fill="#34D399"/>
+    <text x="68" y="157" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="10">张</text>
+    <text x="92" y="157" fill="#111827" font-family="system-ui, sans-serif" font-size="11">老张</text>
+    <text x="420" y="157" text-anchor="end" fill="#6B7280" font-family="system-ui, sans-serif" font-size="12" font-weight="600">1,920</text>
+    <rect x="16" y="190" width="428" height="36" rx="10" fill="url(#bg)"/>
+    <text x="230" y="213" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">发现更多挑战</text>
+  </g>
+
+  <text x="600" y="620" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="36" font-weight="700">GlowFit</text>
+  <text x="600" y="650" text-anchor="middle" fill="#FED7AA" font-family="system-ui, sans-serif" font-size="16">让每一次运动都有意义</text>
 </svg>
