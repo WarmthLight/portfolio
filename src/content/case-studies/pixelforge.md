@@ -806,7 +806,7 @@ Generate 6 Variants
 <div class="flex-1 p-4 overflow-y-auto">
 <div class="grid grid-cols-5 gap-3">
 <div class="rounded-lg bg-zinc-800 border border-zinc-700 overflow-hidden cursor-pointer group relative hover:border-fuchsia-500/50 transition-all">
-<div class="aspect-square bg-zinc-850 flex items-center justify-center p-3" style="background-color: #1a1a2e;">
+<div class="aspect-square bg-zinc-800 flex items-center justify-center p-3" style="background-color: #1a1a2e;">
 <div class="w-10 h-14 relative">
 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-5 h-5 bg-amber-400 rounded-sm"></div>
 <div class="absolute top-5 left-1/2 -translate-x-1/2 w-4 h-6 bg-fuchsia-500 rounded-sm"></div>

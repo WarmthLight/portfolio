@@ -36,7 +36,7 @@ const { sections, lang } = Astro.props;
     { rootMargin: '-20% 0px -60% 0px' }
   );
 
-  document.querySelectorAll('section[id]').forEach(section => {
-    observer.observe(section);
+  document.querySelectorAll('div[id="background"], div[id="research"], div[id="architecture"], div[id="wireframe"], div[id="visual"], div[id="high-fidelity"], div[id="interaction"], div[id="results"]').forEach(el => {
+    observer.observe(el);
   });
 </script>
