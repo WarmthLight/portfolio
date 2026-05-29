@@ -9,22 +9,28 @@ const directions = [
     href: '/en/unity',
     title: 'Unity Game Dev',
     desc: 'Interactive experiences & game creation',
-    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v6c0 1.243 1.007 2.25 2.25 2.25h9a2.25 2.25 0 002.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087V4.5a2.25 2.25 0 00-2.25-2.25h-4.5A2.25 2.25 0 005.25 4.5v1.587"/></svg>`,
-    color: 'bg-blue-500',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v6c0 1.243 1.007 2.25 2.25 2.25h9a2.25 2.25 0 002.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087V4.5a2.25 2.25 0 00-2.25-2.25h-4.5A2.25 2.25 0 005.25 4.5v1.587"/></svg>`,
+    gradient: 'from-blue-500 via-blue-400 to-cyan-400',
+    lightBg: 'bg-blue-50',
+    tag: 'Game Dev',
   },
   {
     href: '/en/uiux',
     title: 'UI/UX Design',
     desc: 'User interface & experience design',
-    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
-    color: 'bg-purple-500',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
+    gradient: 'from-violet-500 via-purple-400 to-fuchsia-400',
+    lightBg: 'bg-purple-50',
+    tag: 'Design',
   },
   {
     href: '/en/aigc',
     title: 'AIGC Generation',
     desc: 'AI-powered creative content',
-    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>`,
-    color: 'bg-amber-500',
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>`,
+    gradient: 'from-amber-500 via-orange-400 to-rose-400',
+    lightBg: 'bg-amber-50',
+    tag: 'AI',
   },
 ];
 ---
@@ -52,20 +58,34 @@ const directions = [
       {directions.map((d, i) => (
         <a
           href={d.href}
-          class={`group relative flex flex-col p-6 sm:p-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)] hover:bg-white hover:border-[var(--color-primary)] hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 animate-fade-in-up animate-delay-${(i + 1) * 100}`}
+          class={`group relative flex flex-col rounded-2xl overflow-hidden border border-[var(--color-border)] bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-500 animate-fade-in-up animate-delay-${(i + 1) * 100}`}
         >
-          <div class={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${d.color} text-white mb-5 group-hover:scale-110 transition-transform duration-300`}>
-            <Fragment set:html={d.icon} />
+          <div class={`relative h-36 sm:h-44 bg-gradient-to-br ${d.gradient} overflow-hidden`}>
+            <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/10"></div>
+            <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-white/10"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                <Fragment set:html={d.icon} />
+              </div>
+            </div>
+            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
+              {d.tag}
+            </div>
           </div>
-          <h2 class="text-lg sm:text-xl font-semibold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
-            {d.title}
-          </h2>
-          <p class="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed flex-1">{d.desc}</p>
-          <div class="mt-5 flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity">
-            <span>View Details</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+
+          <div class="flex flex-col flex-1 p-6 sm:p-7">
+            <h2 class="text-xl sm:text-2xl font-bold mb-2 text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+              {d.title}
+            </h2>
+            <p class="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed flex-1">{d.desc}</p>
+            <div class="mt-5 pt-5 border-t border-[var(--color-border-light)] flex items-center justify-between">
+              <span class="text-sm font-medium text-[var(--color-primary)]">Explore Projects</span>
+              <div class="w-8 h-8 rounded-full bg-[var(--color-primary-50)] flex items-center justify-center group-hover:bg-[var(--color-primary)] transition-colors duration-300">
+                <svg class="w-4 h-4 text-[var(--color-primary)] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </a>
       ))}
