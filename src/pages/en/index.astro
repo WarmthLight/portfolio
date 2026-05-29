@@ -33,18 +33,18 @@ const directions = [
 ---
 
 <Base lang={lang} title={site.name[lang]}>
-  <section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-primary-50)] rounded-full blur-3xl opacity-60"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-50 rounded-full blur-3xl opacity-60"></div>
+  <section class="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 sm:px-6 overflow-hidden">
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[var(--color-primary-50)] rounded-full blur-3xl opacity-60"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-80 sm:h-80 bg-purple-50 rounded-full blur-3xl opacity-60"></div>
     </div>
 
     <div class="animate-fade-in-up">
-      <p class="text-sm font-medium text-[var(--color-primary)] tracking-widest uppercase mb-6">Portfolio</p>
-      <h1 class="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
+      <p class="text-xs sm:text-sm font-medium text-[var(--color-primary)] tracking-widest uppercase mb-4 sm:mb-6">Portfolio</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight">
         <span class="gradient-text">{site.name[lang]}</span>
       </h1>
-      <p class="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
+      <p class="text-base sm:text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
         {site.tagline[lang]}
       </p>
     </div>
@@ -56,7 +56,7 @@ const directions = [
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 pb-24">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
     <div class="text-center mb-12">
       <p class="text-sm text-[var(--color-text-muted)] tracking-wide">Explore My Work</p>
     </div>
