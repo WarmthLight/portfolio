@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "AI驱动的游戏资产创作工作流"
   en: "AI-Driven Game Asset Creation Workflow"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/assetforge-cover.svg"
 role:
   zh: "AI 资产创作者"
   en: "AI Asset Creator"

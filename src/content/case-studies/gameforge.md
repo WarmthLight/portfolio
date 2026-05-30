@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "AI赋能游戏开发全流程的实践探索"
   en: "Practical Exploration of AI-Empowered Full Game Development Pipeline"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/gameforge-cover.svg"
 role:
   zh: "AI 游戏开发者"
   en: "AI Game Developer"

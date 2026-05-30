@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "将AI工具深度融入专业UI设计流程"
   en: "Deeply Integrating AI Tools into Professional UI Design Workflow"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/designcopilot-cover.svg"
 role:
   zh: "AI 辅助设计师"
   en: "AI-Assisted Designer"
