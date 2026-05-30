@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "探索AI在叙事内容创作中的完整工作流"
   en: "Exploring the Complete Workflow of AI in Narrative Content Creation"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/aimanga-cover.svg"
 role:
   zh: "AI 漫剧创作者"
   en: "AI Manga Drama Creator"

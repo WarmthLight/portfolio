@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "探索AI视频生成的叙事能力与技术边界"
   en: "Exploring the Narrative Capability and Technical Boundaries of AI Video Generation"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/motionai-cover.svg"
 role:
   zh: "AI 视频创作者"
   en: "AI Video Creator"

@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "探索AI图像生成的创意边界与审美把控"
   en: "Exploring the Creative Boundaries and Aesthetic Control of AI Image Generation"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/promptcanvas-cover.svg"
 role:
   zh: "AI 艺术创作者"
   en: "AI Art Creator"

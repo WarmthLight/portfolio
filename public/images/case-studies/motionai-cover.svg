@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#18181B"/>
+      <stop offset="50%" style="stop-color:#27272A"/>
+      <stop offset="100%" style="stop-color:#3F3F46"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="150" cy="120" r="120" fill="#06B6D4" opacity="0.08"/>
+  <circle cx="1050" cy="550" r="150" fill="#3B82F6" opacity="0.06"/>
+
+  <!-- 应用图标 -->
+  <g transform="translate(80, 200)">
+    <rect width="140" height="140" rx="28" fill="url(#iconGrad)" filter="url(#shadow1)"/>
+    <!-- 播放按钮图标 -->
+    <polygon points="52,40 52,90 92,65" fill="#fff" opacity="0.9"/>
+    <rect x="35" y="95" width="70" height="6" rx="3" fill="#fff" opacity="0.3"/>
+    <rect x="35" y="95" width="45" height="6" rx="3" fill="#fff" opacity="0.6"/>
+    <text x="70" y="135" text-anchor="middle" fill="#CFFAFE" font-family="system-ui, sans-serif" font-size="11" font-weight="600">MotionAI</text>
+  </g>
+
+  <!-- 视频播放器界面 -->
+  <g transform="translate(280, 50)" filter="url(#shadow2)">
+    <rect width="640" height="440" rx="8" fill="#18181B" stroke="#3F3F46" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect width="640" height="32" rx="8" fill="#27272A"/>
+    <rect y="24" width="640" height="8" fill="#27272A"/>
+    <text x="16" y="22" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="10" font-weight="600">MotionAI</text>
+    <text x="110" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Timeline</text>
+    <text x="180" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Shots</text>
+    <text x="230" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Export</text>
+    <!-- 视频预览区 -->
+    <rect x="16" y="44" width="380" height="216" rx="6" fill="#09090B"/>
+    <polygon points="190,120 190,170 230,145" fill="#06B6D4" opacity="0.8"/>
+    <rect x="16" y="260" width="380" height="24" rx="0" fill="#27272A"/>
+    <rect x="16" y="260" width="120" height="24" rx="0" fill="#06B6D4" opacity="0.4"/>
+    <circle cx="32" cy="272" r="6" fill="#06B6D4"/>
+    <rect x="52" y="268" width="320" height="8" rx="4" fill="#3F3F46"/>
+    <rect x="52" y="268" width="120" height="8" rx="4" fill="#06B6D4"/>
+    <!-- 镜头列表 -->
+    <rect x="412" y="44" width="212" height="216" rx="6" fill="#27272A"/>
+    <text x="424" y="64" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="8" font-weight="600">镜头列表</text>
+    <rect x="424" y="74" width="192" height="36" rx="4" fill="#09090B" stroke="#06B6D4" stroke-width="1"/>
+    <rect x="432" y="80" width="48" height="24" rx="3" fill="#06B6D4" opacity="0.3"/>
+    <text x="490" y="90" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="7">Shot 01 - 城市全景</text>
+    <text x="490" y="102" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">Runway Gen-3 | 4s</text>
+    <rect x="424" y="116" width="192" height="36" rx="4" fill="#09090B"/>
+    <rect x="432" y="122" width="48" height="24" rx="3" fill="#3B82F6" opacity="0.3"/>
+    <text x="490" y="132" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="7">Shot 02 - 人物特写</text>
+    <text x="490" y="144" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">Pika 2.0 | 3s</text>
+    <rect x="424" y="158" width="192" height="36" rx="4" fill="#09090B"/>
+    <rect x="432" y="164" width="48" height="24" rx="3" fill="#A855F7" opacity="0.3"/>
+    <text x="490" y="174" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="7">Shot 03 - 动作场景</text>
+    <text x="490" y="186" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">可灵 | 5s</text>
+    <rect x="424" y="200" width="192" height="36" rx="4" fill="#09090B"/>
+    <rect x="432" y="206" width="48" height="24" rx="3" fill="#10B981" opacity="0.3"/>
+    <text x="490" y="216" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="7">Shot 04 - 结尾画面</text>
+    <text x="490" y="228" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">Sora | 4s</text>
+    <!-- 时间线 -->
+    <rect x="16" y="296" width="608" height="64" rx="6" fill="#27272A"/>
+    <text x="28" y="316" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="8" font-weight="600">时间线</text>
+    <rect x="28" y="324" width="580" height="24" rx="4" fill="#09090B"/>
+    <rect x="28" y="324" width="120" height="24" rx="4" fill="#06B6D4" opacity="0.5"/>
+    <rect x="156" y="324" width="90" height="24" rx="4" fill="#3B82F6" opacity="0.5"/>
+    <rect x="254" y="324" width="150" height="24" rx="4" fill="#A855F7" opacity="0.5"/>
+    <rect x="412" y="324" width="120" height="24" rx="4" fill="#10B981" opacity="0.5"/>
+    <rect x="540" y="324" width="68" height="24" rx="4" fill="#F59E0B" opacity="0.5"/>
+    <!-- 工具对比 -->
+    <rect x="16" y="372" width="608" height="56" rx="6" fill="#27272A"/>
+    <text x="28" y="392" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="8" font-weight="600">工具对比</text>
+    <rect x="28" y="400" width="120" height="20" rx="4" fill="#3F3F46"/>
+    <rect x="28" y="400" width="96" height="20" rx="4" fill="#06B6D4" opacity="0.6"/>
+    <text x="36" y="414" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Runway</text>
+    <text x="116" y="414" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">95%</text>
+    <rect x="156" y="400" width="120" height="20" rx="4" fill="#3F3F46"/>
+    <rect x="156" y="400" width="88" height="20" rx="4" fill="#3B82F6" opacity="0.6"/>
+    <text x="164" y="414" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Pika</text>
+    <text x="244" y="414" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">88%</text>
+    <rect x="284" y="400" width="120" height="20" rx="4" fill="#3F3F46"/>
+    <rect x="284" y="400" width="80" height="20" rx="4" fill="#A855F7" opacity="0.6"/>
+    <text x="292" y="414" fill="#fff" font-family="system-ui, sans-serif" font-size="7">可灵</text>
+    <text x="364" y="414" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">85%</text>
+    <rect x="412" y="400" width="120" height="20" rx="4" fill="#3F3F46"/>
+    <rect x="412" y="400" width="72" height="20" rx="4" fill="#10B981" opacity="0.6"/>
+    <text x="420" y="414" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Sora</text>
+    <text x="484" y="414" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">82%</text>
+  </g>
+
+  <!-- 右侧卡片 - 视频数据 -->
+  <g transform="translate(960, 100)" filter="url(#shadow2)">
+    <rect width="200" height="180" rx="12" fill="#27272A" stroke="#3F3F46" stroke-width="1"/>
+    <text x="16" y="32" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="10" font-weight="600">视频数据</text>
+    <rect x="16" y="44" width="168" height="50" rx="6" fill="#09090B" stroke="#3F3F46" stroke-width="1"/>
+    <text x="24" y="62" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="7">AI生成效率</text>
+    <text x="24" y="78" fill="#10B981" font-family="system-ui, sans-serif" font-size="16" font-weight="700">8x</text>
+    <rect x="16" y="100" width="80" height="24" rx="6" fill="url(#iconGrad)"/>
+    <text x="56" y="116" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="8" font-weight="600">生成</text>
+    <rect x="104" y="100" width="80" height="24" rx="6" fill="#3F3F46"/>
+    <text x="144" y="116" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="8">导出</text>
+    <rect x="16" y="132" width="168" height="36" rx="6" fill="#18181B"/>
+    <text x="24" y="148" fill="#3B82F6" font-family="system-ui, sans-serif" font-size="7" font-weight="600">叙事工作流</text>
+    <text x="24" y="160" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">从脚本到成片 2小时</text>
+  </g>
+
+  <text x="600" y="580" text-anchor="middle" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="32" font-weight="700">MotionAI</text>
+  <text x="600" y="610" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="14">AI视频生成的叙事能力与多工具对比评测平台</text>
+</svg>

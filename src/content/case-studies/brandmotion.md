@@ -5,7 +5,7 @@ title:
 subtitle:
   zh: "AI在商业视频场景中的高效应用"
   en: "Efficient Application of AI in Commercial Video Scenarios"
-cover: "/images/case-studies/placeholder-cover.svg"
+cover: "/images/case-studies/brandmotion-cover.svg"
 role:
   zh: "AI 商业视频创作者"
   en: "AI Commercial Video Creator"

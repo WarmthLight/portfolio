@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#18181B"/>
+      <stop offset="50%" style="stop-color:#27272A"/>
+      <stop offset="100%" style="stop-color:#3F3F46"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#EF4444"/>
+    </linearGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="150" cy="120" r="120" fill="#F59E0B" opacity="0.08"/>
+  <circle cx="1050" cy="550" r="150" fill="#EF4444" opacity="0.06"/>
+
+  <!-- 应用图标 -->
+  <g transform="translate(80, 200)">
+    <rect width="140" height="140" rx="28" fill="url(#iconGrad)" filter="url(#shadow1)"/>
+    <rect x="30" y="35" width="80" height="60" rx="4" fill="#fff" opacity="0.15"/>
+    <rect x="35" y="40" width="70" height="50" rx="2" fill="#fff" opacity="0.2"/>
+    <circle cx="55" cy="55" r="4" fill="#fff" opacity="0.8"/>
+    <circle cx="75" cy="55" r="4" fill="#fff" opacity="0.8"/>
+    <rect x="45" y="70" width="50" height="8" rx="2" fill="#fff" opacity="0.6"/>
+    <text x="70" y="135" text-anchor="middle" fill="#FEF3C7" font-family="system-ui, sans-serif" font-size="11" font-weight="600">PromptCanvas</text>
+  </g>
+
+  <!-- AI艺术画廊界面 -->
+  <g transform="translate(280, 50)" filter="url(#shadow2)">
+    <rect width="640" height="440" rx="8" fill="#18181B" stroke="#3F3F46" stroke-width="1"/>
+    <!-- 标题栏 -->
+    <rect width="640" height="32" rx="8" fill="#27272A"/>
+    <rect y="24" width="640" height="8" fill="#27272A"/>
+    <text x="16" y="22" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="10" font-weight="600">PromptCanvas</text>
+    <text x="120" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Gallery</text>
+    <text x="170" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Create</text>
+    <text x="220" y="22" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="9">Compare</text>
+    <text x="280" y="22" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="9">Prompts</text>
+    <!-- 提示词输入框 -->
+    <rect x="16" y="44" width="608" height="48" rx="8" fill="#09090B" stroke="#3F3F46" stroke-width="1"/>
+    <text x="28" y="72" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="9">A cyberpunk cityscape at sunset, neon lights reflecting in puddles...</text>
+    <rect x="560" y="52" width="48" height="28" rx="6" fill="url(#iconGrad)"/>
+    <text x="584" y="70" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="8" font-weight="600">生成</text>
+    <!-- 画廊网格 -->
+    <rect x="16" y="104" width="148" height="148" rx="6" fill="#3F3F46"/>
+    <rect x="24" y="112" width="132" height="100" rx="4" fill="#F59E0B" opacity="0.3"/>
+    <rect x="24" y="212" width="132" height="32" rx="4" fill="#27272A"/>
+    <text x="32" y="232" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">Midjourney v6</text>
+    <rect x="176" y="104" width="148" height="148" rx="6" fill="#3F3F46"/>
+    <rect x="184" y="112" width="132" height="100" rx="4" fill="#EF4444" opacity="0.3"/>
+    <rect x="184" y="212" width="132" height="32" rx="4" fill="#27272A"/>
+    <text x="192" y="232" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">DALL-E 3</text>
+    <rect x="336" y="104" width="148" height="148" rx="6" fill="#3F3F46"/>
+    <rect x="344" y="112" width="132" height="100" rx="4" fill="#A855F7" opacity="0.3"/>
+    <rect x="344" y="212" width="132" height="32" rx="4" fill="#27272A"/>
+    <text x="352" y="232" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">Stable Diffusion</text>
+    <rect x="496" y="104" width="128" height="148" rx="6" fill="#3F3F46"/>
+    <rect x="504" y="112" width="112" height="100" rx="4" fill="#06B6D4" opacity="0.3"/>
+    <rect x="504" y="212" width="112" height="32" rx="4" fill="#27272A"/>
+    <text x="512" y="232" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">Firefly</text>
+    <!-- 工具对比栏 -->
+    <rect x="16" y="268" width="608" height="64" rx="6" fill="#27272A"/>
+    <text x="28" y="288" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="8" font-weight="600">工具对比</text>
+    <rect x="28" y="298" width="120" height="24" rx="4" fill="#3F3F46"/>
+    <rect x="28" y="298" width="80" height="24" rx="4" fill="#F59E0B" opacity="0.6"/>
+    <text x="36" y="314" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Midjourney</text>
+    <text x="116" y="314" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">92%</text>
+    <rect x="156" y="298" width="120" height="24" rx="4" fill="#3F3F46"/>
+    <rect x="156" y="298" width="96" height="24" rx="4" fill="#EF4444" opacity="0.6"/>
+    <text x="164" y="314" fill="#fff" font-family="system-ui, sans-serif" font-size="7">DALL-E 3</text>
+    <text x="252" y="314" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">88%</text>
+    <rect x="284" y="298" width="120" height="24" rx="4" fill="#3F3F46"/>
+    <rect x="284" y="298" width="72" height="24" rx="4" fill="#A855F7" opacity="0.6"/>
+    <text x="292" y="314" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Stable Diffusion</text>
+    <text x="372" y="314" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">85%</text>
+    <rect x="412" y="298" width="120" height="24" rx="4" fill="#3F3F46"/>
+    <rect x="412" y="298" width="88" height="24" rx="4" fill="#06B6D4" opacity="0.6"/>
+    <text x="420" y="314" fill="#fff" font-family="system-ui, sans-serif" font-size="7">Firefly</text>
+    <text x="500" y="314" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="7">80%</text>
+    <!-- 创作统计 -->
+    <rect x="16" y="348" width="608" height="80" rx="6" fill="#27272A"/>
+    <text x="28" y="372" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="8" font-weight="600">创作统计</text>
+    <rect x="28" y="380" width="140" height="36" rx="4" fill="#09090B"/>
+    <text x="36" y="396" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="14" font-weight="700">1,247</text>
+    <text x="36" y="410" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">生成图片</text>
+    <rect x="180" y="380" width="140" height="36" rx="4" fill="#09090B"/>
+    <text x="188" y="396" fill="#EF4444" font-family="system-ui, sans-serif" font-size="14" font-weight="700">386</text>
+    <text x="188" y="410" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">优化提示词</text>
+    <rect x="332" y="380" width="140" height="36" rx="4" fill="#09090B"/>
+    <text x="340" y="396" fill="#06B6D4" font-family="system-ui, sans-serif" font-size="14" font-weight="700">48</text>
+    <text x="340" y="410" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">创作模板</text>
+    <rect x="484" y="380" width="128" height="36" rx="4" fill="#09090B"/>
+    <text x="492" y="396" fill="#10B981" font-family="system-ui, sans-serif" font-size="14" font-weight="700">96%</text>
+    <text x="492" y="410" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">满意率</text>
+  </g>
+
+  <!-- 右侧卡片 - 创作效率 -->
+  <g transform="translate(960, 100)" filter="url(#shadow2)">
+    <rect width="200" height="180" rx="12" fill="#27272A" stroke="#3F3F46" stroke-width="1"/>
+    <text x="16" y="32" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="10" font-weight="600">创作效率</text>
+    <rect x="16" y="44" width="168" height="50" rx="6" fill="#09090B" stroke="#3F3F46" stroke-width="1"/>
+    <text x="24" y="62" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="7">提示词优化后质量提升</text>
+    <text x="24" y="78" fill="#10B981" font-family="system-ui, sans-serif" font-size="16" font-weight="700">+47%</text>
+    <rect x="16" y="100" width="80" height="24" rx="6" fill="url(#iconGrad)"/>
+    <text x="56" y="116" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="8" font-weight="600">对比</text>
+    <rect x="104" y="100" width="80" height="24" rx="6" fill="#3F3F46"/>
+    <text x="144" y="116" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="8">导出</text>
+    <rect x="16" y="132" width="168" height="36" rx="6" fill="#18181B"/>
+    <text x="24" y="148" fill="#EF4444" font-family="system-ui, sans-serif" font-size="7" font-weight="600">创作工作流</text>
+    <text x="24" y="160" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="6">从想法到成品 3分钟</text>
+  </g>
+
+  <text x="600" y="580" text-anchor="middle" fill="#FAFAFA" font-family="system-ui, sans-serif" font-size="32" font-weight="700">PromptCanvas</text>
+  <text x="600" y="610" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="14">AI艺术创作的提示词工作台与多模型对比平台</text>
+</svg>
